@@ -143,16 +143,18 @@ class AppConfig:
             pg_server = os.getenv("POSTGRES_SERVER", "localhost")
             pg_port = os.getenv("POSTGRES_PORT", "5432")
             pg_db = os.getenv("POSTGRES_DB", "workplace_assistant")
-            db_url = f"postgresql+psycopg://{pg_user}:{pg_pass}@{pg_server}:{pg_port}/{pg_db}"
+            db_url = f"postgresql+psycopg2://{pg_user}:{pg_pass}@{pg_server}:{pg_port}/{pg_db}"
         else:
             db_url = raw_db_url
 
-        # Ensure modern psycopg driver prefix if standard postgresql:// is provided
-        if db_url.startswith("postgresql://"):
-            db_url = db_url.replace("postgresql://", "postgresql+psycopg://", 1)
+        # Normalise to psycopg2 driver (psycopg2-binary is installed on all envs)
+        if db_url.startswith("postgresql+psycopg://"):
+            # Downgrade psycopg v3 prefix → psycopg2
+            db_url = db_url.replace("postgresql+psycopg://", "postgresql+psycopg2://", 1)
         elif db_url.startswith("postgresql+asyncpg://"):
-            # Provide sync psycopg driver for standard ORM/CLI operations
-            db_url = db_url.replace("postgresql+asyncpg://", "postgresql+psycopg://", 1)
+            db_url = db_url.replace("postgresql+asyncpg://", "postgresql+psycopg2://", 1)
+        elif db_url.startswith("postgresql://"):
+            db_url = db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
 
         try:
             pool_size = int(os.getenv("DB_POOL_SIZE", "10"))
