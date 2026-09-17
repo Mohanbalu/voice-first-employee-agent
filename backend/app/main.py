@@ -22,8 +22,9 @@ for _p in [str(_backend_dir), str(_project_root)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 try:
     from backend.app.routes.chat import router as chat_router
@@ -95,6 +96,18 @@ app.include_router(auth_router)
 app.include_router(hr_router)
 app.include_router(tickets_router)
 app.include_router(location_router)
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Catch-all 500 handler — ensures CORS headers are always present so the
+    browser shows the real error instead of a misleading CORS error.
+    """
+    logger.error("Unhandled exception on %s %s: %s", request.method, request.url.path, exc, exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error. Please check server logs."},
+    )
 
 
 @app.get("/health", tags=["health"])
