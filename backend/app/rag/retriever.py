@@ -83,7 +83,7 @@ def _bool_env(key: str, default: bool) -> bool:
 RAG_TOP_K: int = _int_env("RAG_TOP_K", 15)
 RAG_MIN_SIMILARITY: float = _float_env("RAG_MIN_SIMILARITY", 0.50)
 RAG_MAX_CONTEXT_CHUNKS: int = _int_env("RAG_MAX_CONTEXT_CHUNKS", 6)
-RAG_ALLOW_MOCK: bool = _bool_env("RAG_ALLOW_MOCK", False)
+RAG_ALLOW_MOCK: bool = _bool_env("RAG_ALLOW_MOCK", True)
 
 
 class RetrievalConfig:

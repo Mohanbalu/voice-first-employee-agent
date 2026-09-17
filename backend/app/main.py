@@ -110,22 +110,6 @@ async def global_exception_handler(request: Request, exc: Exception) -> JSONResp
     )
 
 
-@app.on_event("startup")
-def on_startup():
-    import threading
-
-    def _prewarm_models():
-        try:
-            from backend.app.rag.embeddings import LocalSentenceTransformerEmbeddingProvider
-            provider = LocalSentenceTransformerEmbeddingProvider()
-            provider._load_model()
-            logger.info("Background prewarm: Local SentenceTransformer model ready.")
-        except Exception as exc:
-            logger.info("Background prewarm deferred: %s", exc)
-
-    threading.Thread(target=_prewarm_models, daemon=True).start()
-
-
 @app.get("/health", tags=["health"])
 async def health() -> dict:
     """Service health probe."""

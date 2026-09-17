@@ -60,7 +60,7 @@ class DatabaseSettings:
 class EmbeddingSettings:
     """Local and API embedding provider settings."""
 
-    provider: str = "local"  # "local" | "mock" | "openai"
+    provider: str = "mock"  # "mock" | "openai" | "local"
     model: str = "BAAI/bge-small-en-v1.5"
     dimension: int = 384
     batch_size: int = 64
@@ -222,7 +222,7 @@ class AppConfig:
             emb_dimension = vector_dim
 
         embedding_settings = EmbeddingSettings(
-            provider=(os.getenv("EMBEDDING_PROVIDER") or "local").strip().lower(),
+            provider=(os.getenv("EMBEDDING_PROVIDER") or "mock").strip().lower(),
             model=os.getenv("EMBEDDING_MODEL") or "BAAI/bge-small-en-v1.5",
             dimension=emb_dimension,
             batch_size=emb_batch_size,
