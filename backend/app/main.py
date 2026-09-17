@@ -121,57 +121,57 @@ async def global_exception_handler(request: Request, exc: Exception) -> JSONResp
     logger.error("Unhandled exception on %s %s: %s", request.method, request.url.path, exc, exc_info=True)
     return JSONResponse(
         status_code=500,
-        content={"detail": "Internal server error. Please check server logs."},
+        content={"detail": f"Internal server error: {type(exc).__name__}: {exc}"},
     )
 
 
 @app.get("/api/debug/rag", tags=["debug"])
-def debug_rag(
-    q: str = "What is the annual leave policy for employees?",
-    db: Session = Depends(get_db),
-) -> dict:
+def debug_rag(q: str = "What is the annual leave policy for employees?") -> dict:
     """Diagnostic endpoint to profile RAG retrieval and LLM answer generation."""
     import time
+    from backend.app.database import get_session_factory
     timings = {}
 
     try:
-        t0 = time.monotonic()
-        tenant = db.execute(
-            select(Tenant).where(Tenant.id == uuid.UUID(config.tenant.default_id))
-        ).scalar_one_or_none()
-        timings["1_tenant_lookup_ms"] = round((time.monotonic() - t0) * 1000, 2)
+        session_factory = get_session_factory()
+        with session_factory() as db:
+            t0 = time.monotonic()
+            tenant = db.execute(
+                select(Tenant).where(Tenant.id == uuid.UUID(config.tenant.default_id))
+            ).scalar_one_or_none()
+            timings["1_tenant_lookup_ms"] = round((time.monotonic() - t0) * 1000, 2)
 
-        if tenant is None:
-            first_tenant = db.execute(select(Tenant).limit(1)).scalar_one_or_none()
-            tenant = first_tenant
-            timings["tenant_fallback"] = str(tenant.id) if tenant else "none"
+            if tenant is None:
+                first_tenant = db.execute(select(Tenant).limit(1)).scalar_one_or_none()
+                tenant = first_tenant
+                timings["tenant_fallback"] = str(tenant.id) if tenant else "none"
 
-        t1 = time.monotonic()
-        retriever = RAGRetriever(config=RetrievalConfig())
-        results = retriever.retrieve(session=db, tenant_id=tenant.id, question=q) if tenant else []
-        timings["2_retrieve_ms"] = round((time.monotonic() - t1) * 1000, 2)
-        timings["retrieved_chunks"] = len(results)
+            t1 = time.monotonic()
+            retriever = RAGRetriever(config=RetrievalConfig())
+            results = retriever.retrieve(session=db, tenant_id=tenant.id, question=q) if tenant else []
+            timings["2_retrieve_ms"] = round((time.monotonic() - t1) * 1000, 2)
+            timings["retrieved_chunks"] = len(results)
 
-        t2 = time.monotonic()
-        builder = ContextBuilder()
-        built = builder.build(results)
-        timings["3_context_ms"] = round((time.monotonic() - t2) * 1000, 2)
+            t2 = time.monotonic()
+            builder = ContextBuilder()
+            built = builder.build(results)
+            timings["3_context_ms"] = round((time.monotonic() - t2) * 1000, 2)
 
-        t3 = time.monotonic()
-        gen = AnswerGenerator()
-        ans = gen.generate(question=q, context_text=built.context_text)
-        timings["4_answer_gen_ms"] = round((time.monotonic() - t3) * 1000, 2)
-        timings["total_ms"] = round((time.monotonic() - t0) * 1000, 2)
+            t3 = time.monotonic()
+            gen = AnswerGenerator()
+            ans = gen.generate(question=q, context_text=built.context_text)
+            timings["4_answer_gen_ms"] = round((time.monotonic() - t3) * 1000, 2)
+            timings["total_ms"] = round((time.monotonic() - t0) * 1000, 2)
 
-        return {
-            "status": "ok",
-            "timings": timings,
-            "env_groq_model": os.getenv("GROQ_MODEL"),
-            "config_groq_model": config.ai.groq_model,
-            "embedding_provider": config.embedding.provider,
-            "is_render": bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID")),
-            "answer_preview": ans.answer[:300],
-        }
+            return {
+                "status": "ok",
+                "timings": timings,
+                "env_groq_model": os.getenv("GROQ_MODEL"),
+                "config_groq_model": config.ai.groq_model,
+                "embedding_provider": config.embedding.provider,
+                "is_render": bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID")),
+                "answer_preview": ans.answer[:300],
+            }
     except Exception as exc:
         import traceback
         return {
