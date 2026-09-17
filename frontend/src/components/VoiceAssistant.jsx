@@ -511,6 +511,7 @@ export default function VoiceAssistant() {
   };
 
   const quickPrompts = [
+    '📍 Where am I located in the office?',
     'What is the annual leave policy for employees?',
     'How many casual leaves can I take in a year?',
     'What is the standard probation period policy?',
