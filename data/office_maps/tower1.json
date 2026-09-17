@@ -1,0 +1,13 @@
+{
+  "building_id": "tower1",
+  "name": "Innovation Tower 1",
+  "floors": [
+    {
+      "floor_number": 1,
+      "name": "Lobby & Cafeteria",
+      "rooms": [],
+      "beacons": [],
+      "qr_checkpoints": []
+    }
+  ]
+}

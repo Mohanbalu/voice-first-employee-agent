@@ -1,0 +1,1047 @@
+{
+  "total_documents": 12,
+  "total_chunks": 886,
+  "valid_chunks": 886,
+  "empty_chunks": 0,
+  "very_short_chunks": 0,
+  "short_chunks": 11,
+  "normal_chunks": 719,
+  "large_chunks": 156,
+  "very_large_chunks": 0,
+  "exact_duplicate_chunks": 0,
+  "exact_duplicate_groups": 0,
+  "near_duplicate_pairs": 24,
+  "missing_metadata_fields": 0,
+  "invalid_page_ranges": 0,
+  "invalid_chunk_indexes": 0,
+  "missing_source_files": 0,
+  "suspicious_section_chunks": 19,
+  "suspected_artifact_chunks": 45,
+  "overall_status": "NEEDS_REVIEW",
+  "critical_issues": [],
+  "warnings": [
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0052 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0053 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0054 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0055 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0056 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0057 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0058 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in business_policy_global_0002 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in business_policy_global_0003 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in business_policy_global_0004 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in hcl_leave_and_holiday_policy_0002 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in hcl_leave_and_holiday_policy_0003 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Artifact detected in hcl_leave_and_holiday_policy_0046: High single-character line ratio (17/29)",
+    "Artifact detected in hcl_leave_and_holiday_policy_0047: High single-character line ratio (17/34)",
+    "Artifact detected in hclc_it_policies_v2_0003: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0004: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0005: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0039: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0040: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0051: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0052: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0056: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0057: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0103: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0104: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0115: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0116: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0117: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0142: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0143: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0159: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0160: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0161: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0177: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0178: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0192: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0193: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0205: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0206: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0207: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0224: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0236: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0237: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0238: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0239: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0257: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0258: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0269: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0270: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0271: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0280: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0281: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0282: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0294: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0295: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0296: Contains long dot sequences (possible table of contents)",
+    "Artifact detected in hclc_it_policies_v2_0297: Contains long dot sequences (possible table of contents)",
+    "Suspicious section in human_rights_policy_10_06_2026_0028 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in human_rights_policy_10_06_2026_0029 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in human_rights_policy_10_06_2026_0030 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in human_rights_policy_10_06_2026_0031 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in human_rights_policy_10_06_2026_0032 ('Revision History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in travel_policy_0001 ('Policy Process FAQ(s) Form(s) History'): Matches navigation/menu pattern: '\\bHistory\\b'",
+    "Suspicious section in travel_policy_0002 ('Policy Process FAQ(s) Form(s) History'): Matches navigation/menu pattern: '\\bHistory\\b'"
+  ],
+  "informational_findings": [
+    "Detected 24 near-duplicate chunk pairs (Jaccard similarity >= 0.88)"
+  ],
+  "document_summaries": {
+    "anti_bribery_and_anti_corruption_policy_global_28_04_2026": {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "document_name": "Anti Bribery And Anti Corruption Policy Global 28 04 2026",
+      "source_file": "Anti Bribery-and-Anti-Corruption-Policy-Global_28-04-2026.pdf",
+      "source_file_exists": true,
+      "total_chunks": 58,
+      "min_page": 1,
+      "max_page": 12,
+      "pages_represented": 12,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 52,
+      "large_chunks": 5,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0052",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0053",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0054",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0055",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0056",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0057",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+          "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0058",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        }
+      ],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "REVIEW"
+    },
+    "business_policy_global": {
+      "document_id": "business_policy_global",
+      "document_name": "Business Policy Global",
+      "source_file": "business_policy_global.pdf",
+      "source_file_exists": true,
+      "total_chunks": 83,
+      "min_page": 1,
+      "max_page": 18,
+      "pages_represented": 18,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 47,
+      "large_chunks": 35,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [
+        {
+          "document_id": "business_policy_global",
+          "chunk_id": "business_policy_global_0002",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "business_policy_global",
+          "chunk_id": "business_policy_global_0003",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "business_policy_global",
+          "chunk_id": "business_policy_global_0004",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        }
+      ],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "REVIEW"
+    },
+    "disciplinary_policy_global_09_09_2025": {
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "document_name": "Disciplinary Policy Global 09 09 2025",
+      "source_file": "Disciplinary-Policy-Global-09-09-2025.pdf",
+      "source_file_exists": true,
+      "total_chunks": 129,
+      "min_page": 1,
+      "max_page": 41,
+      "pages_represented": 41,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 0,
+      "normal_chunks": 107,
+      "large_chunks": 22,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "environmental_policy_2026_version_17": {
+      "document_id": "environmental_policy_2026_version_17",
+      "document_name": "Environmental Policy 2026 Version 17",
+      "source_file": "Environmental-Policy-2026-Version-17.pdf",
+      "source_file_exists": true,
+      "total_chunks": 17,
+      "min_page": 1,
+      "max_page": 3,
+      "pages_represented": 3,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 0,
+      "normal_chunks": 17,
+      "large_chunks": 0,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "hcl_leave_and_holiday_policy": {
+      "document_id": "hcl_leave_and_holiday_policy",
+      "document_name": "Hcl Leave And Holiday Policy",
+      "source_file": "HCL LEAVE AND HOLIDAY POLICY.pdf",
+      "source_file_exists": true,
+      "total_chunks": 50,
+      "min_page": 1,
+      "max_page": 12,
+      "pages_represented": 12,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 0,
+      "normal_chunks": 45,
+      "large_chunks": 5,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [
+        {
+          "document_id": "hcl_leave_and_holiday_policy",
+          "chunk_id": "hcl_leave_and_holiday_policy_0002",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "hcl_leave_and_holiday_policy",
+          "chunk_id": "hcl_leave_and_holiday_policy_0003",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        }
+      ],
+      "artifacts_found": [
+        {
+          "chunk_id": "hcl_leave_and_holiday_policy_0046",
+          "details": [
+            "High single-character line ratio (17/29)"
+          ]
+        },
+        {
+          "chunk_id": "hcl_leave_and_holiday_policy_0047",
+          "details": [
+            "High single-character line ratio (17/34)"
+          ]
+        }
+      ],
+      "exact_duplicates_internal": 0,
+      "quality_status": "REVIEW"
+    },
+    "hcl_wfh_policy": {
+      "document_id": "hcl_wfh_policy",
+      "document_name": "Hcl Wfh Policy",
+      "source_file": "hcl wfh policy.pdf",
+      "source_file_exists": true,
+      "total_chunks": 26,
+      "min_page": 1,
+      "max_page": 19,
+      "pages_represented": 19,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 0,
+      "normal_chunks": 13,
+      "large_chunks": 13,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "hclc_it_policies_v2": {
+      "document_id": "hclc_it_policies_v2",
+      "document_name": "Hclc It Policies V2",
+      "source_file": "HCLC-IT-Policies-v2.pdf",
+      "source_file_exists": true,
+      "total_chunks": 330,
+      "min_page": 1,
+      "max_page": 134,
+      "pages_represented": 134,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 5,
+      "normal_chunks": 316,
+      "large_chunks": 9,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [
+        {
+          "chunk_id": "hclc_it_policies_v2_0003",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0004",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0005",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0039",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0040",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0051",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0052",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0056",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0057",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0103",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0104",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0115",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0116",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0117",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0142",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0143",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0159",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0160",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0161",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0177",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0178",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0192",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0193",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0205",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0206",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0207",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0224",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0236",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0237",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0238",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0239",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0257",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0258",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0269",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0270",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0271",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0280",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0281",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0282",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0294",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0295",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0296",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        },
+        {
+          "chunk_id": "hclc_it_policies_v2_0297",
+          "details": [
+            "Contains long dot sequences (possible table of contents)"
+          ]
+        }
+      ],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "health_insurance_policy_2026": {
+      "document_id": "health_insurance_policy_2026",
+      "document_name": "Health Insurance Policy 2026",
+      "source_file": "health insurance Policy-2026.pdf",
+      "source_file_exists": true,
+      "total_chunks": 16,
+      "min_page": 1,
+      "max_page": 4,
+      "pages_represented": 4,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 14,
+      "large_chunks": 1,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "human_rights_policy_10_06_2026": {
+      "document_id": "human_rights_policy_10_06_2026",
+      "document_name": "Human Rights Policy 10 06 2026",
+      "source_file": "Human-Rights-Policy-10-06-2026.pdf",
+      "source_file_exists": true,
+      "total_chunks": 32,
+      "min_page": 1,
+      "max_page": 13,
+      "pages_represented": 13,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 0,
+      "normal_chunks": 28,
+      "large_chunks": 4,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [
+        {
+          "document_id": "human_rights_policy_10_06_2026",
+          "chunk_id": "human_rights_policy_10_06_2026_0028",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "human_rights_policy_10_06_2026",
+          "chunk_id": "human_rights_policy_10_06_2026_0029",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "human_rights_policy_10_06_2026",
+          "chunk_id": "human_rights_policy_10_06_2026_0030",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "human_rights_policy_10_06_2026",
+          "chunk_id": "human_rights_policy_10_06_2026_0031",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "human_rights_policy_10_06_2026",
+          "chunk_id": "human_rights_policy_10_06_2026_0032",
+          "section": "Revision History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        }
+      ],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "REVIEW"
+    },
+    "the_blueprint_for_ai_leadership": {
+      "document_id": "the_blueprint_for_ai_leadership",
+      "document_name": "The Blueprint For Ai Leadership",
+      "source_file": "the-blueprint-for-ai-leadership.pdf",
+      "source_file_exists": true,
+      "total_chunks": 98,
+      "min_page": 1,
+      "max_page": 31,
+      "pages_represented": 31,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 38,
+      "large_chunks": 59,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    },
+    "travel_policy": {
+      "document_id": "travel_policy",
+      "document_name": "Travel Policy",
+      "source_file": "Travel-Policy.pdf",
+      "source_file_exists": true,
+      "total_chunks": 32,
+      "min_page": 1,
+      "max_page": 4,
+      "pages_represented": 4,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 28,
+      "large_chunks": 3,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [
+        {
+          "document_id": "travel_policy",
+          "chunk_id": "travel_policy_0001",
+          "section": "Policy Process FAQ(s) Form(s) History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        },
+        {
+          "document_id": "travel_policy",
+          "chunk_id": "travel_policy_0002",
+          "section": "Policy Process FAQ(s) Form(s) History",
+          "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+        }
+      ],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "REVIEW"
+    },
+    "water_policy_2026_0": {
+      "document_id": "water_policy_2026_0",
+      "document_name": "Water Policy 2026 0",
+      "source_file": "Water-Policy-2026_0.pdf",
+      "source_file_exists": true,
+      "total_chunks": 15,
+      "min_page": 1,
+      "max_page": 3,
+      "pages_represented": 3,
+      "empty_chunks": 0,
+      "very_short_chunks": 0,
+      "short_chunks": 1,
+      "normal_chunks": 14,
+      "large_chunks": 0,
+      "very_large_chunks": 0,
+      "missing_metadata_count": 0,
+      "invalid_page_ranges": 0,
+      "index_sequence_errors": 0,
+      "suspicious_sections": [],
+      "artifacts_found": [],
+      "exact_duplicates_internal": 0,
+      "quality_status": "READY"
+    }
+  },
+  "duplicate_groups_detail": [],
+  "near_duplicates_detail": [
+    {
+      "chunk_id_1": "business_policy_global_0025",
+      "chunk_id_2": "business_policy_global_0031",
+      "document_id": "business_policy_global",
+      "similarity": 0.9107,
+      "note": "Non-adjacent chunks with 91% word overlap"
+    },
+    {
+      "chunk_id_1": "business_policy_global_0027",
+      "chunk_id_2": "business_policy_global_0032",
+      "document_id": "business_policy_global",
+      "similarity": 0.9079,
+      "note": "Non-adjacent chunks with 90% word overlap"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0002",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0003",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0004",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0005",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0023",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0024",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0025",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0026",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0104",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0107",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 0.8889,
+      "note": "Non-adjacent chunks with 88% word overlap"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0105",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0107",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Non-adjacent chunks with 100% word overlap"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0105",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0108",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 0.9259,
+      "note": "Non-adjacent chunks with 92% word overlap"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0107",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0108",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 0.9259,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0107",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0114",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 0.8929,
+      "note": "Non-adjacent chunks with 89% word overlap"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0114",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0115",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0123",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0124",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "disciplinary_policy_global_09_09_2025_0125",
+      "chunk_id_2": "disciplinary_policy_global_09_09_2025_0126",
+      "document_id": "disciplinary_policy_global_09_09_2025",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0001",
+      "chunk_id_2": "hclc_it_policies_v2_0002",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0039",
+      "chunk_id_2": "hclc_it_policies_v2_0040",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0060",
+      "chunk_id_2": "hclc_it_policies_v2_0061",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 0.9296,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0142",
+      "chunk_id_2": "hclc_it_policies_v2_0147",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 1.0,
+      "note": "Non-adjacent chunks with 100% word overlap"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0213",
+      "chunk_id_2": "hclc_it_policies_v2_0214",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 0.9375,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0293",
+      "chunk_id_2": "hclc_it_policies_v2_0294",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0295",
+      "chunk_id_2": "hclc_it_policies_v2_0296",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "hclc_it_policies_v2_0326",
+      "chunk_id_2": "hclc_it_policies_v2_0327",
+      "document_id": "hclc_it_policies_v2",
+      "similarity": 0.9286,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "human_rights_policy_10_06_2026_0023",
+      "chunk_id_2": "human_rights_policy_10_06_2026_0024",
+      "document_id": "human_rights_policy_10_06_2026",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    },
+    {
+      "chunk_id_1": "human_rights_policy_10_06_2026_0031",
+      "chunk_id_2": "human_rights_policy_10_06_2026_0032",
+      "document_id": "human_rights_policy_10_06_2026",
+      "similarity": 1.0,
+      "note": "Adjacent chunks with unusually high similarity (>92%)"
+    }
+  ],
+  "suspicious_sections_detail": [
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0052",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0053",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0054",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0055",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0056",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0057",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026",
+      "chunk_id": "anti_bribery_and_anti_corruption_policy_global_28_04_2026_0058",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "business_policy_global",
+      "chunk_id": "business_policy_global_0002",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "business_policy_global",
+      "chunk_id": "business_policy_global_0003",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "business_policy_global",
+      "chunk_id": "business_policy_global_0004",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "hcl_leave_and_holiday_policy",
+      "chunk_id": "hcl_leave_and_holiday_policy_0002",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "hcl_leave_and_holiday_policy",
+      "chunk_id": "hcl_leave_and_holiday_policy_0003",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "human_rights_policy_10_06_2026",
+      "chunk_id": "human_rights_policy_10_06_2026_0028",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "human_rights_policy_10_06_2026",
+      "chunk_id": "human_rights_policy_10_06_2026_0029",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "human_rights_policy_10_06_2026",
+      "chunk_id": "human_rights_policy_10_06_2026_0030",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "human_rights_policy_10_06_2026",
+      "chunk_id": "human_rights_policy_10_06_2026_0031",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "human_rights_policy_10_06_2026",
+      "chunk_id": "human_rights_policy_10_06_2026_0032",
+      "section": "Revision History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "travel_policy",
+      "chunk_id": "travel_policy_0001",
+      "section": "Policy Process FAQ(s) Form(s) History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    },
+    {
+      "document_id": "travel_policy",
+      "chunk_id": "travel_policy_0002",
+      "section": "Policy Process FAQ(s) Form(s) History",
+      "reason": "Matches navigation/menu pattern: '\\bHistory\\b'"
+    }
+  ]
+}

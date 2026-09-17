@@ -1,0 +1,785 @@
+--- PAGE 1 ---
+
+Scope
+
+This anti-bribery and anti-corruption policy (this "Policy") applies to all individuals worldwide working for all affiliates and subsidiaries of HCLTech at all levels and grade
+(whether permanent, fixed-term or temporary), consultants, contractors, trainees, seconded staff, casual workers, volunteers, interns, agents, or any other person asso
+Policy).
+In this Policy, "Third Party (ies)" means any individual or organization you come into contact with during the course of your work for us and includes actual and potentia
+intermediaries, representatives, subcontractors, agents, advisers, joint ventures, and government & public bodies (including their advisers, representatives and officials
+
+Note: For the French translation of the policy, please refer to the policy provided in the Annexure section
+
+Anti Bribery and Anti Corruption
+Policy-Global
+Latest Updated Date: 19 Jan, 2026
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 2 ---
+
+Policy Statement
+
+Objective
+HCL Technologies Limited ("HCLTech" or the "Company") is committed to the prevention, deterrence, and detection of fraud, bribery, and all other corrupt business pra
+activities with honesty, integrity, and the highest possible ethical standards and vigorously enforce its business practice, wherever it operates throughout the world, of n
+loudly a zero tolerance culture at HCLTech, whereby the Company maintains a solid reputation with its Third Parties spread across multiple industries.
+
+Examples of bribery:
+Offering a bribe - You offer a potential client tickets to a major sporting event, but only if they agree to do business with us. This would be an offense as you are makin
+offense for the potential client to accept your offer.
+Receiving a bribe - A supplier offers your cousin a job, but makes it clear that in return they expect you to use your influence to ensure we continue to do business wit
+Bribing a government official - You are asked to arrange for an additional payment to be made to a customs official to speed up the administrative process of clearin
+
+“Red flags” that may indicate bribery or corruption are set out in Annexure A to this Policy.
+Employees or members of their immediate families (spouse, mother, father, son, daughter, brother, sister or any of these step- or in-law relationships, whether esta
+should not provide, solicit or accept any bribe to or from competitors, vendors, suppliers, customers, or others that do business or are trying to do business with H
+should be cordial, but must be on an arm’s length basis. Nothing should be accepted, nor should the employee have any outside involvement, that could impair, or giv
+his/her duties or to exercise business judgment in a fair and unbiased manner.
+
+1. Gifts & Hospitality
+Providing clients with hospitality is acceptable provided the requirements set out in this section titled “Gifts and Hospitality” are followed.
+To avoid committing a bribery offence, the gift or hospitality must:
+be reasonable and justifiable in all the circumstances; and
+have the intention to improve the image of HCLTech, better present its products and services, or establish cordial relations.
+
+Please review the below examples of hospitality to understand what is acceptable
+You invite an important existing client to attend a fine dining or a football match as part of a public relations exercise designed to cement good relations and enha
+Answer: Yes. This hospitality seems to be reasonable and justifiable in all the circumstances and the intention is to improve HCLTech image, better present our produc
+You invite a potential client to watch Wimbledon a week before the deadline for RFP opening for a large IT deal you hope to secure in order to persuade them to
+Answer: No. This hospitality would constitute bribery as it would be made with the intention of influencing potential client to obtain business. The timing of this hospitali
+entertain the potential clients without breaching the law. This is because the intention of the hospitality would be then to improve our image, better present our produc
+client.
+You are invited to be a guest of an outside company or person at meetings, trips, etc., usually overnight, that have an emphasis on recreation of some type. Is it
+Answer: Your participation in such events should be limited only to those where a benefit to HCLTech is expected to result, and as much of your expenses as is possib
+event should be in good standing with HCLTech based on prior performance.
+A vendor has offered a five star, seven-day holiday package to Hawaii or Singapore for you and your family as a token of his appreciation. Can you go?
+Answer No. Taking into account the reason for the gift, the value of the holiday is excessive and unreasonable in the circumstances. You should politely decline the gift
+A potential sub-contractor delivers to your office a case of expensive wines a week before you are to make a purchase decision of his services or goods. Can yo
+Answer No. The gift appears to have been made with the clear intention of influencing you to award the contract to the sub-contractor. You should return the case
+assess the quote for the supply of services impartially with quotes you have obtained from other sub- contractors.
+
+2. What is not acceptable under this Policy?
+It is not acceptable for you (or someone on your behalf) to:
+accept an offer of a gift of any size from any Third Party which is in negotiation with, or is submitting a proposal with us;
+give, promise to give, or offer, any payment, gift, hospitality or advantage with the expectation or hope that a business advantage will be given or received or to
+give, promise to give, or offer, any payment, gift or hospitality to a government official, agent or representative to “facilitate” or expedite a routine procedure;
+accept or solicit any payment, advantage, gift or hospitality from a Third Party that you know or suspect is being offered with the expectation that it will obtain a b
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 3 ---
+
+threaten, or retaliate against, another employee who has refused to commit a bribery offence or who has raised concerns under this Policy; or
+engage in any activity that might lead to a breach of this Policy.
+The points stated above are illustrative in nature and in no way intend to limit the applicability of this Policy.
+
+2.1. Willful Blindness
+If you willfully ignore or turn a blind eye to any evidence of corruption or bribery within your department and /or around you, it will be taken seriously against you. A
+directly participated in or may not have directly benefited from, the corruption or bribery concerned, the willful blindness to the same can, depending upon the circumst
+
+2.2. Facilitation Payments and Kickbacks
+We do not make, and will not accept, Facilitation Payments or “kickbacks” of any kind.
+“Facilitation Payments” are typically small, unofficial payments (sometimes known as “grease payments”) made to secure or expedite a routine government action by
+Guidance on how to avoid making Facilitation Payments
+Corrupt government officials demanding payments to perform routine government actions may often put you in very difficult positions.
+There is no easy solution to the problem therefore. However, the following steps may help:
+Require official receipts for any payments you make
+Report suspicions, concerns, queries and demands for Facilitation Payments to the higher ups and to local enforcement authorities and refuse to make such pay
+
+“Kickbacks” are typically payments made to commercial organizations in return for a business favor or advantage, such as a payment made to secure the award of a c
+You must avoid any activity that might lead to, or suggest, that a Facilitation Payment or Kickback will be made or accepted by HCLTech. Facilitation Payments are kn
+may be concerned that the inability to make them may cause difficulties in doing business in some jurisdictions, and that this may result in loss of income or contract.
+The guidance set out below is intended to help support you in circumstances when you are asked to make Facilitation Payments.
+
+2.3. Blackmail/ Extortions
+We remain committed to our Policy of not making Facilitation Payments. The only limited exception to this is in circumstances where you or Third Parties are left with
+loss of life, limb or liberty.
+In the event that you experience such circumstances and make a payment, it is your responsibility to contact your Manager and can raise concerns by submitting y
+after the event, so that the incident can be properly recorded, reviewed and accounted for with the authorities. Path: MyHCLTech >>Top Ribbon (Main Menu)>> Ethics
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+
+3. Charitable Donations
+As part of its corporate citizenship activities, HCLTech may support local charities or provide sponsorship, for example, to sporting or cultural events. We only make ch
+practices and also within the corporate governance framework of the organization.
+
+4. Political Activities
+We are apolitical, advocate government policies on sustainability and don’t contribute financial or in-kind to political parties, politicians, and related institutions in any of
+We do not make contributions to political parties, political party officials or candidates for political office.
+Payment or use of corporate assets of any type as payment, directly or indirectly to any person, business, political organization, or public official for any unlawful o
+political contribution on behalf of HCLTech, use any HCLTech resources to assist a candidate or elected official in any campaign, or coerce or direct another employ
+incentives to, or otherwise bribe, any public officials in the hopes of influencing the decision of that individual.
+
+5. Business Relationships
+HCLTech expects all Third Parties doing business with HCLTech to approach issues of bribery and corruption in a manner that is consistent with the principles set ou
+and ensure compliance with these standards, to continue the business relationship.
+In order to maintain the highest standards of integrity, with respect to any dealings with a Third Party, you must ensure that:
+You will conduct due diligence enquiries to review the integrity records of any Third Party before entering a commercial relationship with them;
+You will fully document the engagement process and the final approval of the selection of any Third Party;
+You will implement a program to provide appropriate information on this Policy to all Third Parties engaged in business relationship with HCLTech;
+You will ensure that:
+Each Third Party within your work area are fully briefed on this Policy, and have made a formal commitment in writing to abide by it;
+Fees and commissions agreed will be appropriate and justifiable remuneration for legitimate services rendered; and
+Contractual agreements will include appropriate wording making it possible to withdraw from the relationship if any of the Third Parties fail to abide by this
+In the event that you have any doubt on the integrity of a Third Party, it is your responsibility to contact your Manager and can raise concerns by submitting your grieva
+MyHCLTech >>Top Ribbon (Main Menu)>> Ethics Helpline.
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+6. Offset or Similar Obligations
+Many government contracts (particularly in defense / aeronautics sector) require companies to make offset commitments. The purpose of these offset commitments is
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 4 ---
+
+Similarly, a government in a country or a particular state giving a grant or other facilities to HCLTech may require preference to be given to the residents of such countr
+violate this Policy.
+In case there is any doubt regarding compliance with this Policy at any stage of the transaction, you are strongly encouraged to raise concerns by submitting your griev
+transaction. Path: MyHCLTech >>Top Ribbon (Main Menu)>> Ethics Helpline.
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+7. What we expect of you
+You, HCLTechie are the pillars of this organization and behind each HCLTech success story. You must ensure that you read, understand and comply with this Policy.
+If you have doubts or concerns contact your Manager or can raise concerns by submitting your grievance in the Global Ethics Helpline. Path: MyHCLTech >>Top Rib
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+The prevention, detection and reporting of bribery and other forms of corruption are the responsibility of all those working for HCLTech or under HCLTech’s control.
+You must follow all the procedures laid out in other policies (available in the respective intranet portal) which help in anti-bribery and corruption due diligence on supplie
+Parties.
+You must notify your Manager, and can raise concerns by submitting your grievance in the Global Ethics Helpline as soon as possible if you believe or suspect that a b
+in the future. Path: MyHCLTech >>Top Ribbon (Main Menu)>> Ethics Helpline.
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+8.Record-keeping
+You must ensure all expenses claims relating to hospitality, gifts or expenses incurred to Third Parties are submitted in accordance with our Business Gift and Entertain
+expenditure. All accounts, invoices, memoranda and other documents and records relating to dealings with third parties, such as clients, suppliers and business contac
+completeness. No accounts will be kept “off-book” to facilitate or conceal improper payments and the same is ensured through effective monitoring and auditing mecha
+9.What are the governing legislations?
+All national laws relating to bribery and corruption, especially such laws that are in place in jurisdictions where HCLTech has an office(s) or carries out its work, are of im
+in this Policy particular attention has been paid to the requirements of:
+The UK Bribery Act 2010 which entered into effect on 1 July 2011 (“UKBA”) and which has extra- territorial reach. HCLTech has substantial presence in UK, and
+company conducts itself;
+The Foreign and Corrupt Practices Act 1977 (“FCPA”). This Act is in effect in the US and it assumes extra-territorial effect. Adherence to its requirements is mand
+Indian Prevention of Corruption Act 1988 and Amendment Act, 2018 (“POCA”).
+
+Legal provisions of these 3 Acts are detailed in Annexure B to this policy.
+HCLTech has also assumed contractual obligations to its clients on its compliance with UKBA, FCPA and/or POCA.
+
+10. Protection
+Those who refuse to accept or offer a bribe, or those who raise concerns or report another’s wrong-doing, are sometimes worried about possible repercussions. We e
+concerns in good faith under this Policy, even if they turn out to be mistaken. We are committed to ensuring no one suffers any detrimental treatment as a result of refu
+in good faith their suspicion that an actual or potential bribery or other corruption offence has taken place, or may take place in the future.
+If you believe that you have suffered any such treatment, you should inform your Manager or can raise concerns by submitting your grievance in the Global Ethics Help
+Path: MyHCLTech >>Top Ribbon (Main Menu)>> Ethics Helpline.
+
+Employees based out of Germany/Netherlands shall continue to raise their grievance by writing to whistleblower@hcltech.com.
+
+11.Training and Communication
+Training on this Policy forms part of the induction process for all new employees and will be required on an on-going annual basis for all current employees. Records o
+
+12. Who is responsible for the Policy?
+The Chief Executive Officer has overall responsibility for ensuring this Policy complies with our legal and ethical obligations, and that all those under our control comply
+Managers at all levels are responsible for ensuring those reporting to them are made aware of and understand this Policy, undertake training on how to implement and
+The Ethics & Trade Compliance (“E&TC”)/ HR Team have responsibility for this Policy, and for monitoring its use and effectiveness (and dealing with any queries o
+decide independently to achieve Objectives mentioned herein.
+The policy clearly implies “zero tolerance” to occurrence of bribery and requires 100% compliance by employees.
+Management at all levels are responsible for ensuring those reporting to them are made aware of and understand this Policy, and attend regular training on how to imp
+You are responsible for the success of this Policy and should ensure you use it to disclose any suspected danger or wrong-doing.
+
+13.Waiver and Amendment of the Policy
+We are committed to continuously reviewing and updating our policies and procedures based on the learning. This is so even when HCLTech enters new market/secto
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 5 ---
+
+The E&TC/ HR Team will monitor the effectiveness and review the implementation of this Policy, regularly considering its suitability, adequacy and effectiveness.
+Any improvements identified will be made as soon as possible. Therefore, this document is subject to modification from time to time.
+Any amendment or waiver of any provision of this Policy must be approved in writing by majority of members of Top Management.
+The Policy will be reviewed and audited from time to time which requires cooperation from all concerned.
+
+Consequences
+Any employee who breaches this Policy will face disciplinary action, which could result in dismissal. We reserve our right to terminate our contractual relationship with
+also result in imposition of large fines/imprisonment on the individual or the Company as the case may be or termination of contract with a Third Party.
+Annexure
+Annexure A
+Potential risk scenarios: “red flags”
+The following is a list of possible red flags that may arise during the course of your employment for HCLTech and which may raise concerns under anti-bribery and anti
+for illustrative purposes only. If you encounter any of these red flags while workingfor HCLTech, you have responsibility to report them promptly to your Manager and ca
+Ethics Helpline as set out in “How to Raise a Concern”. Employeesbased out of Germany/Netherlands shall continue to raise their grievance by writing towhistleblower
+Menu)>> Ethics Helpline.
+you suspect or become aware that a Third Party engages in, or has been accused of engaging in, improper business practices;you learn that a Third Party has a reput
+or has a reputation for having a “special relationship” with foreign government officials;a Third Party insists on receiving a commission or fee payment before committin
+function or process for us;a Third Party requests payment in cash and/or refuses to sign a formal contract, or to provide an invoice or receipt for a payment made;a Th
+geographic location different from where the third party resides or conducts business;a Third Party requests an unexpected additional fee or commission to “facilitate”
+entertainment, hospitality or gifts before commencing or continuing contractual negotiations or provision of services;a Third Party requests that a side payment (not an
+legal violations;a Third Party requests that you provide employment or some other advantage to a friend or relative;you receive an invoice from a Third Party that appe
+use of side letters (i.e. agreed terms in a letter or other document outside the written contract between the parties) or refuses to put the agreed terms in a written contra
+fee payment that appears large given the services stated to have been providedThird Party requests or requires the use of an agent, intermediary, consultant, distribut
+offered an unusually generous gift or offered lavish hospitality by a Third Partyyou become aware that a colleague, other employee or contractor working on our behalf
+expedite an activity (such as an inspection or paperwork) or to “overlook” potential legal or regulatory violations
+Annexure B
+INDIA UK USA
+Source of Law The Prevention of
+Corruption Act 1988
+("POCA")
+The Bribery Act
+2010
+
+The Foreign Corrupt
+Practices Act
+("FCPA")
+
+General
+Description
+of Act
+
+The Prevention of
+Corruption Act, is an
+Act of the Parliament of
+India enacted to
+combat corruption in
+government agencies
+and public sector
+businesses in India. The
+act seeks to bring the
+Indian
+anti-corruption legal
+framework in conformity
+with current international
+The Bribery Act
+2010 criminalized
+bribery, the
+bribing of foreign
+government
+representatives and
+the failure by
+private
+companies to
+prevent
+corruption. It also
+The Foreign Corrupt
+Practices Act (FCPA) is a
+United States law that
+prohibits U.S. firms and
+individuals from paying
+bribes to foreign officials
+to further business deals.
+The FCPA contains two
+main articles: 1) the anti-
+bribery provisions, and 2)
+the books,
+records, and internal
+control provisions, which
+speaks of
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 6 ---
+
+practices laid down by
+the United
+Nations Convention
+Against Corruption
+(UNCAC).
+As per the latest
+amendment in 2018, the
+punishment is enhanced
+to make the law
+stringent.
+As per latest amendment
+in 2018, the punishment
+is enhanced to Minimum
+punishment of 3 years,
+extendable up to 7 years
+with fine; from the earlier
+6
+months, with extension
+up to 3 years.
+
+made it an
+offense to be
+bribed. The act
+applies to UK
+citizens,
+residents and
+companies and
+organizations
+that are
+incorporated in
+the UK, or that
+conduct business
+in the
+UK—granting
+similar
+extraterritorial
+privileges as the
+FCPA. The
+penalties per
+violation are
+more
+straightforward
+and stringent.
+
+accounting practices.
+FCPA targets corruption
+and bribery
+internationally.
+Corporations covered by
+FCPA must devise and
+maintain internal controls
+to assure regulators that
+their business
+transactions are
+accounted for properly.
+
+Offense By public servants:
+1. Accepting, obtaining,
+attempting to obtain, or
+agreeing to accept:
+a) “gratification”, other
+than legal remuneration,
+as a motive or reward for
+inter alia doing or
+refraining from doing
+any official act or
+favoring or disfavoring
+any particular person;
+b) any valuable thing
+without consideration or
+with inadequate
+consideration, from any
+person who is concerned
+General Offense
+Bribing (s1):
+Offering or giving
+a financial or
+other advantage
+to a person:
+- Intending to
+induce them, or
+another,
+improperly to
+perform a public
+function or
+The FCPA prohibits
+payments of/offers to pay
+bribes;
+requesting/accepting
+bribes is not a violation of
+the FCPA (though
+recipients may be
+prosecuted under other
+US laws).
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 7 ---
+
+in any proceeding or
+business transacted by
+the public servant;
+2. Obtaining money or
+any other gratification as
+a reward for inducing a
+person erroneously to
+believe that the official’s
+influence with the
+Government has
+resulted in his obtaining
+a “title” (i.e.
+benefit) for the other
+person.
+By others:
+1. Offering “gratification”
+to a public servant.
+2. Accepting, obtaining,
+attempting to obtain,
+agreeing to accept
+“gratification”
+in order to exert personal
+influence over a public
+servant.
+3. Influencing a public
+servant by corrupt
+or illegal means, into
+inter alia doing or
+forbearing to do any
+official act.
+4. Abetting public
+servants in committing
+acts punishable under
+the POCA (as set
+out above).
+business activity,
+or as a reward
+for the same; or
+- Knowing or
+believing the
+acceptance
+would in itself
+constitute improper
+performance.
+
+Would
+facilitation
+payments be
+caught?
+
+Yes Yes No, Permissible under the
+FCPA in narrow
+circumstances.
+
+Would
+corporate
+hospitality be
+caught?
+
+Yes Depends on intent No, Permissible under the
+FCPA.
+For example:
+Promotional items of
+modest value with
+company logo; Snacks
+and beverages at a trade
+show; Reasonable
+airfare, hotel, local
+transportation and dinner
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 8 ---
+
+in connection with facility
+inspection.
+
+Does the
+offense only
+apply to
+bribing public
+officials?
+
+Yes No No
+Does it have
+extraterritorial
+reach
+
+Yes Yes (if committed
+by a British
+national, or
+resident, a national
+of a
+British overseas
+territory or a body
+incorporated in
+the UK)
+
+Yes
+Penalties
+include:
+
+- Imprisonment between
+six months and five
+years
+- Unlimited fine
+
+Individuals:
+- Imprisonment
+for up to ten
+years
+- Unlimited fine
+Companies:
+- Unlimited fine
+- Debarment
+from public
+Contracts:
+- A confiscation
+order under the
+Proceeds of Crime
+Act 2002
+
+I. Under the anti-bribery
+provisions of the FCPA,
+the following direct
+penalties may be
+imposed:
+
+Against individuals: Up to
+5 years imprisonment and
+criminal fines up to
+US$250,000 per violation
+or 2x the
+benefit sought through
+the corrupt payment/offer,
+civil penalties up to
+US$21,410 per violation
+and/or
+restitution, in addition to
+forfeiture or disgorgement
+of ill-gotten gains.
+
+Against companies:
+Criminal fines up to
+US$2,000,000 per
+violation or 2x the benefit
+sought through the
+corrupt payment/offer,
+civil penalties up to
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 9 ---
+
+US$21,410 per violation
+and/or restitution, in
+addition to forfeiture or
+disgorgement of ill-gotten
+gains.
+
+II. Under the accounting
+and books
+and records provisions of
+the FCPA, the following
+penalties may
+be imposed:
+
+Against individuals: A
+criminal penalty of up to
+US$5,000,000 per
+violation or 2x the benefit
+sought through the
+corrupt payment / offer,
+up to 20 years
+imprisonment, and a
+civil penalty of up to
+US$192,768 per violation,
+in addition to forfeiture or
+disgorgement of ill-gotten
+gains.
+
+Against Companies: A
+criminal penalty of up to
+US$25,000,000 per
+violation or 2x the benefit
+sought through the
+corrupt payment/offer,
+and a civil penalty of up
+to US$963,837 per
+violation, in addition to
+forfeiture or disgorgement
+of ill-gotten gains.
+
+Adequate
+procedures in
+place designed to
+prevent bribery
+
+A commercial
+organization has a
+statutory defense for any
+offense committed by
+persons associated with
+such commercial
+organization if it can
+prove adequate
+procedures had been
+instituted to prevent such
+conduct, in compliance
+with guidelines to be
+prescribed under the
+POCA.
+Defense to the
+offense of failing
+to prevent bribery.
+Not a
+defense to other
+offenses but may
+be relevant to
+prosecutorial
+discretion.
+
+Having adequate
+corporate procedures is
+not a statutory defense
+under the FCPA, nor is
+failure to prevent bribery
+a statutory cause of
+action.
+Having adequate
+corporate procedures is,
+however, a legal
+defense to the charge
+and may assist in
+negotiations with the
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 10 ---
+
+government or to mitigate
+penalties.
+
+Anti Bribery and Anti Corruption policy(fr-CA).pdf
+
+Revision History:
+Version From To Description Author Approved By
+1 20 Dec
+2011
+28 Feb
+2013
+First Copy C&BTeam C&BHead
+2 01 Mar
+2013
+28 Feb
+2014
+Revision C&BTeam C&BHead
+3 01 Mar
+2014
+09 Dec
+2017
+Reviewed by
+external counsel –
+no changes made
+HR Policy &
+Compliance Team
+HR Policy &
+Compliance Head
+4 10 Dec
+2017
+28 Feb
+2019
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+5 01 Mar
+2019
+21 May
+2019
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+6 22 May
+2019
+21 May
+2020
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+7 22 May
+2020
+14 Sep
+2020
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+8 15 Sep
+2020
+04 Jan
+2021
+Revision HR Policy &
+Compliance CoE
+General Counsel
+9 05 Jan
+2021
+21 Apr
+2022
+Revision HR Policy &
+Compliance CoE
+Top Management
+10 22 Apr
+2022
+31 Jul
+2022
+Revision HR Policy &
+Compliance CoE
+Top Management
+11 01 Aug
+2022
+14 Jun
+2023
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+12 15 Jun
+2023
+12 Sep
+2023
+Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+13 13 Sep
+2023
+- Revision HR Policy &
+Compliance CoE
+HR Policy &
+Compliance CoE Head
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 11 ---
+
+Glossary
+The following definitions shall apply to these terms unless stated otherwise:
+Term Definition
+Bribe An inducement, payment, reward or advantage offered, promised,
+or provided to any person in order to gain any commercial,
+contractual, regulatory or personal advantage. It is illegal to directly
+or indirectly offer a bribe or receive a bribe. It is also a separate
+offense to bribe a government/public official
+Anything of value and includes, but is not limited to: cash, cash
+equivalents, gifts, inside information, sexual or other favors,
+corporate hospitality or entertainment, offering employment to a
+relative, payment or reimbursement of travel expenses, charitable
+donation or social contribution, political contributions, abuse of
+function and can pass directly or through a third party
+Government/
+Public Official
+Employees and officials, whether elected or appointed, who hold any
+governmental position, including legislative, administrative, or judicial
+position of any kind; is a candidate for any governmental position; any
+official or employee of a company wholly or partially controlled by a
+government (such as state-owned companies); or an official in a
+political party, in a country or territory.
+Corruption The wrongdoing on the part of an authority or those in power through
+means that are illegitimate, immoral, or incompatible with ethical
+standards. Corruption often results from patronage and is associated
+with bribery.
+Facilitation
+Payments
+Small, unofficial payments (sometimes known as “grease payments”)
+made to secure or expedite a routine government action by a
+government official.
+Kickbacks Payments made to commercial organizations in return for a business
+favor or advantage, such as a payment made to secure the award of a
+contract.
+Keywords
+Anti-bribery policy, Anti-corruption, Bribery prevention, Corruption prevention, Ethical conduct standards, Compliance, Business ethics, Code of conduct, Integrity, Tran
+Conflict of interest, Legal compliance, Corporate Governance
+Disclaimers
+The company reserves the right to alter, append or withdraw this policy either in part or in full based on management's discretion along with Unions or Work Council ap
+law of land to be adhered to prior to policy launch.
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)
+
+--- PAGE 12 ---
+
+Policy History
+Version No. From To Reason for creation / updation Author
+1 1 Apr, 2024 4 Sep, 2024 New Launch in Policy Studio Tanushree Vats(Ent HR-I&C-I&C-Pol
+3 12 Sep, 2025 18 Jan, 2026 Policy has been revised as part of the annual review & revision with no changes proposed Tanushree Vats(Ent HR-I&C-I&C-Pol
+4 19 Jan, 2026 Added the French translation in the Annexure section. Tanushree Vats(Ent HR-I&C-I&C-Pol
+
+All rights reserved (No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in any form or by any means, electronically, mechanically, or otherwise without prior written
+permission)

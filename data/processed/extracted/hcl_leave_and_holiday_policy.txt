@@ -1,0 +1,566 @@
+--- PAGE 1 ---
+
+Leave
+and
+Holiday
+Policy-DPO
+HCL Ltd, 2014. All rights reserved.
+No part of the document may be copied, reproduced, stored in any retrieval system, or transmitted in
+any form or by any means, electronically, mechanically, or otherwise without prior written.
+
+--- PAGE 2 ---
+
+Revision History:
+Version From To Description Author Approved By
+1 01 Jan 2009 01 Oct 2010 First Copy BSERV HR Team BSERV HR Head
+2 01 Oct 2010 31 Dec 2011 Revision BSERV HR Team BSERV HR Head
+3 01 Jan 2012 01 Apr 2012 Revision BSERV HR Team BSERV HR Head
+4 01 Apr 2012 31 Dec 2012 Revision BSERV HR Team BSERV HR Head
+5 01 Jan 2013 30 Jun 2014 Revision BSERV HR Team BSERV HR Head
+6 01 Jul 2014 30 Apr 2015 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+7 01 May 2015 31 Oct 2016 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+8 01 Sep 2016 14 Jun 2019 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+9 01 Dec 2016 14 Jun 2019 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+10 01 Dec 2016 14 Jun 2019 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+11 15 Jun 2019 31 Aug 2020 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+12 01 Sep 2020 26 Oct 2020 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+13 27 Oct 2020 03 May 2022 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+14 04 May 2022 09 May 2022 Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+15 10 May 2022 - Revision HR Policy &Compliance CoE HR Policy &Compliance CoE Head
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 2
+
+--- PAGE 3 ---
+
+Applicability:
+This policy is applicable to all India based employees on rolls of HCL Technologies Ltd – DPO. This policy is
+not applicable for employees based in Lucknow and Madurai.
+PolicyDetails:
+Objective:
+The Company recognizes that Employee needs time off from work to ensure work life balance as well
+as for meeting various other needs, social obligations or personal exigencies .This policy provides
+various leave options available to an employee.
+Leave Accounting Year:
+The leaves are accounted on the basis of calendar year i.e. 1st January to 31st December.
+ 
+Types of Leave
+Leaves are of 5 types :
+o Annual Leaves (AL)
+o My Leave
+o Child Raising Leave
+a) Maternity Leave
+b) Maternity Leave Extension
+c) Surrogacy Leave
+d) Adoption Policy
+e) Paternity Leave
+o Compensatory Off
+o Leave without Pay (LWP)
+o Transfer Leave
+ 
+Quantum of Annual Leaves
+ 
+CategoryTenure Range Total No. of Annual
+Leaves (AL)
+Maximum ALs that can be carried
+forward to Next Year
+A Employees who have completed 3
+years as on 31st December 20 12
+B Employees who have NOT completed 3
+years as on 31st December 18 12
+C Employees Less than 6 months old 18 12
+ 
+*Note:
+Leave entitlement would be credited in the beginning of the year for all E0.3 and above employees and for remaining
+employee it would be credited on monthly accrual basis.
+-
+Pro rata leave entitlement shall be given to those employees joining in between the holiday calendar year.-
+Annual leave can be taken into blocks of half day and full day as per the available leave balance-
+In case, employee does not have sufficient leaves in his/her current year eligibility (entitlement till that month) the differential
+will be debited from his/her available accumulated leaves from previous year, if any.
+-
+The accumulation of annual leaves can be done up to a maximum of 45 days and any excess leaves over and above 45 days
+will be encashed / lapsed as per Policy at the end of the year in which 45 annual leaves have been accumulated. E.g.: The
+annual leave balance of an employee on 31 December is 50 days. (50-45)=5 days of annual will be en-cashed and paid to
+-
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 3
+
+--- PAGE 4 ---
+
+the employee along with the January salary. The employee’s annual leave balance on 1 January will thus stand at 45 days.
+Leaves other than the leaves to be carried forward will be en-cashed at the end of leave accounting year, if they have not
+been availed during the year. Encashment of these leaves will be done at rate of basic salary for one day of the employee.
+-
+Annual Leaves (if any) prorated till LWD, will be encashed along with Full and final settlement. Any excess Annual Leave
+(over and above the pro-rated entitlement till LWD) taken by the employee will be recovered.
+-
+An employee who has taken leave without obtaining prior approval, will be deemed to be absent from work without
+permission. This may result in disciplinary actions.
+-
+An employee who wishes to cancel his leave initially applied for and approved, will need to intimate his reporting manager.-
+No leave, except maternity leave, can be claimed by an employee as a matter of right. Granting of leave shall be at the
+discretion of the Company depending on work exigencies. Further, in exigencies, the Company reserves its right to call the
+employee back to join duty as immediately as possible even if the employee is on any sanctioned leave.
+-
+Notwithstanding anything above, if an employee is prevented to report to work due to sudden sickness, he/she would be
+required to notify his reporting manager before the commencement of normal business hours.
+-
+Any intentional misstatement of a reason given for a leave will amount to misconduct and the Company may initiate
+disciplinary action against such employee.
+-
+After expiration of leave, if an employee fails to return and/or fails to communicate with the HR  and his/ her RM, the
+Company shall consider such unauthorized absence of an employee as impermissible conduct and he shall be liable for
+disciplinary action.
+-
+The maximum encashment of leaves at the time of separation will be 45 days. The encashment of leaves
+beyond 45 days will be done as per the below table with effect from 1st September, 2020:
+ 
+Table 1
+            Employee band Encashment logic beyond 45 days
+E0 to E3 Encashment of leave will be done at 1
+ times the basic salary for one day of the
+employee
+E4 and above (Employees who have joined
+on or before April 30, 2011)
+Effective 1 January 2023, leaves
+accumulated post 45 days will be lapsed
+and thus leaves will not be en-cashed. This
+will apply on the leave balance of the
+calendar year 2022 and onwards.
+E4 and above (Employees who joined on or
+after May 1,2011)
+Leaves accumulated post 45 days will be
+lapsed and thus leaves will not be en-
+cashed.
+In an event of promotion from E3 to E4 Encashment of leave beyond 45 days will be
+governed as per following: From 1st January
+to date of promotion to E4 band @100%
+Effectrive 1 January, 2023, leaves accrued
+after date of promotion to be lapsed.
+In an event of separation (for all bands) Effective 01 September 2020^ ,
+accumulated leaves up to 45 and above will
+be encashed @ the rate of 100% of Basic
+Salary.
+ ^ Separation action being initiated on or after September 1, 2020
+Intervening Holidays/weekends
+Intervening holidays/weekends will not be taken into account for leave calculation except in case of child
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 4
+
+--- PAGE 5 ---
+
+raising leave (except Paternity Leave) and leave-without-pay. E.g.: If an employee has applied for Annual
+Leaves from Friday to Wednesday, then the number of leaves calculated is 4 days.
+ 
+Clubbing with other leaves/ RH/ Holidays
+Annual Leaves/ Child raising Leave can be clubbed with Leave without Pay/ Company Holidays/ Restricted
+Holidays.
+ Leaves Rounding off logic (yearly)
+For calculation purpose, leaves will be rounded off as per the below logic.
+ 
+Leaves Rounding Off Logic
+Range Round off
+1.00 - 1.25 1.00
+1.26 - 1.75 1.50
+1.76 - 2.00 2.00
+ 
+Voluntary Leave Encashment Policy
+ Effective May 2, 2022, employees in bands E0-E3 will be able to raise Voluntary Leave Encashment
+Requests.
+ Guidelines:
+ The window will open on February 1st of every year post the year end encashment that happens in
+January every year.
+-
+ The encashment request window will be open between 1st February – 15th December of every year.-
+ Cut-off date to place the request will be 20th of every month. The encashment will happen every month
+for requests placed in that month.
+-
+ 12 leaves will be frozen, and employees can raise request for encashment of annual leaves > 12.
+Employees who do not have a balance of more than 12 leaves, will not be able to raise a request.
+-
+ The encashment will happen at 100% of the basic salary of the employee as on payroll run date.
+Backdated changes in basic salary will not be considered/ normalized.
+-
+ An employee must consider his / her leave requirements before encashing their leaves under the
+Program.
+-
+ Once encashed, leave balances cannot be reversed.-
+ Submitted encashment requests can be cancelled till cut-off date as mentioned in the Policy. Request
+cannot be edited. If an employee wishes to change the request, they must first cancel it and then place
+another request before the cut-off date. Post cut-off date, no changes will be entertained.
+-
+ Employees at onsite (E0-E3) with India leave balance can also get their India leaves encashed. The
+encashment will happen at 100% of the last drawn India basic salary.
+-
+  This program will not be applicable to rebadged employees with differential leave policies unless
+otherwise stated.
+-
+Employees will have to provide a mandatory consent before placing the request.-
+The program will not be applicable to employees serving notice period as per Exit Management System.
+VLE requests raised before initiating separation will not be considered. Leaves will be encashed at the
+time of separation as per the Policy.
+-
+All encashments under the Program will be taxable.-
+Please refer "Forms" section of the Policy for VLE Guide.-
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 5
+
+--- PAGE 6 ---
+
+My Leave
+Employee can avail My leaves to a maximum of defined limits mentioned in table below, with an
+approval from his/her RM in a calendar year on the following occasions:
+-
+CategoryTenure Range Total No. of My Leave 
+A Employees who have completed 3 years as on
+31st December 2
+B Employees who have NOT completed 3 years as
+on 31st December 1
+C Employees Less than 6 months old (Eligible for 1 My Leave as soon as they complete
+6 months in the system)
+Marriage, Family Celebration- Birthday of parents/in–laws, self, spouse, children, marriage anniversary
+etc
+-
+CSR activities-
+Bereavement-
+The leaves, if not availed will be lapsed at the end of the year and cannot be carried forward.-
+My Leave needs to be applied at least 7 days in advance to leave start date, else approval from the
+Second Level Manager rule will apply
+-
+In case, My leave(s) are not applied as per the rules mentioned above, leave application would go to
+SLM (Second Level Manager) for approval.
+-
+The above rule will be applied in instances where the employee is in E6 or below career level, else the
+same approved by the reporting manager only.
+-
+ 
+Child Raising Leave
+Child raising leave is an employee benefit provided by HCL. Under this category of leaves, the employee will
+be provided either paid or unpaid time off work, as applicable to take care for their respective child/children
+or make arrangements for the child's welfare.
+It is not mandatory to avail all the below leave types
+ 
+a.) Maternity Leave
+o    All women employees who have worked continuously for a period of at least 80 days during 12 months
+immediately preceding the date of her expected date of delivery, are entitled to receive maternity benefit of a
+total of 26 weeks of paid leave, whether taken before or after childbirth. However the employee cannot take
+leaves more than eight weeks before her expected date of delivery.
+o    In case of miscarriage or medical termination of pregnancy, an employee on production/submission of
+the prescribed proof to HR in the form a medical certificate from a registered medical practitioner, will be
+entitled to leave with pay, for a period of 6 weeks immediately following the day of her miscarriage or
+medical termination of pregnancy. Miscarriage means expulsion of contents of uterus at any period prior or
+during 26th week of pregnancy. This leave can be availed on approval from HR and RM.
+o    Medical termination of the pregnancy should be one that is advised by the doctor/medical practitioner.
+Medical termination of the Pregnancy for the purpose of this policy shall mean the termination of pregnancy
+as permissible under the provisions of Medical Termination of Pregnancy Act, 1971. In terms of the
+applicable provisions of Medical Termination of Pregnancy Act, 1971, a pregnancy may be terminated by a
+registered medical practitioner,
+a)    Where the length of the pregnancy does not exceed twelve weeks,
+b)    Where the length of the pregnancy exceeds twelve weeks but does not exceed twenty weeks, if not
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 6
+
+--- PAGE 7 ---
+
+less than two registered medical practitioners are, of opinion, formed in good faith, that –
+i.) The continuance of the pregnancy would involve a risk to the life of the pregnant woman or of grave injury to her
+physical or mental health; or
+ii.) There is a substantial risk to the child to be born, would suffer from physical or mental abnormalities as to be
+seriously handicapped.
+iii.) Where any pregnancy is alleged to have been caused by an unfortunate act, and the same has been
+presumed to constitute a grave injury to the mental health of the pregnant woman.
+o    However, the aforesaid benefits will not apply if the termination of pregnancy is voluntary and
+accordingly leave cannot be claimed under this policy.
+o    In case of maternity leave, the employee must submit application/request at least 6 weeks in advance in
+LMS as has been prescribed under the Maternity Benefit Act, 1961 with the expected date of delivery. The
+employee is required to produce a medical certificate confirming the pregnancy and detailing the expected
+date of birth and the date on which the maternity leave is to commence. The employee can avail the
+maternity leave post approval from RM and HR
+Female Employees will also be eligible to take breaks between work to visit the Child in Crèche.
+ 
+b.)Maternity Leave Extension
+o    A women employee is entitled to further avail one month of paid extended maternity leave after
+completion of Maternity leave in case of illness arising out of pregnancy / delivery, premature birth of a child
+etc.
+o    A medical certificate from a registered medical practitioner has to be submitted to the HR and is required
+to be uploaded while applying leave in LMS.
+o    The employee needs to apply for Maternity Leave Extension from 4 weeks to 10 days in advance in LMS
+proceeding immediately after the last day of Maternity Leave. This can be availed on approval of RM and
+HR
+o    Maternity leave extension should be taken in continuation only
+ 
+Leave for Tubectomy Operation: In case of tubectomy operation, the employee on production of such
+medical proofs as issued by the registered medical practitioner is entitled for paid leaves for the period of
+two weeks immediately following the day of her tubectomy operation. The approval from RM and HR is
+required to avail this leave 
+ 
+c.) Surrogacy Leave
+o    Surrogacy is an arrangement whereby another woman agrees to carry the pregnancy for intended
+parents who cannot give birth to a baby.
+o    A commissioning mother intending for a child through surrogacy is eligible for 26 weeks of continuous
+leave.
+o    The commissioning mother must produce relevant medical documentation to declare having a child
+through surrogacy.
+o    The commissioning mother must check the below details before taking the surrogacy procedure to be
+eligible for surrogacy leave :
+The commissioning couple must be Indian citizens and legally married for minimum 5 years-
+The age group of the commissioning couple must be between 23-50 for female and 26-55 for
+male.
+-
+The commissioning couple must not have any surviving child biologically or through adoption-
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 7
+
+--- PAGE 8 ---
+
+or surrogacy (except when the child born through surrogacy is physically challenged or
+terminally ill).
+The surrogate mother should be a close relative of commissioning couple and must be
+between age of 25-35 years
+-
+o    The employee will have to submit the proof of childbirth / doctor’s certificate / Surrogacy Documents
+prior to availing the leave.
+o    The employee should apply for surrogacy leave at least 4 weeks in advance and can be availed on
+approval of RM and HR
+o    An employee opting for surrogacy will be entitled to include the child as dependent under relevant
+company policies after completion of necessary legal formalities
+ 
+e.) Adoption Leave
+o    In case of adoption of a child, the employee will be entitled to continuous paid leave, depending on the
+age of the child, if the employee declares himself / herself as the primary care giver.
+o    Leave entitlement :
+26 weeks – If the age of child is up to 1 year-
+12 weeks – if child is more than 1 years and less than 3 years of age-
+6 weeks – if child is more than 3 years and less than 5 years of age-
+4 weeks – if child is 5 years of age and less than 8 years-
+o    The Employees will be entitled to above mentioned leave durations for taking care of step children as
+well.
+o    The adoption of a child has to be through licensed agencies. In order to avail the benefits under this
+category, the employee is required to submit the copy of the registered adoption deed and/or proof of
+childbirth prior to availing the leave.
+o    If the employee can’t furnish the aforesaid documents prior to availing of leaves, he/she may provide a
+written declaration in LMS for submitting the necessary documents as and when the same gets available. In
+case if the employee is not able to provide the required documents within the timelines as suggested by him
+/ her in the declaration, the adoption leave provided will be adjusted from the employee’s leave balance
+subsequently
+o    If both the parents of child are working with the Company, only one parent can avail this leave.
+o    The employee should apply for adoption leave at least 4 weeks in advance and can be availed on
+approval of RM and HR
+o    An employee who legally adopts a child following due procedures will also be entitled to include the child
+as dependent under relevant Company policies
+ 
+Please Note: Any weekly off or Company Holiday that falls during Maternity leave, Maternity Leave
+extension, Infant care leave, leave for Tubectomy Operation. Adoption leave and Surrogacy leave is
+counted as part of the respective leave period and will not give rise to any additional leave or payment
+ 
+ f.) Paternity Leave
+o    A male employee is eligible for 5 working days of paid paternity leave for the birth of his child(ren). A
+formal communication along with documentary evidence is to be submitted to the reporting manager.
+o    This leave can be availed for taking care of Surrogate child as well
+o    This leave must be availed within 1 year of the child(ren)’s birth and in continuation.
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 8
+
+--- PAGE 9 ---
+
+Please Note: Any weekly off or Company Holiday that falls during Maternity leave, Maternity Leave
+extension, leave for Tubectomy Operation, Adoption leave and Surrogacy leave is counted as part of the
+respective leave period and will not give rise to any additional leave or payment
+**In an unfortunate event of demise of mother at the time of childbirth, the father will be entitled to take 26
+weeks of continuous paid leave to take care of the Child.
+ 
+Compensatory Off and EDP
+o    If any employee work on a Process holiday, compensatory off can be availed as per the grid given
+below.
+o    Compensatory Off cannot be availed in advance of the extra day planned. It can only be availed after the
+employee works on extra day.
+o    If a process holiday falls on a National Holiday, in that case employee will be entitled to double
+wages and not compensatory off
+ 
+HOLIDAY TABLE         
+Holiday Type E0/E1 (Ops/Ops
+Support)
+E2/E3 (Ops/Ops
+Support)
+* E0-E1
+(Bus. Support)
+*E2-E3
+(Bus. Support)E4 & Above
+Process Holiday
+(6 holidays as per centre/
+process calendar)
+1 day extra wage1 day
+compensatory off
+1 day
+compensatory offNot Applicable Not Applicable
+ * Smart card attendance is mandatory, with a minimum of 9.5 hours of log in time to avail the compensatory
+off or to be eligible for Extra Day Pay.
+Double wage payment for Festival and National Holiday working: All Employees who work on a
+National/ festival holiday are entitled to double wages for the days worked. This is applicable to both billable
+and non-billable employees. Such working should be planned in advance and approved by his / her
+Reporting Manager.
+*Double wages will be calculated basis the employee’s salary as on that respective Company(National/
+Festival) Holiday on which the employee has worked. The amount would be paid along with the
+subsequent month salary.
+*Double Wage Salary refers to employee’s regular pay for a day and one day extra pay. For example,
+the employee worked on Independence Day and his one day pay is INR 1000, he will be entitled to get
+addition INR 1000 as Extra day pay.   
+ 
+Company/Process Holiday
+Rules relating to Company Holidays will be applicable effective the beginning of calendar year from 1st
+January to 31st December. Employees will be entitled to 9 days Company Holidays in the calendar year.
+-
+There are 3 National Holidays for all the locations, i.e. Jan 26, Aug 15 & Oct 2 will remain as mandatory
+National Holidays irrespective of the days that they fall under.
+-
+Company Holidays include the national holidays and other location specific holidays-
+The list of Process Holidays are finalized in the beginning of the calendar. Other than national holidays
+(3), every employee would follow the client holidays (6) of the process and same would be updated on
+respective Holiday Calendar w.e.f. 1st January.
+-
+For employees who are part of DPO Support Teams (IT, Finance, HR, Admin, BPC, Transitions, MIS,
+WFM) and not aligned to Customer, will get 6 Company Holidays and can avail 3 Restricted Holidays
+-
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 9
+
+--- PAGE 10 ---
+
+based on the Holiday List of their Work Location. These RH’s need to be applied & approved by RM
+through LMS at least 3 days prior to the Holiday.
+ 
+Leave without pay
+o    All the LWP’s leaves should be pre-approved leaves as per the leave planner and should be updated in
+the weekly roster. Conditions for availing Leave Without Pay:
+o Medical Reasons
+o Extension of Maternity Leaves
+o Marriage
+o Exams
+o Professional training (Short duration)
+o Spouse’s deputation to another country
+o     The approval authority for leaves under LWP is as follows:
+ 
+LWP Approving Authority Matrix 
+No. of Days Approving Authority
+Upto 7 days Reporting Manager (RM)
+8 days to 15 days Delivery Lead / Functional Head + EP HR Lead
+16 days to 31 days Delivery Lead / Functional Head + HR Director
+>31 days HR Head
+ 
+Unauthorised Absence
+Any absence from duty must be authorized. If an employee is absent from the duty without authorization,
+such absence will be treated as unauthorized absence and may result in disciplinary action. In such cases,
+the employee is not entitled to salary for that period and will not be able to apply any other type of leave
+except for unauthorized absence which is permitted by RM and HR. Further, the HR and RM can apply this
+leave on behalf of employees absent from duty and only the HR and RM can cancel this leave.
+Transfer Leave          
+o    Employees are entitled for a 5 days transfer leaves (Calendar Days) which is to be availed between the
+last working day at the present location and the first working day at the new transferred location applicable
+for transfers within India and for employees returning to India from an onsite assignment (9 months or
+more). (Detailed Information on Transfer has been mentioned in the Transfer Policy).
+o    This type of leave cannot be carried forward or clubbed with any other type of leave.
+o    If the transfer action has been completed in SAP - The system will allow the employee to apply for a
+Transfer Leave within 1 month from the Transfer effective date.
+o    If transfer action has not been completed in SAP – The system will allow the employee to apply and
+avail for a Transfer Leave within 1 month of the transfer leave applying date and the current date.
+o    Employees voluntarily seeking transfer (request transfer) will not be entitled for transfer leaves.
+ 
+Female Employees enrolled/covered under ESIC
+Female employees who are enrolled/covered under ESIC are required to avail the maternity benefit
+provided by government. Employee needs to fill up and submit Form -17 & 19 as per ESIC guidelines to
+avail this benefit. Please refer forms section of the policy to download the applicable forms.
+ 
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 10
+
+--- PAGE 11 ---
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Process:
+Procedure and Guidelines
+The leaves availed by all employees have to be recorded in the Leave Management System (LMS) on I
+Assist (https://www.hclbpo.net) and should be applied on LMS at least 2 days in advance.
+The Leave request through LMS is automatically sent to the Reporting Manager.
+The reporting manger has the authority to approve or reject leaves of his reportees. In the absence of
+Reporting Manager, he/she has the access to delegate approving rights to the next manager in
+line/Process Head.
+The Reporting Manager can check the leave balance of the employee in LMS before approving any type
+of leave request.
+If an employee applies and his/her manager approves it, the employee has the right to withdraw / cancel
+the leave in LMS before the leave begins.
+If an employee decides to join back before the end of his/her leaves then he/she will have to contact EP
+HR to cancel the un-availed leaves.
+If the leaves applied are not continuous then the employee will also have the option to cancel the leave
+in LMS before the period begins.
+For employees in E0 and E1 grade, if the leaves are not applied through LMS then the employee will be
+marked as ‘Abscondee’ on the fourth day of unscheduled absence and on the 11th day he/she will be
+auto-terminated by the system from the organization. This entire process is system driven and there will
+be no exceptions to this rule, however this rule will not be applicable to any unapproved leave in LMS.
+If an employee does not apply for leaves through LMS or the Reporting Manager does not approve any
+leave, which the employee avails, the same would be treated as an unscheduled leave.
+In case an employee fails to report to work on completion of sanctioned leaves, the extended absence
+would be accounted as ‘unscheduled leave’ and the same procedure of auto absconding and termination
+will be followed. Reporting Manager/EP HR should immediately be informed for extension and leaves
+should be updated in LMS.
+All unscheduled leaves would be treated as Leave without Pay and attendance allowance would be
+deducted as applicable.
+Leave balance for all employees and their team members is updated in LMS.
+Annual leaves for upto 6 days will be auto-approved, if RM do not respond within 5 days of leave
+application through LMS.
+ 
+       Company/Process Holiday
+Rules relating to Company Holidays will be applicable effective the beginning of calendar year from 1st
+January to 31st December. Employees will be entitled to 9 days Company Holidays in the calendaryear.
+There are 3 National Holidays for all the locations, i.e. Jan 26, Aug 15 & Oct 2 will remain as mandatory
+National Holidays irrespective of the days that they fall under.
+Company Holidays include the national holidays and other location specific holidays
+The list of Process Holidays are finalized in the beginning of the calendar. Other than national holidays
+(3), every employee would follow the client holidays (6) of the process and same would be updated on
+respective Holiday Calendar w.e.f. 1st January.
+ 
+ 
+ 
+ 
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 11
+
+--- PAGE 12 ---
+
+HCL Confidential
+Leave and Holiday Policy-DPO
+Page 12

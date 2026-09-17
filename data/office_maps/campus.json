@@ -1,0 +1,16 @@
+{
+  "campus_id": "hq_campus",
+  "name": "Main Headquarters Campus",
+  "buildings": [
+    {
+      "building_id": "tower1",
+      "name": "Innovation Tower 1",
+      "floors": 10
+    },
+    {
+      "building_id": "tower2",
+      "name": "Operations Tower 2",
+      "floors": 8
+    }
+  ]
+}

@@ -1,0 +1,1857 @@
+--- PAGE 1 ---
+
+The Blueprint for AI Leadership | 2026 1
+The Blueprint  
+for AI Leadership
+It’s personal, not just technical
+2026
+
+--- PAGE 2 ---
+
+The Blueprint for AI Leadership | 2026 2
+Contents
+Lead from  
+the front 
+09
+Executive 
+summary:
+Who’s really 
+winning the  
+AI race?
+05
+The human edge
+14
+Fixing the  
+data reality
+18
+Modernizing  
+at scale
+23
+The AI  
+leadership 
+manifesto
+27
+
+--- PAGE 3 ---
+
+The Blueprint for AI Leadership | 2026 3
+Foreword
+AI has entered a decisive new phase. Across industries, 
+organizations are no longer asking whether AI can create 
+value; they are asking how quickly, responsibly and 
+effectively that value can be scaled across the enterprise.
+The Blueprint for AI Leadership makes clear that the 
+AI race will not be won by technology alone. Models, 
+platforms, data and architecture matter deeply, but 
+they are only part of the story. The real differentiator 
+is increasingly personal: how leaders set direction, 
+how people build trust in AI, how roles evolve and how 
+organizations create the confidence, capability and 
+culture needed to work alongside intelligent systems.
+The findings point to a widening divide between AI 
+Leaders and AI Followers. Leaders are not defined 
+by technology adoption alone, but by their ability 
+to connect AI investments to measurable business 
+outcomes, modernize the foundations that support scale 
+and build cultures where people are empowered to work 
+confidently alongside intelligent systems. They recognize 
+that AI transformation is not just a technical program, 
+but a human and organizational one.
+For enterprises, the implications are profound. AI 
+exposes weaknesses in fragmented data, legacy 
+architecture and outdated ways of working. But it also 
+creates an opportunity to build organizations that are 
+more adaptive, resilient and future-ready. The shift 
+toward Agentic AI will only intensify this need, requiring 
+stronger governance, clearer accountability and a 
+renewed focus on human judgment.
+At HCLTech, we believe the next era of enterprise 
+advantage will belong to organizations that put people 
+at the center of AI transformation. Winning the AI race 
+is not only about building smarter systems; it is about 
+building organizations that are ready to use them wisely.
+The opportunity is immense. The time to act with clarity, 
+confidence and purpose is now.
+Pawan Vadapalli, 
+Corporate Vice President 
+and Global Head, 
+Digital Business Services,  
+HCLTech
+
+--- PAGE 4 ---
+
+The Blueprint for AI Leadership | 2026 4
+Job role
+Annual revenueIndustry
+In the first quarter of 2026, HCLTech partnered with Raconteur to conduct a 
+global quantitative research survey of 500 decision-makers at enterprise-sized 
+organizations. The goal was to better understand the state of AI adoption across 
+the business landscape: where momentum is building, where organizations are 
+falling short, how AI is reshaping different layers of the enterprise—from the chip 
+to the glass—and what the winners are doing differently.
+Region
+Financial Services 
+Manufacturing
+Retail and Consumer Packaged Goods
+Life sciences and Healthcare
+Travel, Transport, Logistics and Hospitality
+Media, Entertainment and Telecoms
+Energy and Utilities
+Technology
+Automotive 50%
+20%
+30%
+Research 
+methodology 
+20%
+15%
+15%
+15%
+ 10%
+10%
+5%
+5%
+5%
+Chief Executive Officer
+Chief Information Officer
+Chief Technology/Digital Officer
+Chief Operating Officer 
+Direct Report to a C-Level
+Chief Financial Officer
+15%
+40%
+10%
+10%
+5%
+5%
+5% 5%
+5%
+$1bn - $4.99bn 
+$5bn - $9.99bn 
+$10bn+
+United States 
+UK and Ireland
+Germany
+France
+Australia
+Singapore 
+Nordics
+Canada
+India
+Chief Marketing Officer
+Chief Human Resources 
+Officer
+20%20% 20% 15% 10% 5% 5% 5%
+4
+
+--- PAGE 5 ---
+
+The Blueprint for AI Leadership | 2026 5
+Enterprise AI has moved beyond isolated 
+experimentation within individual functions and is 
+increasingly being embedded across core business 
+processes, enterprise applications and day-to-day 
+workflows. As adoption scales, organizations are 
+beginning to realize tangible gains in productivity, 
+decision-making and customer experience. 
+It’s clear that the benefits of AI are no longer in question. 
+HCLTech’s research finds that 90% of organizations 
+believe GenAI and Agentic AI are already having either a 
+major or at least some impact on operational workflows 
+and process efficiency, as well as on data accessibility 
+(91%) and knowledge access and productivity enablement 
+(90%). A majority of respondents (59%) also believe that 
+investing in AI is essential to remaining competitive. 
+However, even as these investments accelerate, 
+the research points to a clear divergence in how 
+organizations are converting those investments into 
+business value. AI Leaders, who represent 18% of the 
+sample, are maximizing ROI not simply by using AI 
+Executive summary 
+Who’s really winning the AI race?
+to reduce costs, but by applying it to drive growth, 
+innovation and improved customer experience.
+AI Followers, by contrast, represent 60% of the sample. 
+While they are realizing returns from AI investments 
+across business functions, they significantly trail 
+Leaders in the higher-value use cases that are reshaping 
+operating models and competitive advantage.
+This gap is especially visible in the adoption of agentic 
+and autonomous systems. AI Leaders are four times more 
+likely than Followers to scale these capabilities, reinforcing 
+how unevenly organizations are moving from functional AI 
+deployment to enterprise-wide transformation.
+This reveals a broader structural and operational 
+challenge. While many organizations generate value 
+from AI, a persistent gap remains between what they 
+expect AI to deliver and what they can realistically 
+achieve. This is particularly visible in commercial 
+outcomes, where only 18% of organizations report AI 
+significantly impacting revenue generation. This gap 
+is not only technical, spanning data, architecture and 
+enterprise applications, but also personal, reflecting 
+shortcomings in leadership alignment, ownership and 
+the ability to drive change. 
+The winners are not simply those deploying more 
+models or launching more pilots, but those using AI to 
+redesign the enterprise itself. In that sense, AI advantage 
+is becoming less about feature-level augmentation and 
+more about structural reinvention: how humans, agents, 
+workflows, systems and data operate together as a 
+single, harmonized model. 
+Efficiency and transformation
+Many organizations currently measure the ROI of 
+AI investment primarily through process speed and 
+efficiency improvements (28%) or cost savings and 
+productivity gains (23%). These indicators suggest that 
+much of AI’s value is still assessed through a transactional 
+lens, providing only a partial view of its broader impact, 
+particularly in areas such as revenue growth, product
+
+--- PAGE 6 ---
+
+The Blueprint for AI Leadership | 2026 6
+Significantly exceeding expectations
+Meeting expectations
+Falling slightly short of expectations
+Falling significantly short of expectations
+Too early to tell
+innovation and long-term competitiveness.
+Such a narrow lens can limit the ability to unlock AI’s 
+full value. “You can focus on efficiency-driven AI or you 
+can focus on transformation,” says Sadagopan Singam, 
+EVP and Global Head, Enterprise Platforms and Edge 
+Services, Digital Business Services, HCLTech. “Efficiency-
+driven AI is about process automation, whereas 
+transformative AI is about reimagining and redesigning 
+the processes themselves.”
+The goal, he argues, is to reach a state of orchestrated 
+intelligence by aligning business goals with AI, 
+embedding continuous workforce learning and balancing 
+AI capabilities with governance and accountability. “These 
+are the key factors separating Leaders and Followers. If all 
+of them are in place, then you’re actually creating a self-
+reinforcing loop that feeds more success.”
+This is the crucial distinction between productivity and 
+advantage. Productivity is local: a task is completed 
+faster, a report is generated more quickly and a support 
+response is drafted with less effort. Advantage is systemic: 
+decisions improve, workflows compress, exceptions 
+are handled better and the enterprise begins operating 
+with a different rhythm, quality and resilience. One is an 
+efficiency gain; the other is a moat.
+Larger organizations appear better positioned to make 
+progress toward this state. While they may face legacy 
+challenges, they are also more likely to have the resources 
+to address foundational requirements—such as security 
+and data discipline—while simultaneously advancing 
+multiple AI initiatives. In fact, firms with revenues 
+exceeding $10B are almost seven times more likely to 
+report that AI ROI significantly exceeds expectations and 
+are more likely to be driven by clearly defined use cases.
+AI initiatives, however, are typically distributed across 
+multiple functions and enterprise systems rather than 
+owned centrally, including technology and infrastructure 
+(76%), data and analytics (74%) and operations (47%). 
+While this reflects AI’s cross-functional relevance, it also 
+creates risks. Without clear leadership and alignment to 
+business goals, accountability can become fragmented, 
+slowing decision-making and diluting impact.
+Running the right race
+Smaller organizations are not excluded from success. 
+Those that address structural challenges and focus on 
+enterprise-wide transformation rather than isolated use 
+cases can still generate significant value. “It’s not only 
+about the size of the organizations,” says Singam. “It’s also 
+about where and how they want to apply AI.”
+In practice, many firms operate with different definitions 
+of success. “Organization A may call something a success 
+while organization B may view the same outcome as a 
+failure,” he notes. “So organizations shouldn’t get too 
+obsessed with how to win, because winning is completely 
+subjective.”
+Most organizations say their AI investments are meeting 
+ROI expectations - however almost one-in-five say ROI 
+is significantly exceeding their initial expectations
+To what extent is your function realizing the expected 
+ROI on its AI investments?
+18%
+60%
+16%
+3%
+2%
+
+--- PAGE 7 ---
+
+The Blueprint for AI Leadership | 2026 7
+Investment falls as AI adoption moves from strategy  
+to deeper organizational layers
+Organizational and talent readiness
+Strategic integration
+Architectural modernization
+Data readiness and intelligence
+90%
+75%
+67%
+37%
+60%
+31%
+16%
+10%
+For each of the following areas of AI adoption, do you 
+feel your organization is investing at the level required 
+to be successful? [sufficient investment]
+Despite these differences, however, the barriers to 
+scaling AI are widely shared.
+At a structural level, legacy systems continue to 
+limit organizations’ ability to scale AI effectively, 
+while integration complexity, technical debt and 
+vendor lock-in further compound these challenges, 
+particularly for those operating on fragmented 
+technology foundations.
+Organizational readiness adds a second layer of 
+constraint. Leaders are significantly more likely than 
+Followers to believe they are investing sufficiently 
+in organizational and talent readiness (67% vs. 
+37%), highlighting a clear divide in how prepared 
+organizations feel to support AI-driven change.
+Workforce-related challenges are frequently cited, but 
+the findings suggest they are less decisive. Instead, 
+progress appears to be shaped more by structural 
+limitations and uneven organizational readiness than by 
+employee resistance alone. Where organizations begin 
+to diverge is in how they respond to these constraints.
+This is where the idea of a full-stack reboot becomes 
+essential. AI Leaders are not just modernizing one 
+layer of the stack. They are progressively rewiring the 
+full enterprise suite: data and semantics, process 
+definitions, application estates, interoperability, 
+governance models, talent design and workflow 
+orchestration. In other words, they are asking not 
+how AI can sit on top of the business, but what parts 
+The AI adaption with an angle to save cost is 
+a bad step medium to long term. Agentic AI 
+hasn’t reached to a stage where it can replace 
+actual human-to-human task to enable cost 
+saving from headcount perspective. There 
+is a difference between efficiency and cost 
+savings. With the emergence of AI, the danger 
+is to confusing efficiency with cost savings.
+“
+Rahul Bakaya, 
+Chief Growth Officer,  
+Property Dollar
+Efficiency-driven AI focuses on process 
+automation, whereas transformative use 
+of AI reimagines and redesigns processes 
+themselves. The former is local and results 
+in quick wins. But the latter is systemic and 
+creates a self-reinforcing loop that feeds 
+on itself, driving more success.
+“
+Sadagopan Singam, 
+EVP and Global Head, Enterprise 
+Platforms and Edge Services, 
+Digital Business Services,  
+HCLTech
+AI Leaders AI Followers
+
+--- PAGE 8 ---
+
+The Blueprint for AI Leadership | 2026 8
+of the business must be rebooted so AI can become 
+operationally intrinsic. 
+AI Leaders also tend to adopt more distributed 
+ownership models, moving beyond “HiPPO” (Highest 
+Paid Person’s Opinion) decision-making. Their ability 
+to orchestrate AI across complex technical and 
+organizational environments is a key differentiator. As 
+Singam notes, while a single enterprise AI platform may 
+be ideal, “organizations very rarely get there today, so the 
+ability to orchestrate multiple platforms is important.”
+The Agentic AI question
+The shift toward Agentic AI will further test 
+organizational readiness. According to Singam, this 
+transition will intensify competitive divergence. “It will be 
+winner takes all: What is the ideal human-to-agent ratio? 
+What are the best metrics for measuring this?”
+Overall, confidence in AI’s transformative potential is 
+high. Yet in many organizations, AI remains concentrated 
+in areas where technical and workforce foundations are 
+already strong, delivering incremental gains rather than 
+systemic change. These gains are often measured using 
+metrics that fail to capture AI’s full impact on growth 
+and competitiveness.
+As Agentic AI scales, this measurement challenge 
+will become more acute. Counting usage, tokens and 
+isolated productivity gains will not be enough. The more 
+meaningful questions will be sharper: are workflows 
+Key takeaways
+Enterprise AI is delivering real results, but 
+mostly incremental gains. True transformation 
+requires reimagining workflows, not just 
+automating them. 
+A growing divide separates AI Leaders, 
+who tie investment to clearly defined use 
+cases, from Followers still stuck in reactive 
+implementation mode.  
+Measuring ROI through cost savings and 
+efficiency alone misses the bigger picture. AI-
+driven relevance means inventing entirely new 
+business models. 
+Technical barriers like integration complexity 
+and legacy debt remain persistently under-
+addressed, while employee resistance is less of 
+an obstacle than many organizations assume.  
+Successful adoption depends as much on 
+culture, leadership and workforce upskilling as 
+it does on data and underlying architecture. 
+The gap between Leaders and Followers will 
+only widen as Agentic AI matures, but self-
+aware and decisive Followers can still leapfrog 
+today’s Leaders if they act now.
+now more reusable, has decision-making improved, are 
+cycle times compressing without control breakdowns, 
+has institutional memory accumulated, do acquisitions 
+integrate more quickly and has the enterprise become 
+easier to change rather than harder? Positive answers to 
+these questions signal a structural edge.
+The organizations most likely to pull ahead share clear 
+characteristics: sustained investments in architectural 
+modernization, robust data foundations, strong 
+leadership alignment and cultures that naturally 
+empower employees to use, challenge and extend AI 
+capabilities. These attributes enable organizations to 
+move beyond efficiency gains and use-case expansion 
+to a third stage: AI-driven relevance, where intelligence 
+is embedded directly into enterprise applications, 
+workflows and operating models.
+Importantly, Followers are not locked into their current 
+position. “The winner of tomorrow is going to be a 
+Follower who’s agitated about the gap,” says Singam. 
+“With sufficient self-awareness and decisive action, 
+organizations can still close the gap and potentially 
+leapfrog today’s Leaders.” 
+8
+
+--- PAGE 9 ---
+
+The Blueprint for AI Leadership | 2026 9
+While most organizations are experimenting with AI, 
+one of the clearest points of divergence lies in how 
+organizations define and pursue value from AI. Among 
+AI Leaders, 73% say adoption is driven by clearly defined 
+use cases and measurable outcomes, compared with 
+22% of Followers.
+This gap is not just a matter of clarity; it reflects a 
+fundamental difference in how organizations approach 
+AI. For Leaders, value is defined upfront and used to 
+guide investment, prioritization and execution. For 
+Followers, value is often more loosely defined, emerging 
+only through market pressure rather than being shaped 
+from the outset.
+This distinction underpins the ability to scale. Where 
+value is clearly articulated, AI initiatives are more likely 
+to gain traction, secure sponsorship and translate into 
+measurable business impact.
+For many organizations, this is where the gap begins 
+– and leadership behavior plays a critical role in 
+translating strategic intent into execution. When 
+leadership is visible, vocal and able to connect AI 
+initiatives clearly to business outcomes, organizations 
+move faster, experiment more effectively and scale 
+promising initiatives. Where this is absent, initiatives 
+that show genuine promise often struggle to gain 
+sustained traction.
+Among AI Leaders, 63% say senior leadership actively 
+champions AI adoption, compared to just 36% of 
+AI Followers. This visible sponsorship does more 
+than signal intent; it helps align priorities, unlock 
+investment and create the conditions for AI initiatives 
+to move beyond isolated pilots. Where leadership 
+is less engaged, AI efforts are more likely to remain 
+fragmented, with weaker links to business outcomes 
+and limited momentum.
+Lead from the front
+
+--- PAGE 10 ---
+
+The Blueprint for AI Leadership | 2026 10
+Our structure 
+and processes 
+allow AI 
+projects to 
+move quickly
+Leaders are more proactive in preparing for workforce 
+impact, with 54% planning for how Agentic AI will 
+reshape roles, compared with just 16% of Followers. This 
+enables them to anticipate change and embed AI more 
+effectively, rather than reacting to disruption as it occurs.
+AI Leaders are also four times more likely than 
+Followers to operate within structures and processes 
+that allow AI projects to move quickly across the 
+organization, an approach that prioritizes agility over 
+hierarchy. This means promising pilots are less likely 
+to stall while awaiting cross-functional sign-offs or 
+extended governance cycles.
+While leadership support for AI may exist conceptually 
+among Followers, true ownership of key initiatives is 
+often less clearly defined and the links to business 
+outcomes are less explicit. “AI strategy fails when you 
+have fundamentally siloed conversations in which all 
+the aspects of the enterprise fail to come together,” 
+says Praveen Bhat, EVP and Global Head, SAP, Digital 
+Business Services, HCLTech. Leaders also need to tie 
+AI initiatives clearly to business outcomes, not just 
+operational efficiency. “You may be running certain 
+things faster, but is it creating any impact on your dollar 
+and end-customer value? Maybe not.”
+Bhat also emphasizes that AI adoption must be 
+driven from the top down. Without senior leadership 
+ownership, it is unlikely to receive the priority required 
+to scale. In some organizations, the absence of 
+Organizations seeing the biggest benefits of AI-driven change are those actively embedding AI adoption 
+at leadership level, into ways of working and as a cultural identity. This is enabling them to quickly translate 
+strategy into day-to-day execution
+To what extent do you agree with the following statements about your organization’s AI adoption practices?
+Leadership 
+actively 
+champions AI 
+adoption
+AI-related 
+risks, ethics 
+and workforce 
+implications are 
+openly discussed
+Cross-functional 
+collaboration 
+is enabled 
+to support AI 
+initiatives
+Continuous 
+learning and 
+reskilling are 
+embedded in  
+our culture
+The organization 
+proactively plans 
+for how Agentic AI 
+may change roles 
+and responsibilities
+64%
+15%
+50%
+28%
+54%
+16%63%
+36%
+37%
+18%
+50%
+19%
+AI Leaders AI Followers
+
+--- PAGE 11 ---
+
+The Blueprint for AI Leadership | 2026 11
+sustained engagement is masked by a proliferation of 
+strategy documents, steering committees and published 
+principles. While these can create the appearance 
+of momentum, they do not necessarily translate into 
+meaningful progress.
+“Leaders in the organization who sell the benefits of 
+AI must have a clear grasp of the infrastructure story, 
+including the costs, constraints and gaps between what 
+AI systems promise and what they can actually deliver 
+in a specific organizational context,” notes Sebastian 
+Reiche, Professor of Managing People in Organizations 
+at IESE Business School.
+Bridging the functional readiness divide 
+Rather than a simple readiness gap, the data points 
+to a more structural constraint: the maturity of core 
+enterprise applications is limiting organizations’ 
+ability to adopt and integrate AI. The most significant 
+bottlenecks sit within systems that underpin 
+core business operations, particularly ERP (35%), 
+finance (32%) and supply chain (26%), where legacy 
+architectures and tightly coupled processes make 
+integration more difficult.
+By contrast, functions such as CRM (20%) and product 
+development and innovation tools (20%), where 
+systems are typically more modular and already closer 
+to customer-facing use cases, are less likely to act as 
+constraints. This suggests that organizations are making 
+faster progress in areas where AI can be layered onto 
+existing workflows, but face greater friction where 
+deeper integration into core systems is required.
+Differences between AI Leaders and Followers are 
+present but less pronounced than in other areas. Leaders 
+report slightly fewer constraints across most systems, 
+particularly in supply chain (17% vs. 29%) and finance 
+(24% vs. 37%), indicating a greater ability to navigate or 
+modernize complex environments. However, the overall 
+pattern remains consistent: the biggest barriers to scaling 
+AI are not at the edge, but at the core of the enterprise.
+The implication is that scaling AI is less about extending 
+use cases and more about addressing the limitations 
+of underlying systems. Organizations may be able 
+to generate value in isolated functions, but without 
+modernizing the applications that support core 
+operations, embedding AI at scale remains difficult.
+This is reflected in how AI is currently being applied. 
+Organizations are more comfortable with AI that assists 
+or augments human work – such as content generation 
+or customer experience optimization – than with 
+deploying more autonomous systems. While Agentic AI 
+is attracting significant attention, fewer than half (45%) 
+say they are using it effectively for workflow automation 
+and orchestration, rising to 71% among Leaders but just 
+44% of Followers.
+AI does not create enterprise 
+value by scaling models alone; 
+it creates value when every AI 
+initiative is tied to a measurable 
+business outcome. The real 
+mandate is not to ask, ‘How 
+fast can we scale AI?’ but ‘How 
+intentionally can we
+scale impact?’
+“
+Paul Villanova, 
+System Director,  
+Consumer Product & Engineering,  
+CommonSpirit Health
+
+--- PAGE 12 ---
+
+The Blueprint for AI Leadership | 2026 12
+Organizations making the fastest progress with AI are those facing fewer constraints from core enterprise 
+systems, while Followers remain more limited by legacy environments
+To what extent do differences in AI maturity across your core enterprise applications limit your organization’s 
+ability to adopt or integrate AI and Agentic AI? [Strongly limits only]
+Leaders FollowersOverall
+CRM
+20%14%20%
+ERP 37%29%35%
+Finance systems 37%24%32%
+Supply chain systems 29%17%26%
+Product development 
+innovation tools
+23%15%20%
+Collaboration/knowledge 
+management tools
+18%15%15%
+HR/People systems
+5%3%5%
+Despite these structural constraints, confidence is 
+expected to rise across all functions over the next three 
+years, including those critical to deploying autonomous 
+systems. This reflects a broader pattern seen between 
+Leaders and Followers: while Leaders are far more 
+confident in managing ongoing AI-driven change 
+today, Followers believe they will be able to do so within 
+the same timeframe.
+This suggests a familiar dynamic, one in which 
+ambition is advancing faster than capability and 
+reinforces the risk that progress toward more 
+autonomous, enterprise-wide AI may be constrained 
+by underlying readiness. As organizations move 
+beyond assisted use cases toward more autonomous 
+systems, confidence begins to falter, particularly 
+around governance and optimization.
+“Many organizations are uncomfortable delegating 
+critical decisions to AI without stronger controls, 
+transparency and governance in place,” says Daniel 
+Meyer, Chief Technology Officer at Camunda. “In 
+industries like financial services, where customer 
+experience, data privacy and regulation are paramount, 
+firms simply do not have the confidence to extend AI 
+beyond low-stakes tasks.”
+This reinforces the role of leadership in determining 
+how confidently AI is deployed at scale. Many 
+organizations will need to strengthen governance 
+frameworks, but without better visibility into how AI  
+12
+
+--- PAGE 13 ---
+
+The Blueprint for AI Leadership | 2026 13
+is operating across the business, progress is likely to  
+be limited.
+“It may sound obvious, but you can’t govern what you 
+can’t see,” says Meyer. “Yet many organizations continue 
+to deploy AI systems with little visibility into how they are 
+actually used or how decisions are reached.”
+Creating the right culture
+To raise employee confidence in using AI, leadership will 
+also need to enhance collaboration between technical 
+and business teams. “Leaders in the organization should 
+invest in establishing liaison roles, drawing on people 
+with the cultural and technical range to bridge the 
+strategic and operational levels,” says Reiche.
+Leadership also needs to create a culture that allows AI 
+enthusiasm and talent to flourish. “Technology or data 
+alone is not going to solve things,” says Bhat. “Without 
+talent that is completely excited about this whole 
+prospect of AI-enabled work, you are not going to run 
+the entire mile.”
+AI Leaders already recognize that employee trust is 
+built through transparency, robust governance and 
+clear commitments around how AI decisions are made, 
+reviewed, challenged and adopted. Where these 
+commitments are in place, organizations tend to see 
+higher levels of employee confidence and, in turn, greater 
+willingness to deploy AI across higher-stakes workflows.
+“You don’t want AI to be an autopilot; it has to be a co-
+pilot,” says Bhat. “It’s an evolution of people’s roles, not a 
+depreciation of them.”
+Translating this value into consistent, enterprise-wide 
+impact, however, requires coordination. Orchestration 
+remains the critical layer between AI capability and 
+measurable enterprise value, with leadership playing 
+a central role in enabling it. “CIOs and CTOs are being 
+asked to demonstrate ROI,” says Meyer.
+Bhat adds that the CFO must also be central to AI 
+strategy, given their ability to connect investment to 
+business value. “The moment you position AI as a business 
+driver, you need to have the CFO at center stage.”
+Ultimately, leadership determines whether AI initiatives 
+translate into enterprise-wide impact or remain 
+confined to isolated pilots. Yet even where leadership 
+and value alignment are in place, scaling AI ultimately 
+depends on whether organizations can build the 
+workforce capabilities required to sustain it. 
+When leadership is visible, vocal 
+and able to connect AI initiatives 
+clearly to business outcomes, 
+organizations move faster, 
+experiment more effectively 
+and scale promising initiatives. 
+Where this is absent, initiatives 
+that show genuine promise 
+often struggle to gain sustained 
+traction.
+“
+Praveen Bhat, 
+EVP and Global Head, SAP, 
+Digital Business Services,  
+HCLTech
+
+--- PAGE 14 ---
+
+The Blueprint for AI Leadership | 2026 14
+The research suggests that confidence in workforce 
+preparedness for AI-driven roles is high among the 
+majority of organizations, with 79% very or somewhat 
+prepared to train and upskill employees for operational 
+changes driven by Agentic AI.
+Yet at the same time, only 33% currently have a 
+comprehensive organization-wide retraining strategy 
+or plan for upskilling employees; nearly two-thirds say 
+it is defined but limited in scope. In other words, while 
+workforce AI enablement is widely recognized as important, 
+this is not consistently translating into action at scale.
+Organizations are equally confident in their ability to 
+adapt recruitment and onboarding processes (79% very 
+or somewhat prepared) and to orchestrate work through 
+a blend of humans and agents (80% very or somewhat 
+prepared). However, confidence drops when it comes to 
+managing role redesign, redeployment and consistent 
+adoption at scale. This points to a persistent gap 
+between belief and capability.
+“Confidence without strategy is a form of organizational 
+wishful thinking. It’s comfortable in the short term but 
+ The human edge
+creates significant risk as AI capabilities mature and 
+workforce requirements evolve,” says Lester Lam, EVP 
+and Global Head, Advisory and Consulting, Digital 
+Business Services, HCLTech.
+Confidence in managing AI-driven change remains 
+limited. Only 27% of organizations say they are very 
+confident today, with a stark divide between Leaders 
+and Followers reinforcing how uneven preparedness 
+remains. While Leaders are significantly more confident 
+than Followers, many organizations expect this gap to 
+narrow within three years. Such optimism raises a critical 
+question: are organizations assessing AI returns based 
+on their ability to execute today or on expectations of 
+future readiness?
+The disconnect between confidence and workforce 
+capability is further emphasized by the gap between AI 
+Leaders and AI Followers. For example, 93% of Leaders 
+have a comprehensive strategy for retraining or upskilling 
+employees, compared with just 20% of Followers. “AI 
+Leaders are treating upskilling as a strategic priority with 
+commensurate investment,” says Lam. “They’ve made 
+substantial commitments of time, money and executive
+
+--- PAGE 15 ---
+
+The Blueprint for AI Leadership | 2026 15
+attention to ensure dedicated learning time is built into 
+work schedules, not just optional evening courses.” 
+AI Followers, by contrast, tend to treat workforce 
+development as a periodic HR initiative rather than 
+embedding it within organizational structures, with only 
+24% prepared to manage continuous organizational 
+changes driven by AI, compared to 52% of AI Leaders. 
+“Upskilling efforts that are disconnected from how 
+performance is evaluated or how work is organized will 
+always underperform, because employees correctly 
+read that the capability being developed is not actually 
+required to succeed in their current role,” says Reiche.
+The problem is compounded by the fact that Followers 
+are three times less likely than Leaders to encourage 
+employees to experiment with AI tools and new ways of 
+working. Reiche’s own work points to a set of structural 
+features that distinguish those organizations that 
+successfully embed capability development. These 
+organizations organize work in ways that generate 
+learning as a natural byproduct, for example, through 
+role rotation, peer feedback and giving employees 
+genuine agency over how their work is configured.
+They also treat alignment between work design, 
+performance management and incentives as a coherent 
+system. Crucially, they approach AI literacy not simply 
+as a technical training challenge, but as a work design 
+challenge. Organizations should define what each 
+role looks like when augmented by AI and then build 
+Leaders are significantly more prepared than Followers for complex workforce changes brought about by Agentic AI
+How prepared is your organization for the following workforce changes expected from Agentic AI?
+AI Leaders AI Followers
+Orchestrating 
+blended 
+human–AI 
+workflows
+Redesigning 
+existing roles
+Training and 
+upskilling existing 
+employees
+Managing workforce 
+displacement and 
+redeployment
+Adapting 
+recruitment 
+and onboarding 
+processes
+Ensuring 
+DEI in an 
+AI-enabled 
+workforce
+Why culture, not code, is stalling the Autonomous Enterprise
+51%
+29%
+55%
+28%
+53%
+30%
+49%
+30%
+38%
+19%
+45%
+26%
+
+--- PAGE 16 ---
+
+The Blueprint for AI Leadership | 2026 16
+development programs around that reality rather than 
+focusing on generic tool adoption.
+Closing the capability gap
+For AI Followers, the window to close this capability 
+gap is beginning to narrow. The research shows that 
+Leaders are already as far ahead on skills as they are on 
+technology. In many cases, this is because they have 
+already built the workforce infrastructure—including 
+development systems, experimentation cultures and 
+role redesign capabilities—necessary to convert AI 
+investment into a sustained, compounding advantage.
+Followers who are struggling to build workforce 
+capabilities may also be focusing on weaker or 
+misdiagnosed barriers to adoption. Conventional 
+narratives often frame AI workforce challenges as a 
+resistance problem, portraying employees as reluctant 
+to adopt new tools or unwilling to change. The research, 
+however, does not support this view.
+In reality, the dominant barrier is a skills shortage, cited 
+by 47% of organizations. At first glance, this suggests 
+a workforce struggling to keep pace with AI—but the 
+evidence points elsewhere. Employee resistance is 
+cited by just 20% of organizations, with leadership 
+misalignment ranking higher at 29%. 
+Attracting and retaining AI-proficient talent ranks as a 
+top challenge for 38% of Leaders. Logic suggests we’d 
+see a much higher percentage of Followers who rank 
+finding and keeping top talent as a major challenge, 
+yet significantly fewer (just 26%) actually do. This 
+reveals an important shift: as organizations approach AI 
+maturity, the primary workforce challenge is no longer 
+building baseline capabilities but rather competing for 
+specialized talent—and Followers just aren’t there yet. 
+Insufficient training programs are cited by 30% of 
+Followers as a top barrier, compared with just 15% of 
+Leaders. This further reinforces that Followers are not 
+being held back by resistant employees, but by the 
+absence of the development infrastructure that Leaders 
+have already established.
+“AI’s transformational potential isn’t realized when 
+you implement AI systems. It’s realized when people 
+throughout your organizations know how to leverage 
+those systems effectively, can identify new opportunities 
+for AI application and are comfortable working in 
+AI-augmented ways,” says Lam. “The technology is 
+necessary but not sufficient.”
+Reiche reinforces this point: “Employee resistance as 
+a narrative is indeed convenient, but it is incomplete.” 
+Workers are often more willing to adapt than assumed, 
+particularly when they are empowered to shape how 
+tools are integrated into their roles and can see a clear 
+vision of how their work will evolve.
+In many cases, deeper structural issues are at the root 
+Leaders are confident managing AI-driven change, 
+while Followers expect to catch up within three years 
+- suggesting a gap between ambition and execution
+How confident are you that your organisation can manage 
+AI-driven change on an ongoing basis today and in three 
+years time?
+Today
+Leaders Followers
+In three 
+years
+72% 14%
+88% 82%
+
+--- PAGE 17 ---
+
+The Blueprint for AI Leadership | 2026 17
+of this gap. The dominant model of work design, in which 
+tasks are centrally defined and assigned, is ill-suited to 
+the dynamic reconfiguration that AI integration demands. 
+“That model produces clarity and control, but it is very 
+poorly suited,” Reiche explains.
+When AI is introduced, organizations must rethink 
+what roles are for, how work flows between people 
+and systems and where human judgment adds value. 
+These are fundamentally questions of work design, yet 
+many organizations lack both the frameworks and the 
+operational habits to address them effectively.
+Upskilling for the autonomous era
+Addressing this challenge is becoming increasingly 
+urgent. While less than 10% of today’s enterprise AI 
+capability is autonomous, that percentage is expected 
+to rise sharply over the next three years across 
+several operational functions, including technology, 
+infrastructure, data and analytics.
+A clear gap remains between Leaders and Followers 
+in preparing for this shift to autonomous systems, 
+particularly in managing workforce displacement (38% 
+of Leaders say they are very prepared vs. just 19% of 
+Followers) and redesigning existing roles (51% vs. 29%).
+Governance, oversight and the ability to challenge 
+autonomous systems will become critical capabilities 
+for employees. These skills will not emerge organically; 
+they will need to be deliberately developed. Even today, 
+readiness for AI governance sits at just 43% across 
+surveyed organizations, well behind readiness to deploy 
+or maintain AI systems.
+“Organizations cannot govern what they do not 
+understand,” says Reiche. “Building a workforce capable 
+of meaningful AI oversight requires, first, that people 
+working alongside autonomous systems have enough 
+understanding of how those systems operate to know 
+when something is wrong.”
+If AI systems are treated as black boxes and employees 
+are expected simply to execute outputs, governance 
+capabilities will remain limited. By contrast, when work 
+is designed so that employees actively interrogate 
+outputs, flag anomalies and contribute to system 
+refinement, oversight becomes embedded in day-to-
+day operations.  
+Beyond individual capability, organizations will also need 
+to invest in roles that operate at the interface between AI 
+systems and human context. As Reiche notes, these roles 
+require contextual judgment, ethical reasoning and the 
+ability to challenge system outputs. Each is a capability 
+that must be explicitly designed and developed.
+Without the right workforce skills and a culture of 
+continuous learning, AI initiatives are likely to remain 
+promising but limited. Where workforce systems are 
+deliberately redesigned to integrate learning, oversight and 
+adaptation, organizations are far more likely to translate AI 
+investment into sustained, enterprise-wide impact.
+Employee resistance as a narrative is indeed 
+convenient, but it is incomplete. Workers are 
+often more willing to adapt than assumed, 
+particularly when they are empowered to 
+shape how tools are integrated into their roles 
+and can see a clear vision of how their work 
+will evolve. In many cases, deeper structural 
+issues are at play.
+“
+Sebastian Reiche, 
+Professor of People Management, 
+IESE Business School
+AI’s transformational potential isn’t realized 
+when you implement AI systems. It’s realized 
+when people throughout your organizations 
+know how to leverage those systems 
+effectively, can identify new opportunities for 
+AI application and are comfortable working 
+in AI-augmented ways. The technology is 
+necessary but not sufficient
+“
+Lester Lam, 
+EVP and Global Head, Advisory and Consulting, 
+Digital Business Services,  
+HCLTech
+
+--- PAGE 18 ---
+
+The Blueprint for AI Leadership | 2026 18
+As organizations move from building AI readiness to 
+scaling it in practice, attention is shifting to a more 
+fundamental constraint: the state of their data.
+Once AI initiatives expand beyond pilots, gaps in 
+data quality, accessibility and governance become 
+increasingly difficult to ignore. AI is only as powerful 
+as the data it runs on, yet a growing divide is emerging 
+between organizations that have built strong data 
+foundations and those that have not. Leaders are eight 
+times more likely than Followers to express confidence 
+in their data foundations when supporting GenAI 
+initiatives (74% vs. 9%), a gap that is increasingly shaping 
+which organizations can scale AI and which remain stuck 
+in pilot mode.
+This disparity is also reflected in performance outcomes, 
+suggesting that data maturity is becoming a key 
+marker of which organizations can turn AI ambition into 
+business value.
+From AI ambition to data reality
+The conversation around AI has shifted significantly 
+in recent years. “A couple of years ago, everyone 
+was focused on the models themselves. Today, the 
+differentiator has become abundantly clear: it’s the 
+data,” says Nagaraj Sastry, SVP and Global Head, 
+Data and AI, Digital Business Services, HCLTech. “The 
+technology has become commoditized in many ways. 
+But what hasn’t been commoditized and what can’t 
+be easily replicated is your proprietary data, your 
+institutional knowledge and, crucially, your ability to 
+leverage it.”
+For many organizations, this is where the challenge 
+becomes most visible. “Every organization thinks AI is a 
+magic tool that’s going to solve all their problems, but 
+it’s really a magnifying glass that exposes problems in 
+their underlying data,” says Marvin Ward Jr., Global Head 
+of Data Management and Operations at Bloomberg. 
+Despite continued investment, many AI programs fail to 
+Fixing the data reality
+
+--- PAGE 19 ---
+
+The Blueprint for AI Leadership | 2026 19
+move beyond proof of concept. The research points to a 
+common underlying cause: fragmented data ecosystems.
+These environments are often the result of years of 
+decentralized decision-making, leaving organizations 
+with siloed datasets, inconsistent definitions and limited 
+interoperability. The barriers, however, are not purely 
+technical. “Data has historically been treated as a 
+departmental asset,” says Sastry. “Each group has built 
+systems optimized for their specific needs, but they’ve 
+created a fragmented landscape that’s genuinely 
+difficult to unify.”
+Trust is another critical constraint. Organizations 
+frequently lack confidence in the accuracy, completeness 
+and timeliness of shared data, while internal dynamics 
+can actively discourage collaboration. At the same time, 
+legacy infrastructure compounds the issue. Many systems 
+were not designed to interoperate, creating integration 
+challenges that are complex and costly to resolve. The 
+result is a data environment that remains ill-equipped 
+to support enterprise-scale AI. As Ward Jr. notes, “AI 
+has drastically lowered the barrier for users to query an 
+organization’s data. This makes data interoperability a 
+must-have and this is where many organizations struggle.”
+Even where organizations successfully generate 
+insights from AI, the ability to translate them into action 
+remains uneven. Many say their confidence is highest 
+when AI is used to support operational performance 
+recommendations (38%), predictive forecasting (38%) 
+Leaders are more likely to trust AI to guide decisions via predictive, strategic and CX insights than 
+Followers are
+How confident are teams across your organization in acting on the data and AI-generated insights available to 
+them? [High confidence only]
+Leaders Followers
+Data quality and reliability signals
+Agent-initiated actions
+24%
+16%
+60%
+34%
+Automated decision outputs
+Predictive and forward-looking forecasts
+67%
+36%
+38%
+19%
+Productivity and workforce optimization insights
+60%
+27%
+Risk, compliance and anomaly detection
+58%
+33%
+Operational performance recommendations
+Strategic and executive insights
+51%
+34%
+47%
+40%
+Customer experience insights
+58%
+33%
+The Blueprint for AI Leadership | 2026
+
+--- PAGE 20 ---
+
+The Blueprint for AI Leadership | 2026 20
+and productivity optimization insights (31%). However, 
+this confidence drops as organizations move closer 
+to automation: just 22% express high confidence in 
+automated decision-making and only 17% in agent-
+initiated actions. What emerges is that many organizations 
+are comfortable using AI to inform decisions, but far 
+fewer trust it or have the data foundations required to 
+operationalize those decisions at scale.
+What distinguishes AI Leaders
+Against this backdrop, AI Leaders stand apart not 
+because they have access to better models, but because 
+they have invested earlier and more systematically in 
+their data foundations. “These organizations did not 
+wait for AI to become a priority before addressing data 
+challenges. Instead, they invested in infrastructure, 
+governance and quality over time,” says Sastry.
+Leaders treat data as a managed product, with clear 
+ownership, defined standards and lifecycle management. 
+51% of AI Leaders have clear ownership and accountability 
+for data-driven AI decisions, while only 27% of AI Followers 
+do. Data is curated for reuse rather than generated for 
+one-off applications. Leading organizations invest in 
+data observability, enabling continuous monitoring of 
+quality and real-time detection of issues, ensuring that 
+confidence in AI systems is grounded in confidence in the 
+data that feeds them.
+Architecture plays a critical role in the success of 
+Leaders who prioritize interoperability and scalability 
+over isolated solutions, whether through modern 
+platforms or distributed models such as data mesh. 
+Equally important is discoverability. Investments in 
+metadata and data cataloging make it easier for teams 
+to find, understand and use data across the organization. 
+As Ward Jr. explains, “Firms must make explicit 
+investments in their metadata to tie together relevant 
+data across domains.”
+There is also a human dimension that organizations 
+must get right. AI Leaders invest in data literacy beyond 
+technical teams, establish clear stewardship models and 
+create forums for collaboration between data producers 
+and consumers, ensuring that data is not only accessible 
+but actively used across the organization.
+In turn, this is reflected in how data is shared. AI Leaders 
+are far more likely to operate in environments where 
+data can move across teams and functions: nearly half 
+(46%) report having a fully established, responsible 
+and trust-based data-sharing culture, compared with 
+a fifth (21%) of Followers. This does not mean granting 
+unrestricted access but rather developing a culture in 
+which data is well understood and therefore easier to 
+use consistently across domains. As Ward Jr. notes, “Data 
+without borders is actually more about data consistency 
+than governance and security.” 
+This consistency is a critical piece of any organization’s 
+ability to scale AI. The most valuable use cases require 
+Every organization thinks AI is a magic tool 
+that’s going to solve all their problems, but 
+it’s really a magnifying glass that exposes 
+problems in their underlying data. AI has 
+drastically lowered the barrier for users to 
+query an organization’s data. This makes data 
+interoperability a must-have and this is where 
+many organizations struggle.
+“
+Marvin Ward Jr., 
+Global Head of Data Management & Operations,
+Bloomberg
+The technology has become commoditized 
+in many ways. But what hasn’t been 
+commoditized and what can’t be easily 
+replicated is your proprietary data, your 
+institutional knowledge and, crucially, your 
+ability to leverage it. But if your organization 
+operates with a mindset of data hoarding, 
+you’ll never realize the full potential of 
+enterprise AI.
+“
+Nagaraj Sastry, 
+SVP and Global Head, Data and AI, 
+Digital Business Services,
+HCLTech
+
+--- PAGE 21 ---
+
+The Blueprint for AI Leadership | 2026 21
+While responsible AI practices are not yet fully established, Leaders have made the biggest headway 
+when it comes to safe usage and accountability in AI systems
+How well established are the following practices for ensuring the responsible use of data in AI across your 
+organization? [Fully established only]
+Leaders Followers
+combining data from multiple functions, including 
+customer intelligence, operational optimization and risk 
+modeling. Without the ability to connect these domains, 
+AI remains limited to narrow, localized applications.
+Crucially, culture underpins all of this. “You can have 
+the most sophisticated technology stack in the world, 
+but if your organization operates with a mindset of 
+data hoarding, you’ll never realize the full potential of 
+enterprise AI,” says Sastry. Creating this culture requires 
+deliberate leadership action. Incentives must be aligned 
+with enterprise-wide outcomes, encouraging teams to 
+share and contribute data rather than retain control. 
+It also requires new ways of working, with cross-functional 
+collaboration embedded into organizational processes 
+and supported by data communities and centers of 
+excellence. Trust must be built at multiple levels—
+technical, organizational and cultural—so that teams have 
+confidence in data quality, clarity on how it will be used 
+and assurance that their contributions will be recognized.
+Governance as an enabler, not a constraint
+As organizations seek to scale AI, governance becomes 
+increasingly important, particularly in the context of 
+GenAI, where risks are more visible and more complex. 
+“Governance isn’t the enemy of innovation, it’s what 
+makes sustainable innovation possible,” says Sastry.
+While safe and compliant data use is relatively well 
+established among Leaders (64%), the capabilities 
+Robust data governance 
+and quality controls for AI
+Clear ownership and accountability 
+for AI-driven decisions
+51%
+27%
+32%
+23%
+Ongoing monitoring for bias 
+and unintended outcomes 
+Formal risk and ethical 
+assessment processes for AI
+41%
+21%
+37%
+21%
+Training and literacy on responsible 
+data and AI practices
+32%
+12%
+Explainability of AI outputs and decisions
+35%
+14%
+Transparency in how AI systems use data
+Safe and compliant use of data in AI systems
+64%
+36%
+47%
+22%
+A responsible, trust-based data-sharing culture
+46%
+21%
+The Blueprint for AI Leadership | 2026
+
+--- PAGE 22 ---
+
+The Blueprint for AI Leadership | 2026 22
+that make AI trustworthy at scale remain less mature. 
+Only a third of Leaders say that the explainability of AI 
+outputs (35%) and training and literacy on Responsible AI 
+practices (32%) are well established. Both measurements 
+drop to less than one in six for Followers. Effective 
+governance, therefore, extends beyond basic compliance 
+to ensuring that data is accurate and well-structured 
+while embedding transparency, accountability and 
+safeguards into AI systems.
+For organizations seeking to close the gap between AI 
+ambition and data readiness, the path forward is rarely 
+linear. “The first question to ask is: what’s actually blocking 
+you today?” says Sastry. For some, the issue is visibility: 
+understanding what data exists and where it resides. For 
+others, it is legacy infrastructure that cannot support 
+modern AI workloads. In many cases, governance gaps 
+either introduce risk or restrict access.
+The research highlights a clear disconnect. While strategic 
+integration is widely recognized as critical to AI success, 
+just one-third believe they are investing sufficiently in the 
+foundations required to enable it. Nearly half (49%) cite 
+data-related challenges as a barrier, while 47% point to 
+technology limitations. In other words, many organizations 
+understand what matters but are underinvesting in 
+the systems required to deliver it. As Ward Jr. explains, 
+infrastructure, governance and culture must be addressed 
+together: “Think of this like a three-legged stool.”
+Data readiness, like change management, is not a one-
+off initiative but an ongoing organizational capability. 
+“Many organizations are still treating AI initiatives like 
+traditional IT projects,” says Sastry. “But AI doesn’t work 
+that way. It requires continuous refinement.”
+Each improvement reinforces the next. Better 
+governance enables faster decisions, improved 
+architecture increases accessibility and greater 
+accessibility drives usage—generating feedback that 
+further improves quality. In this way, organizations that 
+succeed will treat data not as a prerequisite to AI, but as 
+the foundation on which it continuously evolves.
+For business leaders, the priority areas of focus should 
+be strengthening governance, improving accessibility 
+and building a mature culture in which data is shared, 
+trusted and strategically managed. Without trusted, 
+accessible and well-governed data, even the most 
+advanced AI initiatives will struggle to move beyond 
+experimentation.
+That said, strong data foundations alone are not enough. 
+As organizations attempt to operationalize AI at scale, 
+they must confront the challenge of whether their 
+underlying architecture can support it.
+Confidence in data foundations is divided today, 
+with Leaders far ahead of Followers despite 
+widespread optimism for the future
+How confident are you that your organization’s data 
+foundations (quality, accessibility and governance) can 
+support GenAI and Agentic AI workloads now and over 
+the next three years?
+Leaders Followers
+Very confident
+Somewhat confident
+74% 9%
+24% 70%
+
+--- PAGE 23 ---
+
+The Blueprint for AI Leadership | 2026 23
+While data foundations are a critical enabler of AI, they 
+are only part of the equation. Many organizations find 
+that scaling AI also depends on the capacity of their 
+architecture to support it. Unlike data initiatives, which 
+can often be addressed incrementally, modernizing 
+enterprise architecture requires a more fundamental 
+shift: away from infrastructure and application estates 
+that are built for a different era of computing and toward 
+environments designed for flexibility, interoperability and 
+continuous change.
+“Legacy technology constrains innovation,” says Mandy 
+Lamb, Head of Value-Added Services at Visa Europe. “It 
+limits how fast organizations can move, how much they 
+can scale and how confidently they can experiment.”
+Still, most organizations remain distant from this model. In 
+fact, just 11% consider their architecture to be very ready for 
+AI adoption. At the same time, only 10% say they are investing 
+sufficiently in architectural modernization to close that gap. 
+This reveals a clear disconnect: While most organizations 
+recognize their architecture is not ready for AI, very few are 
+investing at the level required to address the shortcomings. 
+The challenge, therefore, lies not just in recognizing the 
+need for architectural change, but in executing it. Nearly 
+Modernizing at scale
+half of organizations (47%) cite technology limitations 
+as a reason for underinvestment in architecture. Budget 
+constraints (31%) and, to a lesser extent, talent shortages 
+further compound the challenge, with the latter more 
+pronounced among Leaders than Followers.
+These findings suggest that architectural modernization 
+is not simply underfunded but structurally difficult to 
+deliver within the constraints of existing technology 
+environments. Against this backdrop, organizations 
+report that GenAI-ready architectures are further 
+constrained by practical challenges, including 
+integration complexity (29%), technical debt (25%) and 
+vendor lock-in (22%). Together, these factors create 
+a compounding effect in which the very systems 
+organizations need to modernize are also the ones that 
+prevent that modernization.
+The wider research reflects this tension. Organizations 
+appear to be prioritizing more visible, strategic aspects 
+of AI adoption, such as integration and use-case 
+development, while underinvesting in the underlying 
+infrastructure required to support them. The result 
+is a widening divide between organizations able to 
+modernize their environments and those with ambitious 
+AI strategies but limited ability to execute them.
+
+--- PAGE 24 ---
+
+The Blueprint for AI Leadership | 2026 24
+When architecture becomes the bottleneck
+For many organizations, the ambition to scale AI is running 
+up against systems and enterprise applications that 
+were never designed for it. But this challenge appears 
+to intensify as organizations become more advanced in 
+their AI journeys. AI Leaders are more likely than Followers 
+to cite legacy systems and technical debt as a barrier to 
+adoption and scale, at 34% compared with 20%.
+This suggests a paradox of AI maturity: the further 
+organizations progress, the more exposed they become 
+to the limitations of their existing technology estates. 
+Leaders may already have captured the more immediate 
+efficiency gains from AI. As they move toward higher-
+value use cases – embedding AI into workflows, 
+decision-making and enterprise transformation – legacy 
+architectures become harder to work around.
+“This paradox is pervasive,” says Chris Pickard, Executive 
+Vice President, Digital Business Services, HCLTech. “Large 
+enterprises built their technology estates over decades 
+to support transactional processing, reporting and 
+operational efficiency. Those systems excel at what they 
+were designed for but struggle with what AI demands.”
+These environments were built for stability and 
+efficiency, not adaptability. They are often tightly 
+coupled and difficult to change, limiting how data 
+can move across the organization. “Many enterprises 
+are still running systems that were never designed to 
+interoperate. They’re dealing with inconsistent data 
+definitions, incompatible formats and integration 
+patterns built for a different era,” says Pickard.
+Even organizations leading the way in AI adoption 
+often find themselves constrained by their existing 
+architecture. “The paradox exists because AI progress 
+is often visible at the surface with pilots and proofs 
+of concept, while the underlying foundations remain 
+unchanged,” says Lamb.
+This constraint is most visible at the application layer, 
+where core business systems lock data and processes 
+into rigid structures that are difficult to extend with AI. As 
+a result, many organizations are able to generate AI-driven 
+insights but struggle to operationalize them at scale.
+This challenge is also reflected in how organizations 
+perceive broader barriers to AI adoption. More than half 
+(56%) cite legacy systems and technical debt as major 
+constraints, highlighting how deeply embedded these 
+limitations remain across the enterprise.
+Pickard sees this pattern consistently across large 
+enterprises. “Leaders who expect to layer AI onto existing 
+estates discover that meaningful adoption requires more 
+fundamental architectural evolution than anticipated,” 
+he says. In effect, progress at the edge can mask 
+stagnation at the core.
+Organizations recognize that their architectures 
+are not yet ready for AI adoption, but most are still 
+investing in AI strategy faster than they are building 
+the foundations to execute it
+believe they are 
+investing sufficiently 
+in AI strategy
+consider their 
+architecture very 
+ready for AI adoption
+say they are investing 
+sufficiently in architectural 
+modernization to close the gap
+78%
+11%
+10%
+
+--- PAGE 25 ---
+
+The Blueprint for AI Leadership | 2026 25
+Organizations overcoming this challenge take a 
+different approach. They focus not only on building 
+new capabilities, but on the conditions that make 
+those capabilities sustainable. “Leaders recognize that 
+scalable AI depends on getting the basics right first: 
+interoperability, modularity and trust,” says Lamb. This is 
+reflected in how they prioritize investment and sequence 
+modernization efforts over time.
+Rethinking modernization
+Against this backdrop, the concept of AI-ready 
+infrastructure is becoming a priority, but it is often 
+misunderstood. Pickard describes this as a shift toward 
+more composable architecture. “Scaling AI requires an 
+architecture that makes compute, data and controls 
+composable, so organizations can assemble production-
+grade AI solutions quickly without rebuilding everything 
+each time,” he says.
+This composability increasingly extends beyond 
+infrastructure into the application layer, allowing 
+organizations to reconfigure business processes and 
+workflows as AI capabilities evolve. However, achieving 
+this state requires more than new technology—it 
+demands deliberate, sustained modernization of the core.
+“The balance comes from refusing a false choice,” says 
+Pickard. “We don’t need to finish modernization before we 
+innovate, but we do need to modernize on purpose.”
+Rather than pursuing large-scale transformation 
+programs in a single sweep, organizations are increasingly 
+adopting a staged approach. They decouple innovation 
+from the legacy core, creating environments where AI can 
+be developed and deployed quickly while modernizing 
+critical constraints in parallel. “Each modernization 
+increment unlocks multiple AI use cases. Those use cases 
+then fund the next wave,” explains Pickard.
+Lamb sees a similar trend, enabled by cloud native and 
+API-based technologies. “Modernization no longer has 
+to mean a single, high-risk transformation. Leaders can 
+prioritize the areas where change will have the biggest 
+impact first,” she says.
+However, infrastructure alone is not the full story. 
+Technical debt is closely tied to organizational 
+structures and ways of working. “The biggest trap is 
+treating modernization as a translation exercise. If we 
+move legacy systems without redesigning them, we 
+don’t eliminate debt, we just replatform it,” says Pickard.
+Much of this technical debt sits in the seams of 
+organizations, from fragmented ownership to enterprise 
+applications that encode processes in ways that are 
+difficult to adapt or scale. “AI exposes this brutally. If 
+the enterprise can’t explain how a process works or 
+where authoritative data lives, AI initiatives inherit that 
+confusion,” he says.
+Addressing this requires more integrated, cross-
+functional ways of working, with teams operating closer to 
+both data and products. When culture and infrastructure 
+evolve together, organizations are better positioned to 
+reduce technical debt and unlock AI at scale.
+Legacy technology constrains innovation. 
+It limits how fast organizations can 
+move, how much they can scale and how 
+confidently they can experiment.
+Modernization no longer has to mean a 
+single, high-risk transformation. Leaders 
+can prioritize the areas where change will 
+have the biggest impact first.
+“
+Mandy Lamb, 
+Head of Value-Added Services,  
+Visa Europe
+Large enterprises built their technology 
+estates over decades to support transactional 
+processing, reporting and operational efficiency. 
+Those systems excel at what they were designed 
+for but struggle with what AI demands. Scaling 
+AI requires an architecture that makes compute, 
+data and controls composable, so organizations 
+can assemble production-grade AI solutions 
+quickly without rebuilding everything each time.
+“
+Chris Pickard, 
+EVP, Digital Business Services,  
+HCLTech
+
+--- PAGE 26 ---
+
+The Blueprint for AI Leadership | 2026 26
+Building from the foundations up
+For organizations earlier in their AI journeys, the temptation 
+is to layer new capabilities onto existing systems. But this 
+approach rarely delivers sustainable results.
+“The most expensive mistake is letting pilot convenience 
+define long-term architecture,” says Pickard.
+Instead, organizations need to stabilize and modernize 
+the core. That means ensuring data is reliable and well 
+governed, systems are modular and interoperable and 
+that governance frameworks are established early. “Early 
+decisions set the slope of your future,” he says.
+The organizations successfully scaling AI are not those 
+with the most advanced models, but those with the most 
+adaptable environments. By modernizing architecture, 
+strengthening core foundations and evolving the way 
+they work, they are removing the constraints that have 
+historically limited progress.
+For others, the challenge is becoming more urgent. As 
+AI adoption accelerates, the gap between Leaders and 
+Followers is widening, not just in adoption, but in the 
+ability to scale AI into core operations. Bridging that 
+gap will depend not on adding more technology, but on 
+building an architecture and application environment 
+capable of carrying AI into core business processes  
+and operations at scale.
+Organizations’ biggest barriers to more open, GenAI-ready architectures are rooted in technical complexity 
+rather than cultural resistance
+Which barriers make it difficult for your organization to adopt more open, GenAI-ready architectures?
+Integration 
+complexity
+Internal 
+technical 
+debt
+Vendor 
+lock-in
+Leadership 
+resistance to 
+large-scale 
+system change
+High switching 
+costs from 
+existing 
+vendors
+Lack of open 
+architecture 
+options in our 
+industry
+Limited internal 
+skills to manage 
+open platforms
+Overall culture 
+on adopting/
+accepting 
+something new
+29%
+25%
+22%
+7%
+5%
+5%
+4%
+4%
+
+--- PAGE 27 ---
+
+The Blueprint for AI Leadership | 2026 27
+AI has moved beyond experimentation. Across industries, 
+organizations are moving from pilots and proofs of concept 
+to confronting a more fundamental challenge: scaling AI 
+into a core business capability.
+At this stage, the dividing line is no longer adoption – it’s 
+execution. Most organizations have proven that AI can 
+deliver value in isolated use cases. Far fewer have translated 
+that potential into sustained, enterprise-wide impact.
+This gap is not explained by investment in or access to 
+technology alone. Instead, it reflects the extent to which 
+an organization’s leadership, workforce capability, data 
+and architecture are aligning around a common objective. 
+In many cases, the difference between organizations that 
+scale AI and those trapped in perpetual piloting comes 
+down to a fundamental orientation. Leaders often treat AI 
+as a business transformation, while Followers treat it as a 
+technology experiment.
+For leadership, the question is no longer whether to 
+invest in AI, but how to make it deliver. And to that  
+end, how an organization answers four key questions  
+defines the difference between experimentation and  
+enterprise capability.
+The AI leadership 
+manifesto
+
+--- PAGE 28 ---
+
+The Blueprint for AI Leadership | 2026 28
+Are you connecting AI to  
+measurable business outcomes?
+The organizations that scale AI most effectively 
+do not treat it as a standalone innovation 
+agenda. They anchor it in clearly defined 
+business outcomes, aligning use cases to the metrics 
+the business already prioritizes, such as revenue 
+growth, cost efficiency, customer retention and 
+operational performance.
+When AI is framed as a business initiative or as a driver 
+of revenue growth, margin improvement, customer 
+satisfaction or competitive differentiation, it naturally 
+commands more attention and resources.
+This is often the point at which initiatives begin to 
+stall. Where value is loosely defined or disconnected 
+from core business priorities, AI remains confined 
+to experimentation. Activity increases, but impact 
+remains limited.
+In this sense, what differentiates Leaders is not just their 
+ability to deploy AI, but their ability to tie it directly to 
+business outcomes. Followers, on the other hand, too 
+often scope initiatives narrowly and execute them in 
+relative isolation with a lack of connective tissue linking 
+experiments to a coherent outcome.
+This discipline changes how AI is deployed. Instead of 
+being layered onto the business, it becomes embedded 
+within the enterprise applications and workflows where 
+value is created. The focus shifts from what AI can do to 
+what it should deliver.
+The conclusion is clear. Organizations should narrow 
+their focus to a small number of high-impact use cases 
+and define success in terms that the business already 
+measures. AI initiatives that are not tied to clear financial 
+or operational outcomes should be deprioritized in favor 
+of those that can demonstrate tangible value.
+Is cultural debt preventing your  
+workforce from scaling AI?
+Clarity determines where AI should be 
+applied. Workforce capability determines 
+whether it can be sustained.
+Many organizations are confident that they can 
+prepare their people for AI-driven change. Far fewer 
+have translated that confidence into comprehensive, 
+organization-wide retraining strategies, redesigned 
+roles or the operating structures needed to support 
+adoption at scale. The result is a persistent gap 
+between belief and capability.
+This gap is not simply a skills issue. It also reflects a form 
+of cultural debt: deeply embedded ways of working 
+built for stability, control and predictable execution, but 
+poorly suited to the experimentation, adaptation and 
+human-machine collaboration that AI requires. In many 
+organizations, roles remain too rigid, learning remains 
+too episodic and performance systems continue to 
+reward existing ways of working even as leaders ask 
+employees to adopt new ones.
+For Leaders, workforce enablement is not treated 
+as a periodic HR initiative. It is embedded into how 
+work is organized, how performance is evaluated and 
+how employees are encouraged to experiment with 
+AI in real workflows. They recognize that AI literacy is 
+not simply a technical training challenge, but a work 
+design challenge. People need to understand not only 
+how to use AI tools, but how their roles, decisions and 
+responsibilities change when those tools become part of 
+day-to-day work.
+Followers, by contrast, often mistake confidence for 
+readiness. They may recognize the importance of 
+upskilling, but their efforts remain limited in scope, 
+disconnected from incentives or detached from how 
+work actually gets done. In these environments, AI 
+adoption is too easily framed as an employee resistance 
+problem, when the deeper constraints are often the 
+absence of development infrastructure, leadership 
+alignment and role clarity.
+This distinction will become more important as 
+autonomous AI expands. Employees will need to do 
+more than operate systems. They will need to interrogate 
+outputs, challenge decisions, identify anomalies and 
+exercise judgment where human context still matters. 
+1
+2
+
+--- PAGE 29 ---
+
+The Blueprint for AI Leadership | 2026 29
+These capabilities will not emerge organically. They 
+must be deliberately built into roles, workflows and 
+learning systems.
+This is where workforce strategy becomes inseparable 
+from AI strategy. Organizations should define what each 
+role looks like when augmented by AI, align upskilling 
+with performance and work design and confront the 
+cultural debt that prevents experimentation, learning 
+and adaptation from becoming part of everyday work. 
+Without this, AI may be implemented, but it will not 
+become a sustained enterprise capability.
+Is your data foundation enabling  
+AI or exposing its limits?
+Data remains the most widely recognized 
+dependency in AI, but also one of the most 
+persistently underestimated.
+Many organizations enter AI initiatives assuming their 
+data environments are sufficient. It is only when they 
+attempt to scale that gaps in quality, accessibility and 
+governance become visible. In this sense, AI does not 
+solve data problems–it exposes them. The gap between 
+what leaders believe about their data estate and what 
+AI teams discover when they try to use it can quickly 
+become an all-too-real constraint.
+Those successfully scaling AI take a different approach. 
+They treat data as an enterprise asset rather than a 
+byproduct of systems and processes. They invest in 
+governance, standardization and accessibility over time, 
+creating environments where data can be reliably reused 
+across functions.
+The distinction is not simply technical–it’s personal. In 
+environments where data is fragmented or closely held 
+within functions, AI remains localized. Where it is shared, 
+trusted and actively managed, AI is far more likely to scale. 
+The priority for organizations should not be pursuing more 
+data but making existing data more usable. They should 
+focus on strengthening governance, standardization and 
+accessibility, treating data as a shared enterprise asset 
+rather than a collection of siloed resources.
+Is your architecture empowering  
+AI-driven transformation or 
+holding it back?
+Even as data improves, architecture often 
+lies in wait as the next constraint. AI places 
+fundamentally different demands on enterprise 
+systems. It requires interoperability across applications, 
+fluid data movement across domains and the ability 
+to embed intelligence into workflows that were never 
+designed to support it. Legacy environments, often 
+optimized for stability and efficiency, struggle to meet 
+these requirements.
+In many cases, these constraints reflect accumulated 
+technical debt: legacy systems, fragmented 
+architectures and integration patterns that were 
+never designed for AI at scale. The result is a growing 
+disconnect between ambition and execution. 
+Organizations can develop AI capabilities at the surface, 
+but struggle to embed them into core operations.
+Most enterprises can buy tools and hire talent but 
+scaling AI is not just about adding new capabilities–
+it’s about removing the constraints that prevent those 
+capabilities from working at scale. Leaders must make 
+hard trade-offs, funding the foundations before the big 
+wins are visible, standardizing patterns even when teams 
+prefer autonomy and enforcing governance without 
+slowing innovation to a crawl.
+Simply put, modernization is unavoidable, but also 
+inherently difficult and costly. It requires new investment 
+and new technologies, of course, but also coordinated 
+changes to existing systems, processes and ways of 
+working that have evolved over time. Yet without the 
+discipline to turn scattered AI activity into something 
+cumulative, organizations can end up with pockets of AI 
+excellence but an enterprise unable to scale it.
+Organizations that are making progress take a more 
+deliberate approach. They prioritize the areas where 
+architectural change will unlock the greatest value, adopt 
+more composable models and align modernization 
+efforts with business priorities. Without this, AI’s potential 
+remains peripheral, capable of generating insight but 
+unable to drive meaningful change.
+3 4
+
+--- PAGE 30 ---
+
+The Blueprint for AI Leadership | 2026 30
+Leaders should resist the temptation to layer AI onto 
+existing systems without addressing underlying 
+constraints. Instead, they should prioritize targeted 
+modernization and focus investment on the parts of the 
+architecture that will unlock the greatest business value. 
+Doing so sequences change in a way that supports both 
+innovation and long-term scalability.
+Turning ambition into advantage
+Together, these questions point to a broader shift. The 
+primary challenge in scaling AI is not related to your 
+technology but to your operating model.
+Though in reality, the barriers to scaling AI are rarely 
+isolated. They reflect a combination of technical 
+debt and cultural debt–legacy systems on one hand 
+and legacy ways of working on the other–alongside 
+fragmented data environments and misaligned 
+operating models. Addressing one without the others 
+rarely delivers sustained progress.
+The organizations pulling ahead are not those with 
+the most advanced models, but those that have 
+aligned the conditions required to make those models 
+effective. They connect AI to measurable outcomes. 
+They build trust across the workforce. They strengthen 
+data foundations rather than working around existing 
+limitations. And they modernize architecture in ways that 
+enable, rather than constrain, progress.
+For business leaders, two priorities must stand 
+out. First, confront the cultural debt that limits AI 
+adoption by redesigning roles, incentives and learning 
+systems around AI-augmented work. Second, ensure 
+leadership commitment is visible and sustained, not 
+just stated, while putting humans at the center of this 
+AI-driven transformation.
+These actions do not guarantee success. But they 
+create the credibility and momentum on which broader 
+transformation depends.
+Ultimately, the question is no longer whether AI will 
+reshape the enterprise. It is whether business leaders are 
+prepared to reshape their organizations around it.
+
+--- PAGE 31 ---
+
+The Blueprint for AI Leadership | 2026 31

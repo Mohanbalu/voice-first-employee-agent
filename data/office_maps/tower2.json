@@ -1,0 +1,13 @@
+{
+  "building_id": "tower2",
+  "name": "Operations Tower 2",
+  "floors": [
+    {
+      "floor_number": 1,
+      "name": "Reception & Logistics",
+      "rooms": [],
+      "beacons": [],
+      "qr_checkpoints": []
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+============================================================
+Knowledge Chunk Quality Report
+============================================================
+Documents analyzed:     12
+Total chunks:           886
+Valid chunks:           886
+Overall Quality Status: NEEDS_REVIEW
+============================================================
+
+CHUNK SIZE DISTRIBUTION:
+  Empty chunks (<1 char):      0
+  Very short (<50 chars):      0
+  Short (50-200 chars):        11
+  Normal (200-1500 chars):     719
+  Large (1500-2500 chars):     156
+  Very large (>2500 chars):    0
+
+INTEGRITY & DUPLICATION METRICS:
+  Exact duplicate chunks:      0
+  Exact duplicate groups:      0
+  Near-duplicate pairs:        24
+  Missing metadata fields:     0
+  Invalid page ranges:         0
+  Index sequence errors:       0
+  Missing source files:        0
+  Suspicious section tags:     19
+  Suspected text artifacts:    45
+
+============================================================
+DOCUMENT-LEVEL BREAKDOWN
+============================================================
+
+Document: anti_bribery_and_anti_corruption_policy_global_28_04_2026
+  Name:               Anti Bribery And Anti Corruption Policy Global 28 04 2026
+  Source File:        Anti Bribery-and-Anti-Corruption-Policy-Global_28-04-2026.pdf (Exists: True)
+  Page Range:         1 to 12 (12 pages represented)
+  Chunks:             58
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 5 / 0
+  Suspicious Sections:7
+  Quality Status:     REVIEW
+
+Document: business_policy_global
+  Name:               Business Policy Global
+  Source File:        business_policy_global.pdf (Exists: True)
+  Page Range:         1 to 18 (18 pages represented)
+  Chunks:             83
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 35 / 0
+  Suspicious Sections:3
+  Quality Status:     REVIEW
+
+Document: disciplinary_policy_global_09_09_2025
+  Name:               Disciplinary Policy Global 09 09 2025
+  Source File:        Disciplinary-Policy-Global-09-09-2025.pdf (Exists: True)
+  Page Range:         1 to 41 (41 pages represented)
+  Chunks:             129
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 22 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: environmental_policy_2026_version_17
+  Name:               Environmental Policy 2026 Version 17
+  Source File:        Environmental-Policy-2026-Version-17.pdf (Exists: True)
+  Page Range:         1 to 3 (3 pages represented)
+  Chunks:             17
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 0 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: hcl_leave_and_holiday_policy
+  Name:               Hcl Leave And Holiday Policy
+  Source File:        HCL LEAVE AND HOLIDAY POLICY.pdf (Exists: True)
+  Page Range:         1 to 12 (12 pages represented)
+  Chunks:             50
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 5 / 0
+  Suspicious Sections:2
+  Quality Status:     REVIEW
+
+Document: hcl_wfh_policy
+  Name:               Hcl Wfh Policy
+  Source File:        hcl wfh policy.pdf (Exists: True)
+  Page Range:         1 to 19 (19 pages represented)
+  Chunks:             26
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 13 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: hclc_it_policies_v2
+  Name:               Hclc It Policies V2
+  Source File:        HCLC-IT-Policies-v2.pdf (Exists: True)
+  Page Range:         1 to 134 (134 pages represented)
+  Chunks:             330
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 9 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: health_insurance_policy_2026
+  Name:               Health Insurance Policy 2026
+  Source File:        health insurance Policy-2026.pdf (Exists: True)
+  Page Range:         1 to 4 (4 pages represented)
+  Chunks:             16
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 1 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: human_rights_policy_10_06_2026
+  Name:               Human Rights Policy 10 06 2026
+  Source File:        Human-Rights-Policy-10-06-2026.pdf (Exists: True)
+  Page Range:         1 to 13 (13 pages represented)
+  Chunks:             32
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 4 / 0
+  Suspicious Sections:5
+  Quality Status:     REVIEW
+
+Document: the_blueprint_for_ai_leadership
+  Name:               The Blueprint For Ai Leadership
+  Source File:        the-blueprint-for-ai-leadership.pdf (Exists: True)
+  Page Range:         1 to 31 (31 pages represented)
+  Chunks:             98
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 59 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+Document: travel_policy
+  Name:               Travel Policy
+  Source File:        Travel-Policy.pdf (Exists: True)
+  Page Range:         1 to 4 (4 pages represented)
+  Chunks:             32
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 3 / 0
+  Suspicious Sections:2
+  Quality Status:     REVIEW
+
+Document: water_policy_2026_0
+  Name:               Water Policy 2026 0
+  Source File:        Water-Policy-2026_0.pdf (Exists: True)
+  Page Range:         1 to 3 (3 pages represented)
+  Chunks:             15
+  Empty:              0
+  Very Short:         0
+  Large / Very Large: 0 / 0
+  Suspicious Sections:0
+  Quality Status:     READY
+
+============================================================
+DIAGNOSTIC FINDINGS BREAKDOWN
+============================================================
+
+1. CRITICAL ISSUES (0):
+  None. All required metadata, page bounds, and sequence indexes are intact.
+
+2. WARNINGS (64):
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0052 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0053 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0054 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0055 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0056 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0057 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in anti_bribery_and_anti_corruption_policy_global_28_04_2026_0058 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in business_policy_global_0002 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in business_policy_global_0003 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in business_policy_global_0004 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in hcl_leave_and_holiday_policy_0002 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in hcl_leave_and_holiday_policy_0003 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Artifact detected in hcl_leave_and_holiday_policy_0046: High single-character line ratio (17/29)
+  [WARNING] Artifact detected in hcl_leave_and_holiday_policy_0047: High single-character line ratio (17/34)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0003: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0004: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0005: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0039: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0040: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0051: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0052: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0056: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0057: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0103: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0104: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0115: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0116: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0117: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0142: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0143: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0159: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0160: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0161: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0177: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0178: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0192: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0193: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0205: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0206: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0207: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0224: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0236: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0237: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0238: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0239: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0257: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0258: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0269: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0270: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0271: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0280: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0281: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0282: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0294: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0295: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0296: Contains long dot sequences (possible table of contents)
+  [WARNING] Artifact detected in hclc_it_policies_v2_0297: Contains long dot sequences (possible table of contents)
+  [WARNING] Suspicious section in human_rights_policy_10_06_2026_0028 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in human_rights_policy_10_06_2026_0029 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in human_rights_policy_10_06_2026_0030 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in human_rights_policy_10_06_2026_0031 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in human_rights_policy_10_06_2026_0032 ('Revision History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in travel_policy_0001 ('Policy Process FAQ(s) Form(s) History'): Matches navigation/menu pattern: '\bHistory\b'
+  [WARNING] Suspicious section in travel_policy_0002 ('Policy Process FAQ(s) Form(s) History'): Matches navigation/menu pattern: '\bHistory\b'
+
+3. INFORMATIONAL FINDINGS (1):
+  [INFO] Detected 24 near-duplicate chunk pairs (Jaccard similarity >= 0.88)
+
+------------------------------------------------------------
+SUSPICIOUS SECTION TAG DETAILS:
+------------------------------------------------------------
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0052
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0053
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0054
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0055
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0056
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0057
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: anti_bribery_and_anti_corruption_policy_global_28_04_2026 | Chunk: anti_bribery_and_anti_corruption_policy_global_28_04_2026_0058
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: business_policy_global | Chunk: business_policy_global_0002
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: business_policy_global | Chunk: business_policy_global_0003
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: business_policy_global | Chunk: business_policy_global_0004
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: hcl_leave_and_holiday_policy | Chunk: hcl_leave_and_holiday_policy_0002
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: hcl_leave_and_holiday_policy | Chunk: hcl_leave_and_holiday_policy_0003
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: human_rights_policy_10_06_2026 | Chunk: human_rights_policy_10_06_2026_0028
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: human_rights_policy_10_06_2026 | Chunk: human_rights_policy_10_06_2026_0029
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: human_rights_policy_10_06_2026 | Chunk: human_rights_policy_10_06_2026_0030
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: human_rights_policy_10_06_2026 | Chunk: human_rights_policy_10_06_2026_0031
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: human_rights_policy_10_06_2026 | Chunk: human_rights_policy_10_06_2026_0032
+    Section: 'Revision History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: travel_policy | Chunk: travel_policy_0001
+    Section: 'Policy Process FAQ(s) Form(s) History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+  Doc: travel_policy | Chunk: travel_policy_0002
+    Section: 'Policy Process FAQ(s) Form(s) History'
+    Reason:  Matches navigation/menu pattern: '\bHistory\b'
+
+============================================================
+FINAL CONCLUSION: NEEDS_REVIEW
+============================================================

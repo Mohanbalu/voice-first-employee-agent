@@ -1,0 +1,155 @@
+--- PAGE 1 ---
+
+Environmental
+policy
+
+1. Purpose
+HCLTech is committed to fostering a safe and sustainable environment through structured and accountable practices. This polic y outlines our environmental
+commitments and their impact on society and the planet. We extend our environmental responsibilities to our value chain partners, encouraging alignment with our
+sustainability principles to collectively reduce environmental impact.
+2. Scope
+This policy applies to all operations, facilities, employees, contractors, vendors, partners and stakeholders associated with HCLTech and its subsidiaries. It covers
+all activities under organizational control that may affect the environment, including pro ducts, services, and processes. The policy integrates environmental
+considerations into strategic planning and establishes organizational alignment with legal and other applicable requirements . It outlines our commitment to
+pollution prevention, sustainable resource use and continual improvement
+3. Policy Statement
+Top Management Commitment
+HCLTech recognizes its responsibility to future generations and its role in addressing global environmental challenges. We co mmit to proactively managing
+environmental impacts, risks and opportunities across our operations and value chain.
+
+Environmental Management Excellence
+HCLTech establishes a robust environmental management framework to guide environmental performance across its operations, ser vices, and products. Th is
+policy
+• Provides a framework for setting and reviewing environmental objectives and targets.
+• Ensures compliance with all applicable environmental laws and regulations.
+• Seeks to minimize the organization’s ecological footprint through responsible stewardship of natural resources, encompassing energy , water, waste and
+other environmental aspects, with a strong focus on efficiency and sustainable practices.
+• Advances sustainable procurement by prioritizing environmentally responsible sourcing and supplier engagement.
+• Supports sustainable sourcing by working closely with suppliers, encouraging responsible supply chain practices, providing sustainability related learning
+and data sharing support, and using suitable platforms to track environmental performance.
+• Promotes environmental awareness and capability building by supporting sustainability related learning and training initiatives for employees and relevant
+value chain partners through appropriate internal learning platforms.
+• Prevents pollution and reduces waste by applying the principles of refuse, reduce, reuse, repurpose, and recycle.
+• Fosters environmental stewardship through local community engagement.
+• Promotes biodiversity within and beyond our operational boundary.
+
+HCLTech implements its environmental commitments through appropriate resources, systems, and controls by:
+• Leveraging advanced technologies such as Artificial Intelligence, Internet of Things, and data analytics to enhance environmental performance.
+• Embedding environmental requirements across procurement, operations, and supplier engagement.
+
+Environmental performance is monitored and evaluated against defined objectives, targets, and compliance obligations. Based o n performance reviews and
+evaluation outcomes, HCLTech commits to continual improvement of environmental performance through correc tive and preventive actions, strengthening the
+effectiveness of its environmental management system.
+
+Water stewardship and energy management are governed through their respective standalone Water Policy and Energy Policy, which outline specific commitments,
+targets and performance mechanisms aligned with HCLTech’s overall environmental sustainability objectives.
+
+--- PAGE 2 ---
+
+Objectives and Targets
+
+We establish measurable environmental objectives and targets, including:
+• Achieve net-zero by the year 2040.
+• 50% reduction in absolute Scope 1 and Scope 2 emissions by FY30 from the baseline year of FY20.
+• 80% of electricity usage to be from renewable energy sources by the year 2030
+• 42% reduction in absolute Scope 3 emissions by FY30 from the baseline year of FY20.
+• Maintain zero-waste-to-landfill at all owned facilities.
+
+Communication
+This policy is communicated organization -wide and made publicly available through official channels. HCLTech conducts training and awareness programs for
+relevant personnel and reviews the policy at least annually to ensure its continued relevance, effectiveness, and alignment w ith evolving regulatory requirements
+and stakeholder expectations.
+
+Governance
+The Board of Directors provides oversight of environmental commitments and related risks, supported by the ESG and Diversity, Equity and Inclusion (ESG & DEI)
+Committee, which ensures the allocation of appropriate resources and strategic direction.
+
+Grievance Mechanism
+HCLTech maintains a transparent grievance mechanism enabling stakeholders to raise concerns related to environmental manageme nt. Complaints are handled
+confidentially with timely acknowledgment, investigation, and resolution, ensuring non-retaliation.
+• Internal grievances may be raised through Incident Management – Occupational Health, Safety and Environment (IMSHS)
+• External stakeholders may raise concerns via whistleblower@hcltech.com or the Ethics Helpline (MyHCLTech → Top Ribbon → Ethics Helpline).
+4. Roles and Responsibilities
+Role Key Responsibilities
+Risk & Compliance Apex Committee
+(RCAC)
+
+Shall be responsible for providing necessary guidance to the Risk and Compliance function at HCLTech and
+ensuring oversight of risk and compliance operations across the organisation.
+Compliance, Legal and Operational Risk
+Council
+Shall be responsible for reporting and recommending actions on enterprise-wide risk matters to RCAC
+ESG & DEI Committee of the Board Shall be responsible for approving annual objectives and KPI set; overseeing disclosures, allocation of
+resources.
+Policy Review Board (PRB) Shall be the apex authority that reviews and approves HCLTech Policies as per the defined frequency.
+Corporate Sustainability Provides support as subject matter expert
+GWS Function Shall be responsible for maintaining EMS controls in its area of operations; ensuring compliance with
+applicable environmental laws; monitoring KPIs; leading EMS audits and improvement projects, implementing
+operational controls, maintaining environmental permits, managing waste and contractors working under it;
+reporting of environmental performance to ESG committee. Shall prepare and update the Policy as and when
+required.
+Procurement Integrate environmental requirements and life-cycle criteria into sourcing and contracts; support supplier
+awareness, ESG-related training, and capacity-building efforts to strengthen responsible supply-chain
+practices
+Employees Follow environmental policy & procedures strictly, report hazards/spills, and actively support environmental
+initiatives.
+Contractors Shall be responsible for adhering to HCLTech established policies and procedures; deploying competent
+workers at site; reporting deficiencies in equipment and processes to the concerned area owner; maintaining
+integrity.
+Internal Audit / Compliance Shall be responsible for Identifying non-compliance risks before regulatory inspections; Validating accuracy of
+compliance registers; Testing effectiveness of compliance monitoring mechanisms
+Any business function
+
+Shall ensure compliance with environmental policy guidelines through active participation in environment
+management and pollution prevention programme.
+5. Policy Development and Review
+Policies must:
+• Follow a standardized structure and template.
+• Be reviewed at least annually or upon regulatory/operational changes.
+• Include version control, approval records, and ownership details.
+
+6. Regulatory Linkages
+This policy framework supports compliance with:
+• ISO14001:2015 - Environmental management system.
+• GRI Standards - Global Reporting Initiative (GRI) Sustainability Reporting Standards
+• Business Responsibility and Sustainability Report (BRSR) - SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.
+•TCFD - Task Force on Climate-related Financial Disclosures (for climate risk governance and transparency)
+• SBTi - Science Based Targets initiative (for science-aligned emissions reduction targets)
+• CDP - Climate Disclosure Project (for climate and environmental performance disclosure)
+
+--- PAGE 3 ---
+
+The following internal policies support the implementation of this Environmental Policy, where applicable:
+• Water Policy
+• Energy Policy
+• Green Procurement Policy
+7. Non-Compliance
+Non-retaliation is ensured, and feedback supports continuous improvement. Compliance with this policy is mandatory. Non -adherence will result in appropriate
+action as determined by the organization’s governance and disciplinary/ authorized committee.
+8. Approval and Revision History
+Version From To Description Author Approved By
+Version From To Change description Proposed By Author Approved By
+NA
+
+9. Glossary
+Term Definition
+NA
+
+10. Owner of Policy
+Policy Owner & Custodian: GWS Department
+
+11. Approving Authority
+Approved By (Name, Designation & Signature) –
+C Vijayakumar
+Chief Executive Officer and Managing Director | HCLTech
+
+Effective Date:
+
+24th June, 2026
+C VIJAYAKUMAR
+CEO & Managing Director
+HCLTech
+
+QHSEE/EMSP/01 VERSION 15.0
+DOCUMENT NO: HCLT/QHSEE/EMSP/01
+VERSION 17.0
