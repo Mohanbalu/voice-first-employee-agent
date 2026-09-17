@@ -68,6 +68,7 @@ ALLOWED_ORIGINS = [
     "http://127.0.0.1:5175",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
+    "https://frontend-lac-alpha-31.vercel.app",
 ]
 
 env_cors = os.getenv("CORS_ORIGINS", "")
@@ -79,8 +80,8 @@ if env_cors:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS if "*" not in ALLOWED_ORIGINS else ["*"],
-    allow_origin_regex=r"^https?://.*$" if "*" in ALLOWED_ORIGINS else r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
+    allow_origins=ALLOWED_ORIGINS,
+    allow_origin_regex=r"^https?://.*$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
