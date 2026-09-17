@@ -154,6 +154,9 @@ class BaseEmbeddingProvider(Protocol):
         ...
 
 
+_GLOBAL_SENTENCE_TRANSFORMER_CACHE: Dict[str, Any] = {}
+
+
 class LocalSentenceTransformerEmbeddingProvider:
     """Production local embedding provider using Sentence-Transformers (BAAI/bge-small-en-v1.5).
 
@@ -205,6 +208,18 @@ class LocalSentenceTransformerEmbeddingProvider:
         return self._model_name
 
     def _load_model(self):
+        global _GLOBAL_SENTENCE_TRANSFORMER_CACHE
+        if self._model_name in _GLOBAL_SENTENCE_TRANSFORMER_CACHE:
+            self._model = _GLOBAL_SENTENCE_TRANSFORMER_CACHE[self._model_name]
+            dim_fn = getattr(self._model, "get_embedding_dimension", None)
+            if callable(dim_fn):
+                self._dimension = self._model.get_embedding_dimension()
+            elif hasattr(self._model, "get_sentence_embedding_dimension"):
+                self._dimension = self._model.get_sentence_embedding_dimension()
+            else:
+                self._dimension = 384
+            return self._model
+
         if self._model is None:
             try:
                 from sentence_transformers import SentenceTransformer
@@ -221,6 +236,7 @@ class LocalSentenceTransformerEmbeddingProvider:
                     self._dimension = self._model.get_sentence_embedding_dimension()
                 else:
                     self._dimension = 384
+                _GLOBAL_SENTENCE_TRANSFORMER_CACHE[self._model_name] = self._model
                 logger.info(
                     "Local embedding model '%s' loaded (dimension=%d)",
                     self._model_name,

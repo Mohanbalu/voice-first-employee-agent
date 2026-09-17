@@ -158,6 +158,37 @@ def _extract_query_entities(query: str) -> dict[str, Any]:
     }
 
 
+_QUERY_STOPWORDS: set[str] = {
+    "what", "is", "are", "the", "a", "an", "for", "in", "on", "at", "to", "from",
+    "of", "and", "or", "how", "can", "i", "my", "do", "does", "about", "tell",
+    "me", "which", "where", "who", "when", "why", "with", "as", "by", "this", "that",
+    "please", "give", "show", "much", "many", "would", "should", "could", "be", "am",
+}
+
+
+def _extract_query_keywords(query: str) -> list[str]:
+    """Extracts search terms and domain phrases from any query for lexical database search."""
+    import re
+    q_lower = query.lower()
+    raw_tokens = re.findall(r"[a-zA-Z0-9_\-]+", q_lower)
+    terms = [t for t in raw_tokens if len(t) > 2 and t not in _QUERY_STOPWORDS]
+
+    # Prioritise key domain phrases
+    phrases = [
+        "annual leave", "sick leave", "casual leave", "maternity leave", "paternity leave",
+        "leave policy", "work from home", "remote work", "health insurance", "medical insurance",
+        "code of conduct", "anti-bribery", "anti bribery", "harassment policy",
+        "travel policy", "expense reimbursement", "laptop support", "it support",
+        "tech support", "office location",
+    ]
+    matched = [p for p in phrases if p in q_lower]
+    result: list[str] = []
+    for item in matched + terms:
+        if item not in result:
+            result.append(item)
+    return result
+
+
 def _build_embedding_service(allow_mock: bool) -> EmbeddingService:
     """Creates an embedding service based on configured EMBEDDING_PROVIDER."""
     cfg_emb = getattr(config, "embedding", None)
@@ -240,17 +271,21 @@ class RAGRetriever:
         self,
         session: Session,
         tenant_id: uuid.UUID,
-        entities: dict[str, Any],
-        limit: int = 10,
+        terms: list[str],
+        limit: int = 12,
     ) -> List[SearchResult]:
-        """Fetches candidate chunks matching extracted entity keywords."""
-        terms = entities.get("terms", [])
+        """Fetches candidate chunks matching extracted entity keywords and query terms."""
         if not terms:
             return []
 
         try:
             from sqlalchemy import or_
-            filters = [Chunk.text.ilike(f"%{term}%") for term in terms[:5]]
+            search_terms = terms[:8]
+            filters = []
+            for term in search_terms:
+                filters.append(Chunk.text.ilike(f"%{term}%"))
+                filters.append(Document.document_name.ilike(f"%{term}%"))
+
             stmt = (
                 select(
                     Chunk.chunk_id,
@@ -271,6 +306,10 @@ class RAGRetriever:
             rows = session.execute(stmt).fetchall()
             results: List[SearchResult] = []
             for row in rows:
+                text_lower = (row.text or "").lower()
+                doc_lower = (row.document_name or "").lower()
+                hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
+                sim = min(0.65 + 0.08 * hits, 0.90)
                 results.append(
                     SearchResult(
                         chunk_id=row.chunk_id,
@@ -281,8 +320,8 @@ class RAGRetriever:
                         page_start=row.page_start,
                         page_end=row.page_end,
                         section=row.section,
-                        similarity_score=0.62,
-                        distance=0.38,
+                        similarity_score=sim,
+                        distance=round(1.0 - sim, 4),
                         metadata=row.metadata_json or {},
                     )
                 )
@@ -290,6 +329,18 @@ class RAGRetriever:
         except Exception as exc:
             logger.warning("Lexical candidate retrieval error: %s", exc)
             return []
+
+    def _embed_with_timeout(self, query: str, timeout_seconds: float = 3.5) -> Optional[List[float]]:
+        """Attempts to embed query with a strict timeout to avoid thread blocking on model loading."""
+        import concurrent.futures
+        try:
+            svc = self._get_embedding_service()
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+                fut = pool.submit(svc.embed_query, query)
+                return fut.result(timeout=timeout_seconds)
+        except Exception as exc:
+            logger.warning("Query embedding skipped or timed out (%s); relying on lexical candidates.", exc)
+            return None
 
     def retrieve(
         self,
@@ -299,9 +350,9 @@ class RAGRetriever:
     ) -> List[SearchResult]:
         """
         Full hybrid retrieval pipeline:
-        - Embed question using query embedding.
+        - Instant lexical candidate retrieval for query terms and entities.
+        - Timeout-safe query embedding generation (3.5s max).
         - pgvector similarity search (top_k candidates).
-        - Lexical candidate retrieval for entity signals.
         - Filter mock embeddings in production mode.
         - Hybrid fusion and reranking with entity boosting.
         - Adaptive similarity thresholding.
@@ -312,34 +363,36 @@ class RAGRetriever:
 
         q_clean = question.strip()
         entities = _extract_query_entities(q_clean)
+        query_keywords = _extract_query_keywords(q_clean)
 
-        svc = self._get_embedding_service()
-        query_vec = svc.embed_query(q_clean)
+        # 1. Fetch lexical candidates immediately from RDS (fast, ~15ms)
+        combined_terms = list(entities.get("terms", []))
+        for kw in query_keywords:
+            if kw not in combined_terms:
+                combined_terms.append(kw)
 
-        if len(query_vec) != config.db.vector_dimension:
-            raise ValueError(
-                f"Query embedding dimension {len(query_vec)} does not match "
-                f"configured VECTOR_DIMENSION {config.db.vector_dimension}."
-            )
-
-        store = VectorStore(target_dimension=config.db.vector_dimension)
-
-        # 1. Retrieve vector candidates
-        vector_candidates = store.search_similar_chunks(
-            session=session,
-            tenant_id=tenant_id,
-            query_embedding=query_vec,
-            top_k=self.cfg.top_k,
-            min_similarity=0.0,
-        )
-
-        # 2. Retrieve lexical candidates if entity signals present
         lexical_candidates = self._search_lexical_candidates(
             session=session,
             tenant_id=tenant_id,
-            entities=entities,
-            limit=8,
+            terms=combined_terms,
+            limit=12,
         )
+
+        # 2. Try vector retrieval with safe 3.5s timeout
+        vector_candidates: List[SearchResult] = []
+        try:
+            query_vec = self._embed_with_timeout(q_clean, timeout_seconds=3.5)
+            if query_vec is not None and len(query_vec) == config.db.vector_dimension:
+                store = VectorStore(target_dimension=config.db.vector_dimension)
+                vector_candidates = store.search_similar_chunks(
+                    session=session,
+                    tenant_id=tenant_id,
+                    query_embedding=query_vec,
+                    top_k=self.cfg.top_k,
+                    min_similarity=0.0,
+                )
+        except Exception as exc:
+            logger.warning("Vector candidate retrieval error (%s); proceeding with lexical.", exc)
 
         # Merge candidate pools by chunk_id
         candidate_dict: dict[str, SearchResult] = {}
@@ -349,6 +402,10 @@ class RAGRetriever:
         for lc in lexical_candidates:
             if lc.chunk_id not in candidate_dict:
                 candidate_dict[lc.chunk_id] = lc
+            else:
+                candidate_dict[lc.chunk_id].similarity_score = min(
+                    candidate_dict[lc.chunk_id].similarity_score + 0.05, 1.0
+                )
 
         candidates = list(candidate_dict.values())
 
@@ -451,7 +508,7 @@ class RAGRetriever:
                         has_direct_hit = True
 
             # General keyword occurrence bonus
-            for term in entities.get("terms", []):
+            for term in combined_terms:
                 if term in text_lower:
                     boost += 0.05
                     has_direct_hit = True
