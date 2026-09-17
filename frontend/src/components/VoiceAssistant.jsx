@@ -113,6 +113,7 @@ export default function VoiceAssistant() {
   const [ticketError, setTicketError] = useState(null);
   // Map of messageId -> ticket number after successful submission
   const [raisedTickets, setRaisedTickets] = useState({});
+  const lastPromptRef = useRef(null); // tracks last prompt for retry
 
   // Native refs
   const mediaRecorderRef = useRef(null);
@@ -477,6 +478,8 @@ export default function VoiceAssistant() {
 
   /** Handle quick prompt selection */
   const handleQuickPrompt = (promptText) => {
+    lastPromptRef.current = promptText;
+    setErrorMessage(null);
     setMessages((prev) => [
       ...prev,
       { id: `user-${Date.now()}`, role: 'user', text: promptText, timestamp: new Date() },
@@ -505,8 +508,20 @@ export default function VoiceAssistant() {
         setVoiceState('completed');
       })
       .catch((err) => {
-        setErrorMessage(err.message || 'Request failed.');
-        setVoiceState('error');
+        const errText = err.message || 'Request failed. Please try again.';
+        // Show inline error bubble so the user is never left with a blank spinning state
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: `err-${Date.now()}`,
+            role: 'assistant',
+            text: `⚠️ ${errText}`,
+            isError: true,
+            timestamp: new Date(),
+          },
+        ]);
+        setErrorMessage(errText);
+        setVoiceState('idle'); // reset to idle so the user can retry immediately
       });
   };
 

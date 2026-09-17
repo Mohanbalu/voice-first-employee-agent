@@ -9,6 +9,7 @@ Module 8 (Authentication) will replace this with JWT-derived tenant identity.
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import uuid
 from typing import Any, Dict, List, Optional
@@ -93,10 +94,20 @@ async def agent(
     )
 
     try:
-        final_state: AgentState = orchestrator.run(
-            request=request.request,
-            tenant_id=tenant_id,
-            conversation_id=conversation_id,
+        loop = asyncio.get_event_loop()
+        final_state: AgentState = await asyncio.wait_for(
+            loop.run_in_executor(None, lambda: orchestrator.run(
+                request=request.request,
+                tenant_id=tenant_id,
+                conversation_id=conversation_id,
+            )),
+            timeout=25.0,  # Hard 25s cap — Render free tier limit
+        )
+    except asyncio.TimeoutError:
+        logger.error("Orchestrator timed out after 25s for tenant=%s", tenant_id)
+        raise HTTPException(
+            status_code=status.HTTP_504_GATEWAY_TIMEOUT,
+            detail="The assistant took too long to respond. Please try again in a moment.",
         )
     except Exception as exc:
         logger.error("Orchestrator failed: %s", exc)

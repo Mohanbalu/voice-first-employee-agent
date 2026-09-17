@@ -158,25 +158,38 @@ export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID
     console.debug(`[API Service] Calling: ${endpoint}`);
   }
 
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      request: requestText,
-      tenant_id: tenantId,
-    }),
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
 
-  const data = await response.json();
-  if (!response.ok) {
-    const errorMsg = response.status === 404
-      ? `API endpoint not found (404) at ${endpoint}. Please check backend routes.`
-      : (data?.detail || data?.error || `Agent request failed with status ${response.status}`);
-    throw new Error(errorMsg);
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        request: requestText,
+        tenant_id: tenantId,
+      }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+    const data = await response.json();
+    if (!response.ok) {
+      const errorMsg = response.status === 404
+        ? `API endpoint not found (404) at ${endpoint}. Please check backend routes.`
+        : (data?.detail || data?.error || `Agent request failed with status ${response.status}`);
+      throw new Error(errorMsg);
+    }
+    return data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('The assistant took too long to respond (30s). Please try again.');
+    }
+    throw error;
   }
-  return data;
 }
 
 // ── Authentication & Token Helpers ──────────────────────────────────────────
