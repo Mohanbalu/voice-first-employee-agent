@@ -22,11 +22,20 @@ for _p in [str(_backend_dir), str(_project_root)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from sqlalchemy.orm import Session
+from sqlalchemy import select
+import uuid
 
 try:
+    from backend.app.config import config
+    from backend.app.database import get_db
+    from backend.app.models.tenant import Tenant
+    from backend.app.rag.retriever import RAGRetriever, RetrievalConfig
+    from backend.app.rag.context_builder import ContextBuilder
+    from backend.app.rag.answer_generator import AnswerGenerator
     from backend.app.routes.chat import router as chat_router
     from backend.app.routes.agent import router as agent_router
     from backend.app.routes.voice import router as voice_router
@@ -35,6 +44,12 @@ try:
     from backend.app.routes.tickets import router as tickets_router
     from backend.app.routes.location import router as location_router
 except ImportError:
+    from app.config import config
+    from app.database import get_db
+    from app.models.tenant import Tenant
+    from app.rag.retriever import RAGRetriever, RetrievalConfig
+    from app.rag.context_builder import ContextBuilder
+    from app.rag.answer_generator import AnswerGenerator
     from app.routes.chat import router as chat_router
     from app.routes.agent import router as agent_router
     from app.routes.voice import router as voice_router
@@ -108,6 +123,49 @@ async def global_exception_handler(request: Request, exc: Exception) -> JSONResp
         status_code=500,
         content={"detail": "Internal server error. Please check server logs."},
     )
+
+
+@app.get("/api/debug/rag", tags=["debug"])
+def debug_rag(
+    q: str = "What is the annual leave policy for employees?",
+    db: Session = Depends(get_db),
+) -> dict:
+    """Diagnostic endpoint to profile RAG retrieval and LLM answer generation."""
+    import time
+    timings = {}
+
+    t0 = time.monotonic()
+    tenant = db.execute(
+        select(Tenant).where(Tenant.id == uuid.UUID(config.tenant.default_id))
+    ).scalar_one_or_none()
+    timings["1_tenant_lookup_ms"] = round((time.monotonic() - t0) * 1000, 2)
+
+    t1 = time.monotonic()
+    retriever = RAGRetriever(config=RetrievalConfig())
+    results = retriever.retrieve(session=db, tenant_id=tenant.id, question=q) if tenant else []
+    timings["2_retrieve_ms"] = round((time.monotonic() - t1) * 1000, 2)
+    timings["retrieved_chunks"] = len(results)
+
+    t2 = time.monotonic()
+    builder = ContextBuilder()
+    built = builder.build(results)
+    timings["3_context_ms"] = round((time.monotonic() - t2) * 1000, 2)
+
+    t3 = time.monotonic()
+    gen = AnswerGenerator()
+    ans = gen.generate(question=q, context_text=built.context_text)
+    timings["4_answer_gen_ms"] = round((time.monotonic() - t3) * 1000, 2)
+    timings["total_ms"] = round((time.monotonic() - t0) * 1000, 2)
+
+    return {
+        "status": "ok",
+        "timings": timings,
+        "env_groq_model": os.getenv("GROQ_MODEL"),
+        "config_groq_model": config.ai.groq_model,
+        "embedding_provider": config.embedding.provider,
+        "is_render": bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID")),
+        "answer_preview": ans.answer[:300],
+    }
 
 
 @app.get("/health", tags=["health"])

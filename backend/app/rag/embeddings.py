@@ -221,6 +221,11 @@ class LocalSentenceTransformerEmbeddingProvider:
             return self._model
 
         if self._model is None:
+            if bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID")):
+                raise RuntimeError(
+                    "Local SentenceTransformer embedding is disabled on Render free tier to prevent CPU/RAM starvation. "
+                    "Use mock or openai embedding provider."
+                )
             try:
                 from sentence_transformers import SentenceTransformer
 

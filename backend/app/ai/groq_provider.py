@@ -20,7 +20,7 @@ from backend.app.ai.provider import AIProvider, AITextResponse, TokenUsage
 logger = logging.getLogger("ai.groq_provider")
 
 DEFAULT_GROQ_BASE_URL = "https://api.groq.com/openai/v1"
-DEFAULT_GROQ_MODEL = "openai/gpt-oss-120b"
+DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
 
 
 class GroqAIProvider(AIProvider):
@@ -45,11 +45,14 @@ class GroqAIProvider(AIProvider):
             or os.getenv("GROQ_BASE_URL")
             or DEFAULT_GROQ_BASE_URL
         )
-        self._model = (
+        raw_model = (
             model
             or os.getenv("GROQ_MODEL")
             or DEFAULT_GROQ_MODEL
         )
+        if raw_model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
+            raw_model = "llama-3.3-70b-versatile"
+        self._model = raw_model
         self._timeout = timeout
         self._max_retries = max_retries
         self._client: Optional[Any] = None
@@ -170,14 +173,16 @@ class GroqAIProvider(AIProvider):
             {"role": "user", "content": f"Employee message: {text}"},
         ]
 
-        # For reasoning models, allocate enough token budget for thinking + JSON
-        effective_max_tokens = max(max_tokens, 400)
+        # Use fast model for instant classification (sub-300ms)
+        intent_model = os.getenv("GROQ_INTENT_MODEL") or "llama-3.1-8b-instant"
+        if intent_model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
+            intent_model = "llama-3.1-8b-instant"
 
         kwargs: Dict[str, Any] = {
-            "model": self._model,
+            "model": intent_model,
             "messages": messages,
             "temperature": temperature,
-            "max_tokens": effective_max_tokens,
+            "max_tokens": max(max_tokens, 300),
             "response_format": {"type": "json_object"},
         }
 

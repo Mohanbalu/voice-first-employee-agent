@@ -83,7 +83,7 @@ class AISettings:
     provider: str = "groq"  # "groq" | "puter" | "openai"
     groq_api_key: Optional[str] = None
     groq_base_url: str = "https://api.groq.com/openai/v1"
-    groq_model: str = "openai/gpt-oss-120b"
+    groq_model: str = "llama-3.3-70b-versatile"
     puter_auth_token: Optional[str] = None
     puter_base_url: str = "https://api.puter.com/puterai/openai/v1/"
     puter_model: str = "gpt-4o-mini"
@@ -197,11 +197,15 @@ class AppConfig:
         except ValueError:
             llm_retries = 2
 
+        raw_groq_model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+        if raw_groq_model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
+            raw_groq_model = "llama-3.3-70b-versatile"
+
         ai_settings = AISettings(
             provider=(os.getenv("AI_PROVIDER") or "groq").strip().lower(),
             groq_api_key=os.getenv("GROQ_API_KEY"),
             groq_base_url=os.getenv("GROQ_BASE_URL", "https://api.groq.com/openai/v1"),
-            groq_model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
+            groq_model=raw_groq_model,
             puter_auth_token=os.getenv("PUTER_AUTH_TOKEN"),
             puter_base_url=os.getenv("PUTER_BASE_URL", "https://api.puter.com/puterai/openai/v1/"),
             puter_model=os.getenv("PUTER_MODEL", "gpt-4o-mini"),
@@ -221,8 +225,12 @@ class AppConfig:
         except ValueError:
             emb_dimension = vector_dim
 
+        raw_emb_provider = (os.getenv("EMBEDDING_PROVIDER") or "mock").strip().lower()
+        if bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID")) and raw_emb_provider == "local":
+            raw_emb_provider = "mock"
+
         embedding_settings = EmbeddingSettings(
-            provider=(os.getenv("EMBEDDING_PROVIDER") or "mock").strip().lower(),
+            provider=raw_emb_provider,
             model=os.getenv("EMBEDDING_MODEL") or "BAAI/bge-small-en-v1.5",
             dimension=emb_dimension,
             batch_size=emb_batch_size,

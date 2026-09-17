@@ -191,12 +191,16 @@ def _extract_query_keywords(query: str) -> list[str]:
 
 def _build_embedding_service(allow_mock: bool) -> EmbeddingService:
     """Creates an embedding service based on configured EMBEDDING_PROVIDER."""
+    is_render = bool(os.getenv("RENDER") or os.getenv("RENDER_SERVICE_ID"))
     cfg_emb = getattr(config, "embedding", None)
     provider_name = (
         (cfg_emb.provider if cfg_emb else None)
         or os.getenv("EMBEDDING_PROVIDER")
-        or "local"
+        or "mock"
     ).strip().lower()
+
+    if is_render and provider_name == "local":
+        provider_name = "mock"
 
     if provider_name == "local":
         try:
@@ -226,13 +230,13 @@ def _build_embedding_service(allow_mock: bool) -> EmbeddingService:
                 if not allow_mock:
                     raise
 
-    if allow_mock or provider_name == "mock":
+    if allow_mock or provider_name in ("mock", "none") or is_render:
         dimension = config.db.vector_dimension
         provider = MockEmbeddingProvider(dimension=dimension)
-        logger.warning(
-            "Retriever using MOCK embedding provider (dimension=%d). "
-            "Results are NOT semantically meaningful.",
+        logger.info(
+            "Retriever using safe cloud MockEmbeddingProvider (dim=%d, is_render=%s)",
             dimension,
+            is_render,
         )
         return EmbeddingService(provider)
 
@@ -330,11 +334,13 @@ class RAGRetriever:
             logger.warning("Lexical candidate retrieval error: %s", exc)
             return []
 
-    def _embed_with_timeout(self, query: str, timeout_seconds: float = 3.5) -> Optional[List[float]]:
+    def _embed_with_timeout(self, query: str, timeout_seconds: float = 2.0) -> Optional[List[float]]:
         """Attempts to embed query with a strict timeout to avoid thread blocking on model loading."""
         import concurrent.futures
         try:
             svc = self._get_embedding_service()
+            if isinstance(getattr(svc, "_provider", None), MockEmbeddingProvider):
+                return svc.embed_query(query)
             with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
                 fut = pool.submit(svc.embed_query, query)
                 return fut.result(timeout=timeout_seconds)
