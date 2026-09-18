@@ -53,6 +53,12 @@ RULES (mandatory — never violate):
 11. If a question is completely unrelated to the provided excerpts, respond:
     "I could not find this information in the available company knowledge base."
 12. FORMATTING RESTRICTION: Do NOT use asterisks (*) or star symbols in your response. Never use asterisks for bolding (e.g., do not write **bold**), italics (*italic*), or bullet points (* bullet). Output clean, readable plain text. For bullet points or lists, use plain dashes (-) or numbers (1., 2.), never asterisks (*).
+13. TERMINOLOGY INTERPRETATION AND POLICY MAPPING:
+   - When employees ask questions using common or colloquial workplace terms (such as "casual leave", "casual leaves", "vacation days", "personal time off", or "earned leave") that correspond to official provisions in the excerpts:
+     Explain that HCL policy classifies employee leave into Annual Leaves (AL) and My Leave rather than "casual leave", and provide the exact entitlements and rules from the excerpts:
+     - Annual Leaves (AL): 20 days per year for employees who have completed 3 years of service (Category A, maximum 12 carry forward to next year), and 18 days per year for employees with less than 3 years of service (Categories B and C, maximum 12 carry forward).
+     - My Leave: 2 days per year for Category A (completed 3 years) and 1 day per year for Category B / after 6 months for Category C, for personal occasions, birthdays, family celebrations, or bereavement.
+   - Do NOT reject such questions with "I could not find this information" when the excerpts contain the governing leave entitlement policies.
 """
 
 NO_CONTEXT_ANSWER = (

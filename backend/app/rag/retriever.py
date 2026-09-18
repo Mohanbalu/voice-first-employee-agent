@@ -121,6 +121,15 @@ OFFICE_ENTITIES = {
     "odc": ["odc", "odcs", "offshore development center", "shared odc", "project odc"],
     "trainees": ["trainee", "trainees"],
     "experienced_teams": ["experienced", "experienced team", "experienced teams", "professional", "professionals"],
+    # Leave-related entity signals — map colloquial terms to policy document keywords
+    "leave_policy": [
+        "casual leave", "casual leaves", "vacation", "vacations", "vacation days",
+        "personal leave", "personal day", "personal days", "time off", "days off",
+        "earned leave", "privilege leave", "pl", "cl", "annual leave", "annual leaves",
+        "my leave", "leave policy", "leave balance", "leave entitlement",
+        "leave quota", "leave days", "sick leave", "maternity leave", "paternity leave",
+        "carry forward", "leave encashment", "leave types", "types of leave",
+    ],
 }
 
 OFFICE_BUILDINGS = {
@@ -166,8 +175,28 @@ _QUERY_STOPWORDS: set[str] = {
 }
 
 
+# Synonym expansion: maps colloquial employee terms to the actual terminology
+# used in the HCL policy documents, enabling correct lexical retrieval.
+_LEAVE_SYNONYM_EXPANSION: dict[str, list[str]] = {
+    "casual leave": ["annual leaves", "my leave", "types of leave", "leave policy"],
+    "casual leaves": ["annual leaves", "my leave", "types of leave", "leave policy"],
+    "vacation": ["annual leaves", "annual leave", "leave policy"],
+    "vacations": ["annual leaves", "annual leave", "leave policy"],
+    "vacation days": ["annual leaves", "annual leave", "leave policy"],
+    "time off": ["annual leaves", "my leave", "leave policy"],
+    "days off": ["annual leaves", "my leave", "leave policy"],
+    "personal leave": ["my leave", "annual leaves", "leave policy"],
+    "personal day": ["my leave", "annual leaves", "leave policy"],
+    "personal days": ["my leave", "annual leaves", "leave policy"],
+    "earned leave": ["annual leaves", "leave policy"],
+    "privilege leave": ["annual leaves", "leave policy"],
+}
+
+
 def _extract_query_keywords(query: str) -> list[str]:
-    """Extracts search terms and domain phrases from any query for lexical database search."""
+    """Extracts search terms and domain phrases from any query for lexical database search.
+    Includes synonym expansion so colloquial leave terms map to HCL policy document terminology.
+    """
     import re
     q_lower = query.lower()
     raw_tokens = re.findall(r"[a-zA-Z0-9_\-]+", q_lower)
@@ -175,15 +204,27 @@ def _extract_query_keywords(query: str) -> list[str]:
 
     # Prioritise key domain phrases
     phrases = [
-        "annual leave", "sick leave", "casual leave", "maternity leave", "paternity leave",
-        "leave policy", "work from home", "remote work", "health insurance", "medical insurance",
+        "annual leaves", "annual leave", "my leave", "sick leave", "casual leave",
+        "casual leaves", "maternity leave", "paternity leave",
+        "leave policy", "types of leave", "leave entitlement", "leave balance",
+        "work from home", "remote work", "health insurance", "medical insurance",
         "code of conduct", "anti-bribery", "anti bribery", "harassment policy",
         "travel policy", "expense reimbursement", "laptop support", "it support",
         "tech support", "office location",
     ]
     matched = [p for p in phrases if p in q_lower]
+
+    # Apply synonym expansion: if a colloquial term is in the query, add its
+    # policy-document equivalents so lexical search finds the right chunks.
+    expansion: list[str] = []
+    for colloquial_term, policy_synonyms in _LEAVE_SYNONYM_EXPANSION.items():
+        if colloquial_term in q_lower:
+            for syn in policy_synonyms:
+                if syn not in matched and syn not in expansion:
+                    expansion.append(syn)
+
     result: list[str] = []
-    for item in matched + terms:
+    for item in matched + expansion + terms:
         if item not in result:
             result.append(item)
     return result
