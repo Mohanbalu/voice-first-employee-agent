@@ -375,15 +375,29 @@ export async function getSchedules(params = {}) {
   const qs = queryParts.length > 0 ? `?${queryParts.join('&')}` : '';
   const endpoint = `${API_BASE_URL}/api/schedules${qs}`;
 
-  const response = await fetch(endpoint, {
-    method: 'GET',
-    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
-  });
-  const data = await response.json();
-  if (!response.ok) {
-    throw new Error(data?.detail || 'Failed to retrieve schedules.');
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'GET',
+      headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.detail || 'Failed to retrieve schedules.');
+    }
+    return data;
+  } catch (err) {
+    clearTimeout(timeoutId);
+    if (err.name === 'AbortError') {
+      console.warn('[getSchedules] Request timed out after 8s, returning empty fallback.');
+      return { total: 0, items: [] };
+    }
+    throw err;
   }
-  return data;
 }
 
 export async function createSchedule(scheduleData) {

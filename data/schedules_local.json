@@ -1,0 +1,61 @@
+{
+  "00000000-0000-0000-0000-000000000001_00000000-0000-0000-0000-000000000006": [
+    {
+      "id": "be379794-5c6a-4d3d-92f2-18a55086c310",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "user_id": "00000000-0000-0000-0000-000000000006",
+      "employee_id": null,
+      "title": "Meeting with HR",
+      "description": null,
+      "scheduled_at": "2026-09-19T10:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "recurrence_type": "NONE",
+      "recurrence_rule": null,
+      "status": "PENDING",
+      "reminder_type": "MEETING",
+      "duration_minutes": 15,
+      "created_at": "2026-09-18T05:33:42.401630+00:00",
+      "updated_at": "2026-09-18T05:33:42.401630+00:00",
+      "completed_at": null,
+      "cancelled_at": null
+    },
+    {
+      "id": "423d2900-2f03-4b3b-92ed-16102cd5cb65",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "user_id": "00000000-0000-0000-0000-000000000006",
+      "employee_id": null,
+      "title": "Quarterly Sprint Planning",
+      "description": null,
+      "scheduled_at": "2026-09-21T10:00:00+00:00",
+      "timezone": "Asia/Kolkata",
+      "recurrence_type": "NONE",
+      "recurrence_rule": null,
+      "status": "PENDING",
+      "reminder_type": "MEETING",
+      "duration_minutes": 60,
+      "created_at": "2026-09-18T05:33:20.760604+00:00",
+      "updated_at": "2026-09-18T05:33:20.760604+00:00",
+      "completed_at": null,
+      "cancelled_at": null
+    },
+    {
+      "id": "856f8b94-7988-48b5-9987-8d5c14bd9e0a",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "user_id": "00000000-0000-0000-0000-000000000006",
+      "employee_id": null,
+      "title": "Review timesheet",
+      "description": null,
+      "scheduled_at": "2026-09-19T09:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "recurrence_type": "NONE",
+      "recurrence_rule": null,
+      "status": "PENDING",
+      "reminder_type": "TIMESHEET",
+      "duration_minutes": 15,
+      "created_at": "2026-09-18T05:29:03.538538+00:00",
+      "updated_at": "2026-09-18T05:29:03.538538+00:00",
+      "completed_at": null,
+      "cancelled_at": null
+    }
+  ]
+}

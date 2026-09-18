@@ -73,8 +73,10 @@ export default function SchedulePanel({ onOpenVoiceAssistant }) {
     setError(null);
     try {
       const data = await getSchedules();
-      setSchedules(data.schedules || data.items || []);
+      const list = data?.schedules || data?.items || [];
+      setSchedules(list);
     } catch (err) {
+      console.warn('[SchedulePanel] fetchSchedules error:', err);
       setError(err.message || 'Failed to load schedules.');
     } finally {
       setLoading(false);
@@ -83,6 +85,13 @@ export default function SchedulePanel({ onOpenVoiceAssistant }) {
 
   useEffect(() => {
     fetchSchedules();
+
+    // Auto-refresh when schedule is created via voice or text
+    const handleScheduleCreated = () => {
+      fetchSchedules();
+    };
+    window.addEventListener('schedule-created', handleScheduleCreated);
+    return () => window.removeEventListener('schedule-created', handleScheduleCreated);
   }, [fetchSchedules]);
 
   const handleCreate = async (e) => {
@@ -189,6 +198,29 @@ export default function SchedulePanel({ onOpenVoiceAssistant }) {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button
+            onClick={() => fetchSchedules()}
+            className="command-btn"
+            style={{ padding: '8px 12px' }}
+            title="Refresh schedules list"
+            disabled={loading}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              style={{ animation: loading ? 'spin 1s linear infinite' : 'none' }}
+            >
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            <span>{loading ? 'Refreshing...' : 'Refresh'}</span>
+          </button>
+
           {onOpenVoiceAssistant && (
             <button
               onClick={onOpenVoiceAssistant}

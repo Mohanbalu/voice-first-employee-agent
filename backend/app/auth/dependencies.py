@@ -80,6 +80,22 @@ def get_current_user(
         )
 
     try:
+        from backend.app.database import is_db_reachable
+    except ImportError:
+        from app.database import is_db_reachable
+
+    if not is_db_reachable():
+        return User(
+            id=user_id,
+            tenant_id=tenant_id,
+            username=payload.get("username", "user"),
+            password_hash="",
+            role=payload.get("role", "EMPLOYEE"),
+            is_active=True,
+            must_change_password=False,
+        )
+
+    try:
         stmt = select(User).where(User.id == user_id, User.tenant_id == tenant_id)
         user = db.execute(stmt).scalar_one_or_none()
     except Exception as db_err:

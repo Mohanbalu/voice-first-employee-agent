@@ -74,37 +74,51 @@ class SchedulingAgentNode:
             "message": confirmation_message,
         }
 
-        # 4. If database session & user available, persist to DB
-        if db_session and current_user:
-            try:
-                service = SchedulingService(db=db_session)
-                if hasattr(current_user, "id"):
-                    user_id = current_user.id
-                elif isinstance(current_user, dict):
-                    user_id = uuid.UUID(str(current_user.get("user_id") or current_user.get("id")))
-                else:
-                    user_id = uuid.UUID(str(current_user))
-                t_id = uuid.UUID(str(tenant_id_str))
+        # 4. Resolve user & tenant, and persist schedule
+        try:
+            t_id = uuid.UUID(str(tenant_id_str or "00000000-0000-0000-0000-000000000001"))
+        except Exception:
+            t_id = uuid.UUID("00000000-0000-0000-0000-000000000001")
 
-                create_payload = ScheduleCreate(
-                    title=parsed.title,
-                    scheduled_at=parsed.scheduled_at,
-                    timezone=parsed.timezone_name,
-                    recurrence_type=parsed.recurrence_type,
-                    recurrence_rule=parsed.recurrence_rule,
-                    reminder_type=parsed.reminder_type,
-                    duration_minutes=parsed.duration_minutes,
-                )
-                created = service.create_schedule(
-                    tenant_id=t_id,
-                    user_id=user_id,
-                    data=create_payload,
-                )
-                schedule_dict["id"] = str(created.id)
-                schedule_dict["status"] = created.status
-                logger.info("Persisted schedule %s in DB for user %s", created.id, user_id)
-            except Exception as exc:
-                logger.error("Failed to persist schedule to DB: %s", exc)
+        # Fallback to Siddhartha if no active user context
+        user_id = uuid.UUID("00000000-0000-0000-0000-000000000006")
+        if current_user:
+            if hasattr(current_user, "id") and current_user.id:
+                user_id = current_user.id
+            elif isinstance(current_user, dict):
+                raw_u = current_user.get("id") or current_user.get("user_id")
+                if raw_u:
+                    try:
+                        user_id = uuid.UUID(str(raw_u))
+                    except Exception:
+                        pass
+            else:
+                try:
+                    user_id = uuid.UUID(str(current_user))
+                except Exception:
+                    pass
+
+        try:
+            service = SchedulingService(db=db_session)
+            create_payload = ScheduleCreate(
+                title=parsed.title,
+                scheduled_at=parsed.scheduled_at,
+                timezone=parsed.timezone_name,
+                recurrence_type=parsed.recurrence_type,
+                recurrence_rule=parsed.recurrence_rule,
+                reminder_type=parsed.reminder_type,
+                duration_minutes=parsed.duration_minutes,
+            )
+            created = service.create_schedule(
+                tenant_id=t_id,
+                user_id=user_id,
+                data=create_payload,
+            )
+            schedule_dict["id"] = str(created.id)
+            schedule_dict["status"] = created.status
+            logger.info("Persisted schedule %s in SchedulingService for user %s", created.id, user_id)
+        except Exception as exc:
+            logger.error("Failed to persist schedule: %s", exc)
 
         return {
             "agent_mode": "tool_intent",

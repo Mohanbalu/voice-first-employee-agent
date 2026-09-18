@@ -80,10 +80,11 @@ _DB_IS_ALIVE: Optional[bool] = None
 
 
 def is_db_reachable() -> bool:
-    """Checks whether the database is reachable with 30-second result caching."""
+    """Checks whether the database is reachable with result caching."""
     global _DB_LAST_CHECK_TIME, _DB_IS_ALIVE
     now = time.monotonic()
-    if _DB_IS_ALIVE is not None and (now - _DB_LAST_CHECK_TIME < 30.0):
+    cache_duration = 30.0 if _DB_IS_ALIVE else 120.0
+    if _DB_IS_ALIVE is not None and (now - _DB_LAST_CHECK_TIME < cache_duration):
         return _DB_IS_ALIVE
 
     _DB_LAST_CHECK_TIME = now

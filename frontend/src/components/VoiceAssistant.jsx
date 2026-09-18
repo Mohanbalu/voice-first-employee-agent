@@ -300,6 +300,10 @@ export default function VoiceAssistant() {
       const backendSuggestTicket = !!result.suggest_ticket;
       const scheduleData = result.schedule_data || null;
 
+      if (scheduleData) {
+        window.dispatchEvent(new CustomEvent('schedule-created', { detail: scheduleData }));
+      }
+
       // 2. Append User turn to conversation
       const userMessageId = `user-${Date.now()}`;
       const assistantMessageId = `asst-${Date.now()}`;
@@ -523,6 +527,9 @@ export default function VoiceAssistant() {
         const cleanResponse = removeAsterisks(res.response || 'No response returned.');
         const backendSuggest = !!res.suggest_ticket;
         const scheduleData = res.schedule_data || null;
+        if (scheduleData) {
+          window.dispatchEvent(new CustomEvent('schedule-created', { detail: scheduleData }));
+        }
         setMessages((prev) => [
           ...prev,
           {
@@ -743,6 +750,31 @@ export default function VoiceAssistant() {
                             )}
                           </div>
                         )}
+                        <div style={{ marginTop: '8px' }}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              window.history.pushState({}, '', '/schedules');
+                              window.dispatchEvent(new PopStateEvent('popstate'));
+                            }}
+                            style={{
+                              background: '#7e22ce',
+                              color: '#ffffff',
+                              border: 'none',
+                              padding: '4px 10px',
+                              borderRadius: '4px',
+                              fontSize: '12px',
+                              fontWeight: '600',
+                              cursor: 'pointer',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                            }}
+                          >
+                            <span>View in Schedules Tab</span>
+                            <span>→</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -172,10 +172,10 @@ class ToolRouterNode:
         if intent == IntentType.SCHEDULING:
             return self._scheduling_node(state)
 
-        # Route task management with timing expressions to SchedulingAgentNode
-        if intent == IntentType.TASK_MANAGEMENT:
+        # Route task management or calendar requests with timing/meeting expressions to SchedulingAgentNode
+        if intent in (IntentType.TASK_MANAGEMENT, IntentType.CALENDAR_QUERY):
             lower_req = request.lower()
-            if any(k in lower_req for k in ("remind", "at ", "tomorrow", "today", "in ", "every ", "schedule", "due ")):
+            if any(k in lower_req for k in ("remind", "schedule", "meeting", "at ", "tomorrow", "today", "in ", "every ", "due ", "am", "pm", "clock", ":")):
                 return self._scheduling_node(state)
 
         # Real ticket creation integration for IT_SUPPORT when session & user provided
