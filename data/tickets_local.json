@@ -1,0 +1,40 @@
+{
+  "00000000-0000-0000-0000-000000000001": [
+    {
+      "id": "d32e5670-0784-42df-abef-7ffad6e82618",
+      "ticket_number": "HCL-IT-000001",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "created_by": "00000000-0000-0000-0000-000000000006",
+      "assigned_to": null,
+      "category": "IT",
+      "subject": "VPN Access Configuration Request",
+      "description": "Need Cisco AnyConnect profile configured for remote access.",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "resolution_notes": null,
+      "hr_answer": null,
+      "kb_chunk_id": null,
+      "created_at": "2026-09-18T05:39:02.739335+00:00",
+      "updated_at": "2026-09-18T05:39:02.739335+00:00",
+      "resolved_at": null
+    },
+    {
+      "id": "75a64657-fd4a-4fb4-b28c-86df85c41a01",
+      "ticket_number": "HCL-HR-000001",
+      "tenant_id": "00000000-0000-0000-0000-000000000001",
+      "created_by": "00000000-0000-0000-0000-000000000006",
+      "assigned_to": null,
+      "category": "HR",
+      "subject": "Annual Leave Calculation Clarification",
+      "description": "Can you verify if remaining earned leaves carry over to next quarter?",
+      "priority": "MEDIUM",
+      "status": "RESOLVED",
+      "resolution_notes": "Leave policy answered by HR team.",
+      "hr_answer": "As per the company leave policy, up to 8 earned leaves carry forward into Q1 automatically.",
+      "kb_chunk_id": null,
+      "created_at": "2026-09-18T05:39:02.739335+00:00",
+      "updated_at": "2026-09-18T05:39:02.739335+00:00",
+      "resolved_at": "2026-09-18T05:39:02.739335+00:00"
+    }
+  ]
+}
