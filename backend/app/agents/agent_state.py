@@ -84,6 +84,10 @@ class AgentState(TypedDict, total=False):
     tool_intents: List[Dict[str, Any]]  # list of ToolIntentResponse dicts
     schedule_created: Optional[Dict[str, Any]]
     ticket_created: Optional[Dict[str, Any]]
+    location_data: Optional[Dict[str, Any]]
+    latitude: Optional[float]
+    longitude: Optional[float]
+    accuracy: Optional[float]
     current_user: Optional[Any]
     db_session: Optional[Any]
 
@@ -97,12 +101,19 @@ def make_initial_state(
     request: str,
     tenant_id: str,
     conversation_id: Optional[str] = None,
+    latitude: Optional[float] = None,
+    longitude: Optional[float] = None,
+    accuracy: Optional[float] = None,
 ) -> AgentState:
     """Returns a fully initialised AgentState for graph entry."""
     return AgentState(
         request=request,
         tenant_id=tenant_id,
         conversation_id=conversation_id or str(uuid.uuid4()),
+        latitude=latitude,
+        longitude=longitude,
+        accuracy=accuracy,
+        location_data=None,
         intent=None,
         intent_confidence=0.0,
         intent_reasoning=None,

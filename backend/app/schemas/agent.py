@@ -49,6 +49,18 @@ class AgentRequest(BaseModel):
         default=None,
         description="Optional session/conversation ID for future multi-turn support.",
     )
+    latitude: Optional[float] = Field(
+        default=None,
+        description="Optional device GPS latitude in decimal degrees.",
+    )
+    longitude: Optional[float] = Field(
+        default=None,
+        description="Optional device GPS longitude in decimal degrees.",
+    )
+    accuracy: Optional[float] = Field(
+        default=None,
+        description="Optional device GPS horizontal accuracy in meters.",
+    )
 
     @field_validator("request")
     @classmethod
@@ -90,6 +102,10 @@ class AgentResponse(BaseModel):
     schedule_data: Optional[Dict[str, Any]] = Field(
         default=None,
         description="Optional structured schedule data when a reminder or schedule was created.",
+    )
+    location_data: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Optional structured location & navigation data when user requests campus location.",
     )
 
 

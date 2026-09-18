@@ -9,11 +9,14 @@ from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 
+from backend.app.config import config
 from backend.app.database import get_db
 from backend.app.models.user import User
-from backend.app.routes.auth import get_current_user
+from backend.app.routes.auth import get_current_user, get_optional_current_user
 from backend.app.schemas.location import (
     ClosestLocationResponse,
+    CurrentLocationRequest,
+    CurrentLocationResponse,
     DistanceRequest,
     DistanceResponse,
     LocationListResponse,
@@ -137,3 +140,32 @@ def get_location(
             detail="Location not found in organization",
         )
     return LocationResponse.model_validate(loc)
+
+
+@router.post("/current", response_model=CurrentLocationResponse)
+def resolve_current_location(
+    payload: CurrentLocationRequest,
+    current_user: Optional[User] = Depends(get_optional_current_user),
+    db: Session = Depends(get_db),
+) -> CurrentLocationResponse:
+    """Determines current campus proximity from device GPS coordinates without persistence.
+
+    - Compares employee coordinates against all known tenant locations.
+    - Identifies nearest building and proximity status (VERY_CLOSE, NEAR, OUTSIDE_CAMPUS).
+    - Privacy: Does NOT store or log employee GPS coordinates.
+    """
+    tenant_id = (
+        current_user.tenant_id
+        if (current_user and getattr(current_user, "tenant_id", None))
+        else uuid.UUID(config.tenant.default_id)
+    )
+    result = LocationService.resolve_current_location(
+        db=db,
+        tenant_id=tenant_id,
+        latitude=payload.latitude,
+        longitude=payload.longitude,
+        accuracy=payload.accuracy,
+        query=payload.query,
+    )
+    return CurrentLocationResponse.model_validate(result)
+

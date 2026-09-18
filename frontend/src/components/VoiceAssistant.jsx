@@ -109,9 +109,74 @@ function isLocationResponse(text) {
   if (!text) return false;
   const t = text.toLowerCase();
   return (
-    (t.includes('tower 1') || t.includes('tower 2') || t.includes('floor') || t.includes('sdc') || t.includes('cafeteria') || t.includes('recreation') || t.includes('odc')) &&
-    (t.includes('located') || t.includes('direction') || t.includes('campus') || t.includes('room') || t.includes('gps'))
+    (t.includes('tower 1') || t.includes('tower 2') || t.includes('floor') || t.includes('sdc') || t.includes('cafeteria') || t.includes('recreation') || t.includes('odc') || t.includes('entrance gate')) &&
+    (t.includes('located') || t.includes('direction') || t.includes('campus') || t.includes('room') || t.includes('gps') || t.includes('walk') || t.includes('meters'))
   );
+}
+
+/** Detects if user prompt is asking about office location or navigation */
+function isLocationQuery(query) {
+  if (!query) return false;
+  const q = query.toLowerCase();
+  return (
+    q.includes('where am i') ||
+    q.includes('my location') ||
+    q.includes('current location') ||
+    q.includes('campus location') ||
+    q.includes('which building') ||
+    q.includes('where is') ||
+    q.includes('navigate') ||
+    q.includes('directions') ||
+    q.includes('cafeteria') ||
+    q.includes('tower 1') ||
+    q.includes('tower 2') ||
+    q.includes('sdc') ||
+    q.includes('techbees') ||
+    q.includes('recreation')
+  );
+}
+
+/**
+ * Asynchronously requests device GPS coordinates with a 3.5s timeout.
+ * Returns { latitude, longitude, accuracy } or null if denied or unavailable.
+ */
+function getDeviceCoordinates(timeoutMs = 3500) {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined' || !navigator?.geolocation) {
+      resolve(null);
+      return;
+    }
+    let resolved = false;
+    const timer = setTimeout(() => {
+      if (!resolved) {
+        resolved = true;
+        resolve(null);
+      }
+    }, timeoutMs);
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        if (!resolved) {
+          resolved = true;
+          clearTimeout(timer);
+          resolve({
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            accuracy: pos.coords.accuracy,
+          });
+        }
+      },
+      (err) => {
+        if (!resolved) {
+          resolved = true;
+          clearTimeout(timer);
+          console.debug('[GPS] Geolocation unavailable or denied:', err?.message);
+          resolve(null);
+        }
+      },
+      { enableHighAccuracy: true, timeout: timeoutMs, maximumAge: 30000 }
+    );
+  });
 }
 
 /**
@@ -299,6 +364,7 @@ export default function VoiceAssistant() {
       const sanitizedSources = sanitizeSources(result.rag_sources);
       const backendSuggestTicket = !!result.suggest_ticket;
       const scheduleData = result.schedule_data || null;
+      const locationData = result.location_data || null;
 
       if (scheduleData) {
         window.dispatchEvent(new CustomEvent('schedule-created', { detail: scheduleData }));
@@ -317,6 +383,7 @@ export default function VoiceAssistant() {
           text: assistantResponse,
           sources: sanitizedSources,
           scheduleData: scheduleData,
+          locationData: locationData,
           timestamp: new Date(),
           suggestTicket: isUnableToAnswer(assistantResponse, backendSuggestTicket),
           queryText: transcript,
@@ -511,7 +578,7 @@ export default function VoiceAssistant() {
   };
 
   /** Handle quick prompt or text submission */
-  const handleQuickPrompt = (promptText) => {
+  const handleQuickPrompt = async (promptText) => {
     lastPromptRef.current = promptText;
     setErrorMessage(null);
     setMessages((prev) => [
@@ -520,13 +587,21 @@ export default function VoiceAssistant() {
     ]);
     setVoiceState('processing');
 
-    sendTextAgentRequest(promptText)
+    // Attempt live GPS coordinate capture if query is location or navigation related
+    let coords = null;
+    if (isLocationQuery(promptText)) {
+      coords = await getDeviceCoordinates(3500);
+    }
+
+    sendTextAgentRequest(promptText, undefined, coords)
       .then((res) => {
         const assistantId = `asst-${Date.now()}`;
         const sanitizedSources = sanitizeSources(res.rag_sources);
         const cleanResponse = removeAsterisks(res.response || 'No response returned.');
         const backendSuggest = !!res.suggest_ticket;
         const scheduleData = res.schedule_data || null;
+        const locationData = res.location_data || null;
+
         if (scheduleData) {
           window.dispatchEvent(new CustomEvent('schedule-created', { detail: scheduleData }));
         }
@@ -538,6 +613,7 @@ export default function VoiceAssistant() {
             text: cleanResponse,
             sources: sanitizedSources,
             scheduleData: scheduleData,
+            locationData: locationData,
             timestamp: new Date(),
             suggestTicket: isUnableToAnswer(cleanResponse, backendSuggest),
             queryText: promptText,
@@ -780,15 +856,108 @@ export default function VoiceAssistant() {
                   </div>
                 )}
 
-                {/* 3. Campus Facility & Directions Card */}
-                {msg.role === 'assistant' && isLocationResponse(msg.text) && (
+                {/* 3. Campus Facility & Live Navigation Card */}
+                {msg.role === 'assistant' && (msg.locationData || isLocationResponse(msg.text)) && (
                   <div className="response-card response-card-location">
-                    <div className="response-card-header">
-                      <span>📍 Campus Directions & Navigation</span>
-                      <span className="location-pill">HCL Campus Grounding</span>
+                    <div className="response-card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                      <span style={{ fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        📍 HCL Campus Live Navigation
+                      </span>
+                      <span className="location-pill">
+                        {msg.locationData?.has_coordinates ? 'Live GPS Active' : 'Campus Directory'}
+                      </span>
                     </div>
-                    <div style={{ fontSize: '12px' }}>
-                      Navigate via designated campus walkways. Check floor directories at the central lobby.
+
+                    {/* Detected Proximity Badge */}
+                    {msg.locationData?.current_location && (
+                      <div style={{
+                        padding: '8px 12px',
+                        background: msg.locationData.proximity_status === 'OUTSIDE_CAMPUS' ? '#fef3c7' : '#dcfce7',
+                        border: `1px solid ${msg.locationData.proximity_status === 'OUTSIDE_CAMPUS' ? '#fde68a' : '#86efac'}`,
+                        borderRadius: 'var(--radius-sm)',
+                        color: msg.locationData.proximity_status === 'OUTSIDE_CAMPUS' ? '#92400e' : '#14532d',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        marginBottom: '8px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}>
+                        <span>
+                          {msg.locationData.proximity_status === 'OUTSIDE_CAMPUS'
+                            ? `⚠️ Outside Campus Perimeter (~${Math.round(msg.locationData.distance_to_nearest_meters || 0)}m from ${msg.locationData.current_location})`
+                            : `📍 Current Proximity: Near ${msg.locationData.current_location}`}
+                        </span>
+                        {msg.locationData.distance_to_nearest_meters != null && msg.locationData.proximity_status !== 'OUTSIDE_CAMPUS' && (
+                          <span style={{ fontSize: '11px', opacity: 0.85 }}>
+                            ~{Math.round(msg.locationData.distance_to_nearest_meters)}m away
+                          </span>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Active Navigation Route Banner */}
+                    {msg.locationData?.destination && (
+                      <div style={{
+                        padding: '8px 12px',
+                        background: '#e0f2fe',
+                        border: '1px solid #bae6fd',
+                        borderRadius: 'var(--radius-sm)',
+                        color: '#0369a1',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        marginBottom: '8px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      }}>
+                        <span>
+                          🚶 Route: {msg.locationData.origin || 'Current Location'} ➔ {msg.locationData.destination}
+                        </span>
+                        <span>
+                          ~{msg.locationData.distance_meters}m • ~{msg.locationData.walking_minutes} min walk
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Turn-by-Turn Steps */}
+                    {msg.locationData?.steps && msg.locationData.steps.length > 0 && (
+                      <div style={{ marginTop: '8px', marginBottom: '8px' }}>
+                        <div style={{ fontSize: '11px', fontWeight: 700, color: '#166534', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          Walking Steps
+                        </div>
+                        {msg.locationData.steps.map((step, idx) => (
+                          <div key={idx} className="nav-step-item">
+                            <span className="nav-step-num">{idx + 1}</span>
+                            <span>{step}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Quick Campus Destination Shortcuts */}
+                    <div style={{ marginTop: '10px' }}>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#166534', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                        Quick Navigation Destinations
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {[
+                          { label: 'Cafeteria (Tower 1)', query: 'Navigate to Cafeteria' },
+                          { label: 'IT Support (Tower 1)', query: 'Where is IT Support?' },
+                          { label: 'Techbees (Tower 2)', query: 'Navigate to Techbees' },
+                          { label: 'Recreation Area (Tower 2)', query: 'Where is the Recreation Area?' },
+                          { label: 'SDC Building', query: 'Navigate to SDC Building' },
+                        ].map((dest, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            className="nav-quick-btn"
+                            onClick={() => handleQuickPrompt(dest.query)}
+                          >
+                            📍 {dest.label}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}

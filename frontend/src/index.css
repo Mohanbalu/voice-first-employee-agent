@@ -1226,11 +1226,14 @@ html, body {
   font-size: 12px;
 }
 
-/* 4. Campus Location Card */
+/* 4. Campus Location & Navigation Card */
 .response-card-location {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  color: #78350f;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #14532d;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-top: 10px;
 }
 
 .location-pill {
@@ -1239,10 +1242,53 @@ html, body {
   gap: 4px;
   padding: 3px 8px;
   border-radius: var(--radius-sm);
-  background: #fef3c7;
-  color: #92400e;
+  background: #dcfce7;
+  color: #166534;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 11px;
+}
+
+.nav-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.nav-step-num {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.nav-quick-btn {
+  background: #ffffff;
+  border: 1px solid #86efac;
+  color: #15803d;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-quick-btn:hover {
+  background: #22c55e;
+  color: #ffffff;
+  border-color: #22c55e;
 }
 
 /* ==========================================================================

@@ -153,7 +153,7 @@ export async function synthesizeSpeech(text, options = {}) {
  * @param {string} [tenantId] - Tenant UUID
  * @returns {Promise<Object>} Agent response object
  */
-export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID) {
+export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID, coordinates = null) {
   const endpoint = `${API_BASE_URL}/api/agent`;
   if (import.meta.env.DEV) {
     console.debug(`[API Service] Calling: ${endpoint}`);
@@ -162,16 +162,25 @@ export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 90000); // 90s timeout for Render backend
 
+  const payload = {
+    request: requestText,
+    tenant_id: tenantId,
+  };
+  if (coordinates && coordinates.latitude != null && coordinates.longitude != null) {
+    payload.latitude = coordinates.latitude;
+    payload.longitude = coordinates.longitude;
+    if (coordinates.accuracy != null) {
+      payload.accuracy = coordinates.accuracy;
+    }
+  }
+
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: getAuthHeaders({
         'Content-Type': 'application/json',
       }),
-      body: JSON.stringify({
-        request: requestText,
-        tenant_id: tenantId,
-      }),
+      body: JSON.stringify(payload),
       signal: controller.signal,
     });
 
@@ -465,5 +474,27 @@ export async function deleteSchedule(scheduleId) {
     throw new Error(data?.detail || 'Failed to delete schedule.');
   }
   return true;
+}
+
+// ── Campus Location & Navigation Helpers ─────────────────────────────────────
+
+export async function resolveCurrentLocation(coords, query = null) {
+  const endpoint = `${API_BASE_URL}/api/locations/current`;
+  const payload = {
+    latitude: coords.latitude,
+    longitude: coords.longitude,
+    accuracy: coords.accuracy || null,
+    query: query || null,
+  };
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to resolve current location.');
+  }
+  return data;
 }
 

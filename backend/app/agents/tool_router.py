@@ -21,10 +21,12 @@ try:
     from backend.app.agents.agent_state import AgentState, IntentType
     from backend.app.agents.hr_agent import HRAgentNode
     from backend.app.agents.scheduling_agent import SchedulingAgentNode
+    from backend.app.agents.navigation_agent import NavigationAgentNode
 except ImportError:
     from app.agents.agent_state import AgentState, IntentType
     from app.agents.hr_agent import HRAgentNode
     from app.agents.scheduling_agent import SchedulingAgentNode
+    from app.agents.navigation_agent import NavigationAgentNode
 
 logger = logging.getLogger("agents.tool_router")
 
@@ -145,6 +147,7 @@ class ToolRouterNode:
     def __init__(self):
         self._hr_node = HRAgentNode()
         self._scheduling_node = SchedulingAgentNode()
+        self._navigation_node = NavigationAgentNode()
 
     def __call__(self, state: AgentState) -> Dict[str, Any]:
         intent_str = state.get("intent", "")
@@ -171,6 +174,10 @@ class ToolRouterNode:
         # Route scheduling & reminder requests directly to SchedulingAgentNode
         if intent == IntentType.SCHEDULING:
             return self._scheduling_node(state)
+
+        # Route navigation requests directly to NavigationAgentNode
+        if intent == IntentType.NAVIGATION:
+            return self._navigation_node(state)
 
         # Route task management or calendar requests with timing/meeting expressions to SchedulingAgentNode
         if intent in (IntentType.TASK_MANAGEMENT, IntentType.CALENDAR_QUERY):

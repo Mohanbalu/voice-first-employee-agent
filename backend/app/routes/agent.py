@@ -110,6 +110,9 @@ async def agent(
                 tenant_id=tenant_id,
                 conversation_id=conversation_id,
                 current_user=current_user,
+                latitude=request.latitude,
+                longitude=request.longitude,
+                accuracy=request.accuracy,
             )),
             timeout=90.0,  # Safe buffer for Render cold start, RAG retrieval + LLM generation
         )
@@ -182,4 +185,5 @@ async def agent(
         error=final_state.get("error"),
         suggest_ticket=suggest_ticket,
         schedule_data=final_state.get("schedule_created"),
+        location_data=final_state.get("location_data"),
     )

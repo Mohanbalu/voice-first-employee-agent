@@ -79,9 +79,9 @@ def _route_after_classify(state: AgentState) -> str:
         logger.warning("Unknown intent from classifier: %r — routing to clarify", intent_str)
         return _NODE_CLARIFY
 
-    if intent in (IntentType.KNOWLEDGE_QUERY, IntentType.NAVIGATION):
+    if intent == IntentType.KNOWLEDGE_QUERY:
         return _NODE_KNOWLEDGE
-    if intent in TOOL_INTENTS:
+    if intent in TOOL_INTENTS or intent == IntentType.NAVIGATION:
         return _NODE_TOOL
     if intent == IntentType.CLARIFY_NEEDED:
         return _NODE_CLARIFY
@@ -198,6 +198,9 @@ class AgentOrchestrator:
         tenant_id: str,
         conversation_id: Optional[str] = None,
         current_user: Optional[Any] = None,
+        latitude: Optional[float] = None,
+        longitude: Optional[float] = None,
+        accuracy: Optional[float] = None,
     ) -> AgentState:
         """
         Executes the full agent graph for a single user request.
@@ -207,6 +210,9 @@ class AgentOrchestrator:
             tenant_id:       UUID string — mandatory for tenant isolation.
             conversation_id: Optional session ID for future multi-turn support.
             current_user:    Optional authenticated User object.
+            latitude:        Optional device GPS latitude.
+            longitude:       Optional device GPS longitude.
+            accuracy:        Optional GPS horizontal accuracy in meters.
 
         Returns:
             The final AgentState after all nodes have run.
@@ -217,6 +223,9 @@ class AgentOrchestrator:
                 request=request,
                 tenant_id=tenant_id,
                 conversation_id=conversation_id or str(uuid.uuid4()),
+                latitude=latitude,
+                longitude=longitude,
+                accuracy=accuracy,
             )
             state["intent"] = IntentType.CLARIFY_NEEDED.value
             state["agent_mode"] = "clarify"
@@ -229,6 +238,9 @@ class AgentOrchestrator:
             request=request.strip(),
             tenant_id=tenant_id,
             conversation_id=conversation_id or str(uuid.uuid4()),
+            latitude=latitude,
+            longitude=longitude,
+            accuracy=accuracy,
         )
         if self._db_session is not None:
             initial["db_session"] = self._db_session

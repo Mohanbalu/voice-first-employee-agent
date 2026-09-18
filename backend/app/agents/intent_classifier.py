@@ -105,14 +105,14 @@ _SYSTEM_PROMPT = """\
 You are an intent classifier for an enterprise employee assistant.
 
 Classify the employee's message into EXACTLY ONE of these intents:
-- knowledge_query: asking about company policy, rules, benefits, procedures, office facilities, building locations
+- knowledge_query: asking about company policies, HR rules, benefits, code of conduct, insurance, employee handbook, procedures
 - leave_request: requesting or asking about leave, time off, holidays
 - it_support: reporting IT issues, requesting tech help or access (e.g. broken laptop, password reset, VPN issue)
 - calendar_query: scheduling meetings, booking rooms, checking calendar
 - task_management: creating or querying tasks, action items, to-dos
 - scheduling: setting reminders, scheduling future alerts, recurring reminders (e.g. remind me tomorrow at 10 AM, set reminder in 30 minutes, remind me every Monday)
 - timesheet: logging hours, checking attendance, overtime queries
-- navigation: finding rooms, offices, facilities, cafeteria, floors, teams, or desks in the building (e.g. where is the IT team, where are Techbees classrooms)
+- navigation: campus office locations, finding where the employee is located, current GPS location, directions, finding rooms, buildings (Tower 1, Tower 2, SDC, Entrance Gate), facilities, cafeteria, floors, teams, or desks (e.g. "where am I located in the office?", "where is the cafeteria?", "navigate to SDC", "where is Tower 1?", "how do I get to Conference Room B?")
 - clarify_needed: message is too vague or ambiguous to classify
 - out_of_scope: completely unrelated to work or employee assistant
 
@@ -221,6 +221,15 @@ class IntentClassifier:
             )
 
         text = text.strip()
+        lowered = text.lower()
+
+        # Fast-path: direct location and navigation requests
+        if any(p in lowered for p in ("where am i", "my location", "current location", "where is my desk", "which building am i in", "am i near")):
+            return IntentClassification(
+                intent=IntentType.NAVIGATION,
+                confidence=0.98,
+                reasoning="Direct office location / navigation query.",
+            )
 
         # 1. Injected provider (e.g., test stub function)
         if self._provider is not None:
