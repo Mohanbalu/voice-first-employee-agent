@@ -319,21 +319,34 @@ def _get_local_chunks() -> List[dict]:
     return _CACHED_LOCAL_CHUNKS
 
 
-def _search_local_chunks(terms: list[str], limit: int = 12) -> List[SearchResult]:
+GENERIC_DOCUMENT_TERMS: set[str] = {
+    "policy", "policies", "employee", "employees", "company", "guidelines",
+    "rules", "general", "workplace", "work", "organization", "management",
+    "standard", "standards", "procedure", "procedures", "global", "document",
+    "portal", "system", "applicable", "applicability",
+}
+
+
+def _search_local_chunks(terms: list[str], limit: int = 15) -> List[SearchResult]:
     if not terms:
         return []
     local_chunks = _get_local_chunks()
     if not local_chunks:
         return []
 
-    search_terms = [t.lower() for t in terms[:8]]
+    search_terms = [t.lower().strip() for t in terms if len(t.strip()) > 2][:12]
     scored = []
     for c in local_chunks:
         text_lower = (c.get("text") or "").lower()
         doc_lower = (c.get("document_name") or "").lower()
-        hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
+        hits = 0
+        for t in search_terms:
+            if t in text_lower:
+                hits += (3 if " " in t else 1)
+            if t not in GENERIC_DOCUMENT_TERMS and t in doc_lower:
+                hits += (4 if " " in t else 2)
         if hits > 0:
-            sim = min(0.65 + 0.08 * hits, 0.92)
+            sim = min(0.68 + 0.05 * hits, 0.95)
             meta = c.get("metadata") or {}
             scored.append((
                 hits,
@@ -385,7 +398,7 @@ class RAGRetriever:
         session: Optional[Session],
         tenant_id: uuid.UUID,
         terms: list[str],
-        limit: int = 12,
+        limit: int = 15,
     ) -> List[SearchResult]:
         """Fetches candidate chunks matching extracted entity keywords and query terms."""
         if not terms:
@@ -393,12 +406,31 @@ class RAGRetriever:
 
         if session is not None:
             try:
-                from sqlalchemy import or_
-                search_terms = terms[:8]
-                filters = []
-                for term in search_terms:
-                    filters.append(Chunk.text.ilike(f"%{term}%"))
-                    filters.append(Document.document_name.ilike(f"%{term}%"))
+                from sqlalchemy import case, or_
+
+                distinctive_terms = [t.lower().strip() for t in terms if len(t.strip()) > 2]
+                if not distinctive_terms:
+                    return []
+
+                score_cases = []
+                where_filters = []
+
+                for term in distinctive_terms[:12]:
+                    is_phrase = " " in term
+                    text_weight = 3 if is_phrase else 1
+                    title_weight = 4 if is_phrase else 2
+
+                    score_cases.append(case((Chunk.text.ilike(f"%{term}%"), text_weight), else_=0))
+                    where_filters.append(Chunk.text.ilike(f"%{term}%"))
+
+                    if term not in GENERIC_DOCUMENT_TERMS:
+                        score_cases.append(case((Document.document_name.ilike(f"%{term}%"), title_weight), else_=0))
+                        where_filters.append(Document.document_name.ilike(f"%{term}%"))
+
+                if not where_filters:
+                    return []
+
+                relevance = sum(score_cases)
 
                 stmt = (
                     select(
@@ -411,20 +443,20 @@ class RAGRetriever:
                         Chunk.page_end,
                         Chunk.section,
                         Chunk.metadata_json,
+                        relevance.label("relevance"),
                     )
                     .join(Document, Chunk.document_ref_id == Document.id)
                     .where(Chunk.tenant_id == tenant_id)
-                    .where(or_(*filters))
+                    .where(relevance > 0)
+                    .order_by(relevance.desc())
                     .limit(limit)
                 )
                 rows = session.execute(stmt).fetchall()
                 if rows:
                     results: List[SearchResult] = []
                     for row in rows:
-                        text_lower = (row.text or "").lower()
-                        doc_lower = (row.document_name or "").lower()
-                        hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
-                        sim = min(0.65 + 0.08 * hits, 0.90)
+                        rel = float(row.relevance) if getattr(row, "relevance", None) is not None else 1.0
+                        sim = min(0.68 + 0.05 * rel, 0.95)
                         results.append(
                             SearchResult(
                                 chunk_id=row.chunk_id,
@@ -493,12 +525,15 @@ class RAGRetriever:
             session=session,
             tenant_id=tenant_id,
             terms=combined_terms,
-            limit=12,
+            limit=15,
         )
 
-        # 2. Try vector retrieval with safe 3.5s timeout if DB is reachable
+        # 2. Try vector retrieval with safe 3.5s timeout if DB is reachable AND real embeddings active
         vector_candidates: List[SearchResult] = []
-        if session is not None and is_db_reachable():
+        svc = self._get_embedding_service()
+        is_mock_provider = isinstance(getattr(svc, "_provider", None), MockEmbeddingProvider)
+
+        if not is_mock_provider and session is not None and is_db_reachable():
             try:
                 query_vec = self._embed_with_timeout(q_clean, timeout_seconds=3.5)
                 if query_vec is not None and len(query_vec) == config.db.vector_dimension:
@@ -512,6 +547,8 @@ class RAGRetriever:
                     )
             except Exception as exc:
                 logger.warning("Vector candidate retrieval error (%s); proceeding with lexical.", exc)
+        elif is_mock_provider:
+            logger.info("Retriever in cloud/mock mode: skipping pgvector distance noise, relying on high-precision ranked lexical candidates.")
 
         # Merge candidate pools by chunk_id
         candidate_dict: dict[str, SearchResult] = {}
