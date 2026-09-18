@@ -147,14 +147,24 @@ class AppConfig:
         else:
             db_url = raw_db_url
 
-        # Normalise to psycopg2 driver (psycopg2-binary is installed on all envs)
-        if db_url.startswith("postgresql+psycopg://"):
-            # Downgrade psycopg v3 prefix → psycopg2
+        # Normalise driver: prefer psycopg2 if installed, fallback to psycopg (v3)
+        has_psycopg2 = False
+        try:
+            import psycopg2  # noqa: F401
+            has_psycopg2 = True
+        except ImportError:
+            pass
+
+        target_driver = "postgresql+psycopg2" if has_psycopg2 else "postgresql+psycopg"
+
+        if db_url.startswith("postgresql+psycopg://") and has_psycopg2:
             db_url = db_url.replace("postgresql+psycopg://", "postgresql+psycopg2://", 1)
+        elif db_url.startswith("postgresql+psycopg2://") and not has_psycopg2:
+            db_url = db_url.replace("postgresql+psycopg2://", "postgresql+psycopg://", 1)
         elif db_url.startswith("postgresql+asyncpg://"):
-            db_url = db_url.replace("postgresql+asyncpg://", "postgresql+psycopg2://", 1)
+            db_url = db_url.replace("postgresql+asyncpg://", f"{target_driver}://", 1)
         elif db_url.startswith("postgresql://"):
-            db_url = db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
+            db_url = db_url.replace("postgresql://", f"{target_driver}://", 1)
 
         try:
             pool_size = int(os.getenv("DB_POOL_SIZE", "10"))
