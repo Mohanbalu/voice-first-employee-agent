@@ -171,39 +171,36 @@ class GroqAIProvider(AIProvider):
             {"role": "user", "content": f"Employee message: {text}"},
         ]
 
-        # Use fast model for instant classification (sub-300ms)
-        intent_model = os.getenv("GROQ_INTENT_MODEL") or "llama-3.1-8b-instant"
-        if intent_model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
-            intent_model = "llama-3.1-8b-instant"
-
-        kwargs: Dict[str, Any] = {
-            "model": intent_model,
-            "messages": messages,
-            "temperature": temperature,
-            "max_tokens": max(max_tokens, 300),
-            "response_format": {"type": "json_object"},
-        }
+        intent_model = os.getenv("GROQ_INTENT_MODEL") or self._model
+        if intent_model == "llama-3.1-8b-instant":
+            intent_model = self._model
 
         try:
-            response = client.chat.completions.create(**kwargs)
+            response = client.chat.completions.create(
+                model=intent_model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max(max_tokens, 300),
+            )
             raw = response.choices[0].message.content or ""
             json_match = re.search(r"\{.*\}", raw, re.DOTALL)
-            if not json_match:
-                logger.warning("Groq returned non-JSON intent response: %r", raw[:100])
-                return None
-            return json.loads(json_match.group())
+            if json_match:
+                return json.loads(json_match.group())
+            logger.warning("Groq returned non-JSON intent response: %r", raw[:100])
         except Exception as exc:
-            logger.warning("Groq intent classification failed: %s", exc.__class__.__name__)
-            # Fall back to trying without response_format if model rejected the parameter
-            try:
-                resp = self.generate_text(
-                    messages=messages,
-                    temperature=temperature,
-                    max_tokens=max_tokens,
-                )
-                json_match = re.search(r"\{.*\}", resp.text, re.DOTALL)
-                if json_match:
-                    return json.loads(json_match.group())
-            except Exception:
-                pass
-            return None
+            logger.warning("Groq intent classification direct call failed: %s (%s)", exc.__class__.__name__, exc)
+
+        # Fallback: try via generate_text
+        try:
+            resp = self.generate_text(
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+            )
+            json_match = re.search(r"\{.*\}", resp.text, re.DOTALL)
+            if json_match:
+                return json.loads(json_match.group())
+        except Exception as exc:
+            logger.error("Groq fallback intent classification failed: %s", exc)
+
+        return None

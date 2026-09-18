@@ -160,7 +160,7 @@ export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID
   }
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+  const timeoutId = setTimeout(() => controller.abort(), 90000); // 90s timeout for Render backend
 
   try {
     const response = await fetch(endpoint, {
@@ -187,7 +187,7 @@ export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID
   } catch (error) {
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
-      throw new Error('The assistant took too long to respond (30s). Please try again.');
+      throw new Error('The assistant took too long to respond. Please try again.');
     }
     throw error;
   }

@@ -111,10 +111,10 @@ async def agent(
                 conversation_id=conversation_id,
                 current_user=current_user,
             )),
-            timeout=35.0,  # Safe buffer for RAG retrieval + LLM generation
+            timeout=90.0,  # Safe buffer for Render cold start, RAG retrieval + LLM generation
         )
     except asyncio.TimeoutError:
-        logger.error("Orchestrator timed out after 25s for tenant=%s", tenant_id)
+        logger.error("Orchestrator timed out after 90s for tenant=%s", tenant_id)
         raise HTTPException(
             status_code=status.HTTP_504_GATEWAY_TIMEOUT,
             detail="The assistant took too long to respond. Please try again in a moment.",
