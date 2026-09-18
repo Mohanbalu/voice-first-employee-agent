@@ -31,6 +31,7 @@ class IntentType(str, Enum):
     IT_SUPPORT = "it_support"
     CALENDAR_QUERY = "calendar_query"
     TASK_MANAGEMENT = "task_management"
+    SCHEDULING = "scheduling"
     TIMESHEET = "timesheet"
     NAVIGATION = "navigation"
 
@@ -45,6 +46,7 @@ TOOL_INTENTS = {
     IntentType.IT_SUPPORT,
     IntentType.CALENDAR_QUERY,
     IntentType.TASK_MANAGEMENT,
+    IntentType.SCHEDULING,
     IntentType.TIMESHEET,
     IntentType.NAVIGATION,
 }
@@ -80,6 +82,10 @@ class AgentState(TypedDict, total=False):
 
     # ── Tool intent layer (non-RAG intents) ──────────────────────────────────
     tool_intents: List[Dict[str, Any]]  # list of ToolIntentResponse dicts
+    schedule_created: Optional[Dict[str, Any]]
+    ticket_created: Optional[Dict[str, Any]]
+    current_user: Optional[Any]
+    db_session: Optional[Any]
 
     # ── Output layer ─────────────────────────────────────────────────────────
     final_response: Optional[str]       # text sent back to the employee

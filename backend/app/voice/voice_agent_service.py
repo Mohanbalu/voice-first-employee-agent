@@ -55,12 +55,11 @@ class VoiceAgentService:
         self._stt_provider = stt_provider or get_stt_provider()
         self._orchestrator = orchestrator
 
-    def _get_orchestrator(self) -> AgentOrchestrator:
+    def _get_orchestrator(self, db_session: Optional[Any] = None) -> AgentOrchestrator:
         if self._orchestrator is not None:
             return self._orchestrator
-        # Lazily create default orchestrator
-        self._orchestrator = AgentOrchestrator()
-        return self._orchestrator
+        # Lazily create default orchestrator with db_session if provided
+        return AgentOrchestrator(db_session=db_session)
 
     def process_voice_request(
         self,
@@ -70,6 +69,8 @@ class VoiceAgentService:
         language: Optional[str] = None,
         prompt: Optional[str] = None,
         conversation_id: Optional[str] = None,
+        current_user: Optional[Any] = None,
+        db_session: Optional[Any] = None,
     ) -> VoiceAgentResponse:
         """Processes an audio recording through STT and LangGraph agent orchestration.
 
@@ -130,12 +131,13 @@ class VoiceAgentService:
         )
 
         # 3. LangGraph Agent Execution
-        orchestrator = self._get_orchestrator()
+        orchestrator = self._get_orchestrator(db_session=db_session)
         try:
             final_state: AgentState = orchestrator.run(
                 request=raw_transcript,
                 tenant_id=resolved_tenant_id,
                 conversation_id=conv_id,
+                current_user=current_user,
             )
         except Exception as exc:
             logger.error("Agent orchestrator execution failed: %s", exc)
@@ -193,4 +195,5 @@ class VoiceAgentService:
             duration=stt_result.duration,
             error=final_state.get("error"),
             suggest_ticket=suggest_ticket,
+            schedule_data=final_state.get("schedule_created"),
         )

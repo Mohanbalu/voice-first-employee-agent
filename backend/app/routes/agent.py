@@ -24,6 +24,8 @@ try:
     from backend.app.agents.agent_state import AgentState
     from backend.app.schemas.agent import AgentRequest, AgentResponse, ToolIntentRef
     from backend.app.rag.answer_generator import clean_markdown_asterisks
+    from backend.app.auth.dependencies import get_optional_current_user
+    from backend.app.models.user import User
 except ImportError:
     from app.config import config
     from app.database import get_db
@@ -31,6 +33,8 @@ except ImportError:
     from app.agents.agent_state import AgentState
     from app.schemas.agent import AgentRequest, AgentResponse, ToolIntentRef
     from app.rag.answer_generator import clean_markdown_asterisks
+    from app.auth.dependencies import get_optional_current_user
+    from app.models.user import User
 
 logger = logging.getLogger("routes.agent")
 router = APIRouter(prefix="/api", tags=["agent"])
@@ -80,15 +84,20 @@ def _resolve_tenant_id(request: AgentRequest) -> str:
 )
 async def agent(
     request: AgentRequest,
+    current_user: Optional[User] = Depends(get_optional_current_user),
     orchestrator: AgentOrchestrator = Depends(_get_orchestrator),
 ) -> AgentResponse:
     """LangGraph agent orchestrator endpoint."""
     tenant_id = _resolve_tenant_id(request)
+    if current_user and str(current_user.tenant_id):
+        tenant_id = str(current_user.tenant_id)
+
     conversation_id = request.conversation_id or str(uuid.uuid4())
 
     logger.info(
-        "Agent request. tenant=%s request_len=%d conversation=%s",
+        "Agent request. tenant=%s user=%s request_len=%d conversation=%s",
         tenant_id,
+        getattr(current_user, "username", "anon"),
         len(request.request),
         conversation_id,
     )
@@ -100,6 +109,7 @@ async def agent(
                 request=request.request,
                 tenant_id=tenant_id,
                 conversation_id=conversation_id,
+                current_user=current_user,
             )),
             timeout=25.0,  # Hard 25s cap — Render free tier limit
         )
@@ -171,4 +181,5 @@ async def agent(
         tool_intents=tool_intents,
         error=final_state.get("error"),
         suggest_ticket=suggest_ticket,
+        schedule_data=final_state.get("schedule_created"),
     )

@@ -22,7 +22,7 @@ for _p in [str(_backend_dir), str(_project_root)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI, Request, Response, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
@@ -43,6 +43,7 @@ try:
     from backend.app.routes.hr import router as hr_router
     from backend.app.routes.tickets import router as tickets_router
     from backend.app.routes.location import router as location_router
+    from backend.app.routes.schedules import router as schedules_router
 except ImportError:
     from app.config import config
     from app.database import get_db
@@ -57,6 +58,7 @@ except ImportError:
     from app.routes.hr import router as hr_router
     from app.routes.tickets import router as tickets_router
     from app.routes.location import router as location_router
+    from app.routes.schedules import router as schedules_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s — %(message)s")
 logger = logging.getLogger("app.main")
@@ -101,7 +103,49 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def ensure_cors_headers_middleware(request: Request, call_next):
+    """Guarantees Access-Control-Allow-Origin headers on all responses, errors, and OPTIONS."""
+    origin = request.headers.get("origin")
+    allow_origin = origin if origin else "*"
+
+    if request.method == "OPTIONS":
+        res = Response(status_code=204)
+    else:
+        try:
+            res = await call_next(request)
+        except Exception as exc:
+            logger.exception("Global exception caught for %s: %s", request.url.path, exc)
+            res = JSONResponse(
+                status_code=500,
+                content={"detail": f"Internal Server Error: {str(exc)}"},
+            )
+
+    res.headers["Access-Control-Allow-Origin"] = allow_origin
+    res.headers["Access-Control-Allow-Credentials"] = "true"
+    res.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD"
+    res.headers["Access-Control-Allow-Headers"] = "*"
+    return res
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    origin = request.headers.get("origin", "*")
+    logger.exception("Global exception handler: %s", exc)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": f"Server error: {str(exc)}"},
+        headers={
+            "Access-Control-Allow-Origin": origin if origin else "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD",
+            "Access-Control-Allow-Headers": "*",
+        },
+    )
 
 # ── Routers ───────────────────────────────────────────────────────────────────
 app.include_router(chat_router)
@@ -111,18 +155,7 @@ app.include_router(auth_router)
 app.include_router(hr_router)
 app.include_router(tickets_router)
 app.include_router(location_router)
-
-
-@app.exception_handler(Exception)
-async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
-    """Catch-all 500 handler — ensures CORS headers are always present so the
-    browser shows the real error instead of a misleading CORS error.
-    """
-    logger.error("Unhandled exception on %s %s: %s", request.method, request.url.path, exc, exc_info=True)
-    return JSONResponse(
-        status_code=500,
-        content={"detail": f"Internal server error: {type(exc).__name__}: {exc}"},
-    )
+app.include_router(schedules_router)
 
 
 @app.get("/api/debug/rag", tags=["debug"])

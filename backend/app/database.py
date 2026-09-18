@@ -55,7 +55,7 @@ def get_engine(db_url: Optional[str] = None) -> Engine:
     if _engine is not None and str(_engine.url) == target_url:
         return _engine
 
-    connect_args: Dict[str, Any] = {}
+    connect_args: Dict[str, Any] = {"connect_timeout": 3}
     if config.db.ssl_mode:
         connect_args["sslmode"] = config.db.ssl_mode
 

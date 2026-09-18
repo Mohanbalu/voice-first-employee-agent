@@ -42,11 +42,11 @@ export default function Login({ onLoginSuccess }) {
       <div style={{
         width: '100%',
         maxWidth: '440px',
-        backgroundColor: '#0f172a',
-        border: '1px solid #1e293b',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e2e8f0',
         borderRadius: '16px',
         padding: '36px',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
       }}>
         {/* Brand Header */}
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
@@ -54,13 +54,13 @@ export default function Login({ onLoginSuccess }) {
             width: '48px',
             height: '48px',
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #3b82f6, #6366f1)',
+            background: 'linear-gradient(135deg, #2563eb, #3b82f6)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: '#fff',
             marginBottom: '16px',
-            boxShadow: '0 8px 16px -4px rgba(59, 130, 246, 0.4)',
+            boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)',
           }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
@@ -69,10 +69,10 @@ export default function Login({ onLoginSuccess }) {
               <line x1="8" y1="23" x2="16" y2="23"></line>
             </svg>
           </div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#f8fafc', margin: '0 0 8px 0' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#0f172a', margin: '0 0 8px 0' }}>
             HCL Employee Assistant
           </h1>
-          <p style={{ fontSize: '0.875rem', color: '#94a3b8', margin: 0 }}>
+          <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
             Sign in with your SAP ID or HR Administrator credentials
           </p>
         </div>
@@ -81,10 +81,10 @@ export default function Login({ onLoginSuccess }) {
         {error && (
           <div style={{
             padding: '12px 16px',
-            backgroundColor: 'rgba(239, 68, 68, 0.1)',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
+            backgroundColor: '#fef2f2',
+            border: '1px solid #fecdd3',
             borderRadius: '10px',
-            color: '#f87171',
+            color: '#be123c',
             fontSize: '0.875rem',
             marginBottom: '20px',
             display: 'flex',
@@ -103,7 +103,7 @@ export default function Login({ onLoginSuccess }) {
         {/* Login Form */}
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '18px' }}>
-            <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: '500', color: '#cbd5e1', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: '600', color: '#334155', marginBottom: '6px' }}>
               SAP ID or Email Address
             </label>
             <input
@@ -116,10 +116,10 @@ export default function Login({ onLoginSuccess }) {
               style={{
                 width: '100%',
                 padding: '12px 14px',
-                backgroundColor: '#1e293b',
-                border: '1px solid #334155',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
                 borderRadius: '8px',
-                color: '#f8fafc',
+                color: '#0f172a',
                 fontSize: '0.9375rem',
                 outline: 'none',
                 boxSizing: 'border-box',
@@ -129,7 +129,7 @@ export default function Login({ onLoginSuccess }) {
           </div>
 
           <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: '500', color: '#cbd5e1', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: '600', color: '#334155', marginBottom: '6px' }}>
               Password
             </label>
             <input
@@ -142,10 +142,10 @@ export default function Login({ onLoginSuccess }) {
               style={{
                 width: '100%',
                 padding: '12px 14px',
-                backgroundColor: '#1e293b',
-                border: '1px solid #334155',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
                 borderRadius: '8px',
-                color: '#f8fafc',
+                color: '#0f172a',
                 fontSize: '0.9375rem',
                 outline: 'none',
                 boxSizing: 'border-box',
@@ -168,6 +168,7 @@ export default function Login({ onLoginSuccess }) {
               fontWeight: '600',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               opacity: isLoading ? 0.7 : 1,
+              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.25)',
               transition: 'background-color 0.2s',
             }}
           >
@@ -179,12 +180,13 @@ export default function Login({ onLoginSuccess }) {
         <div style={{
           marginTop: '28px',
           padding: '14px',
-          backgroundColor: '#1e293b',
+          backgroundColor: '#f1f5f9',
+          border: '1px solid #e2e8f0',
           borderRadius: '8px',
           fontSize: '0.8125rem',
-          color: '#94a3b8',
+          color: '#475569',
         }}>
-          <div style={{ fontWeight: '600', color: '#cbd5e1', marginBottom: '6px' }}>Default Credentials:</div>
+          <div style={{ fontWeight: '700', color: '#1e293b', marginBottom: '6px' }}>Default Credentials:</div>
           <div style={{ marginBottom: '4px' }}>• <strong>HR Admin:</strong> <code>hr@hclpass</code> (or SAP: <code>56000001</code>) &bull; Password: <code>hclpass123</code></div>
           <div>• <strong>Employee:</strong> <code>56031439</code> &bull; Password: <code>HclEmp@56031439</code></div>
         </div>

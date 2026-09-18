@@ -20,9 +20,11 @@ from typing import Any, Dict
 try:
     from backend.app.agents.agent_state import AgentState, IntentType
     from backend.app.agents.hr_agent import HRAgentNode
+    from backend.app.agents.scheduling_agent import SchedulingAgentNode
 except ImportError:
     from app.agents.agent_state import AgentState, IntentType
     from app.agents.hr_agent import HRAgentNode
+    from app.agents.scheduling_agent import SchedulingAgentNode
 
 logger = logging.getLogger("agents.tool_router")
 
@@ -142,6 +144,7 @@ class ToolRouterNode:
 
     def __init__(self):
         self._hr_node = HRAgentNode()
+        self._scheduling_node = SchedulingAgentNode()
 
     def __call__(self, state: AgentState) -> Dict[str, Any]:
         intent_str = state.get("intent", "")
@@ -164,6 +167,16 @@ class ToolRouterNode:
         # Route leave requests to dedicated HR node
         if intent == IntentType.LEAVE_REQUEST:
             return self._hr_node(state)
+
+        # Route scheduling & reminder requests directly to SchedulingAgentNode
+        if intent == IntentType.SCHEDULING:
+            return self._scheduling_node(state)
+
+        # Route task management with timing expressions to SchedulingAgentNode
+        if intent == IntentType.TASK_MANAGEMENT:
+            lower_req = request.lower()
+            if any(k in lower_req for k in ("remind", "at ", "tomorrow", "today", "in ", "every ", "schedule", "due ")):
+                return self._scheduling_node(state)
 
         # Real ticket creation integration for IT_SUPPORT when session & user provided
         if intent == IntentType.IT_SUPPORT and state.get("db_session") and state.get("current_user"):

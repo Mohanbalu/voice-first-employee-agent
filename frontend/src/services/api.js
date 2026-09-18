@@ -63,6 +63,7 @@ export async function sendVoiceAgentAudio(audioBlob, options = {}) {
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
+      headers: getAuthHeaders(),
       body: formData,
     });
 
@@ -164,9 +165,9 @@ export async function sendTextAgentRequest(requestText, tenantId = DEV_TENANT_ID
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
-      headers: {
+      headers: getAuthHeaders({
         'Content-Type': 'application/json',
-      },
+      }),
       body: JSON.stringify({
         request: requestText,
         tenant_id: tenantId,
@@ -359,5 +360,96 @@ export async function answerTicket(ticketId, answer, ingestToKb = true) {
     throw new Error(data?.detail || 'Failed to submit answer.');
   }
   return data;
+}
+
+// ── Scheduling & Reminders ──────────────────────────────────────────────────
+
+export async function getSchedules(params = {}) {
+  const queryParts = [];
+  if (params.status) queryParts.push(`status=${encodeURIComponent(params.status)}`);
+  if (params.upcoming_only) queryParts.push('upcoming_only=true');
+  if (params.today_only) queryParts.push('today_only=true');
+  if (params.limit) queryParts.push(`limit=${params.limit}`);
+  if (params.offset) queryParts.push(`offset=${params.offset}`);
+
+  const qs = queryParts.length > 0 ? `?${queryParts.join('&')}` : '';
+  const endpoint = `${API_BASE_URL}/api/schedules${qs}`;
+
+  const response = await fetch(endpoint, {
+    method: 'GET',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to retrieve schedules.');
+  }
+  return data;
+}
+
+export async function createSchedule(scheduleData) {
+  const endpoint = `${API_BASE_URL}/api/schedules`;
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(scheduleData),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to create schedule.');
+  }
+  return data;
+}
+
+export async function updateSchedule(scheduleId, updateData) {
+  const endpoint = `${API_BASE_URL}/api/schedules/${scheduleId}`;
+  const response = await fetch(endpoint, {
+    method: 'PATCH',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(updateData),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to update schedule.');
+  }
+  return data;
+}
+
+export async function completeSchedule(scheduleId) {
+  const endpoint = `${API_BASE_URL}/api/schedules/${scheduleId}/complete`;
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to complete schedule.');
+  }
+  return data;
+}
+
+export async function cancelSchedule(scheduleId) {
+  const endpoint = `${API_BASE_URL}/api/schedules/${scheduleId}/cancel`;
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.detail || 'Failed to cancel schedule.');
+  }
+  return data;
+}
+
+export async function deleteSchedule(scheduleId) {
+  const endpoint = `${API_BASE_URL}/api/schedules/${scheduleId}`;
+  const response = await fetch(endpoint, {
+    method: 'DELETE',
+    headers: getAuthHeaders(),
+  });
+  if (!response.ok && response.status !== 204) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data?.detail || 'Failed to delete schedule.');
+  }
+  return true;
 }
 

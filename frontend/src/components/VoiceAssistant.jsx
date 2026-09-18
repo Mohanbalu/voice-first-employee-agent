@@ -89,6 +89,31 @@ function detectTicketCategory(query) {
   return 'GENERAL';
 }
 
+/** Detects if assistant response confirms a scheduled reminder */
+function isScheduleResponse(text) {
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return (
+    t.includes('scheduled for') ||
+    t.includes('reminder created') ||
+    t.includes('reminder set') ||
+    t.includes('i have scheduled') ||
+    t.includes('i have created a reminder') ||
+    t.includes('i have set a reminder') ||
+    t.includes('reminder has been scheduled')
+  );
+}
+
+/** Detects if assistant response gives campus location/directions */
+function isLocationResponse(text) {
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return (
+    (t.includes('tower 1') || t.includes('tower 2') || t.includes('floor') || t.includes('sdc') || t.includes('cafeteria') || t.includes('recreation') || t.includes('odc')) &&
+    (t.includes('located') || t.includes('direction') || t.includes('campus') || t.includes('room') || t.includes('gps'))
+  );
+}
+
 /**
  * VoiceAssistant Component — Module 6.4
  *
@@ -103,7 +128,10 @@ export default function VoiceAssistant() {
   const [ttsNotice, setTtsNotice] = useState(null);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   
-  // Conversation thread: Array of { id, role, text, sources, suggestTicket, queryText }
+  // Text chat input state
+  const [inputText, setInputText] = useState('');
+
+  // Conversation thread: Array of { id, role, text, sources, scheduleData, suggestTicket, queryText }
   const [messages, setMessages] = useState([]);
 
   // ── Raise-Ticket modal state ──────────────────────────────────────────────
@@ -270,6 +298,7 @@ export default function VoiceAssistant() {
       const assistantResponse = removeAsterisks(result.response || "I couldn't process that question.");
       const sanitizedSources = sanitizeSources(result.rag_sources);
       const backendSuggestTicket = !!result.suggest_ticket;
+      const scheduleData = result.schedule_data || null;
 
       // 2. Append User turn to conversation
       const userMessageId = `user-${Date.now()}`;
@@ -283,6 +312,7 @@ export default function VoiceAssistant() {
           role: 'assistant',
           text: assistantResponse,
           sources: sanitizedSources,
+          scheduleData: scheduleData,
           timestamp: new Date(),
           suggestTicket: isUnableToAnswer(assistantResponse, backendSuggestTicket),
           queryText: transcript,
@@ -476,7 +506,7 @@ export default function VoiceAssistant() {
     }
   };
 
-  /** Handle quick prompt selection */
+  /** Handle quick prompt or text submission */
   const handleQuickPrompt = (promptText) => {
     lastPromptRef.current = promptText;
     setErrorMessage(null);
@@ -492,6 +522,7 @@ export default function VoiceAssistant() {
         const sanitizedSources = sanitizeSources(res.rag_sources);
         const cleanResponse = removeAsterisks(res.response || 'No response returned.');
         const backendSuggest = !!res.suggest_ticket;
+        const scheduleData = res.schedule_data || null;
         setMessages((prev) => [
           ...prev,
           {
@@ -499,6 +530,7 @@ export default function VoiceAssistant() {
             role: 'assistant',
             text: cleanResponse,
             sources: sanitizedSources,
+            scheduleData: scheduleData,
             timestamp: new Date(),
             suggestTicket: isUnableToAnswer(cleanResponse, backendSuggest),
             queryText: promptText,
@@ -525,11 +557,28 @@ export default function VoiceAssistant() {
       });
   };
 
+  /** Handle keyboard text input submission */
+  const handleTextSubmit = (e) => {
+    if (e) e.preventDefault();
+    const query = inputText.trim();
+    if (!query) return;
+    setInputText('');
+    handleQuickPrompt(query);
+  };
+
+  const commandActions = [
+    { label: 'Policy Inquiry', icon: '📖', query: 'What is the annual leave policy for employees?' },
+    { label: 'Set Reminder', icon: '⏰', query: 'Remind me tomorrow at 10 AM to review project deliverable' },
+    { label: 'Raise Ticket', icon: '🎫', isTicket: true },
+    { label: 'Campus Location', icon: '📍', query: 'Where is the Cafeteria located on campus?' },
+    { label: "Today's Schedule", icon: '📅', query: 'What are my upcoming reminders?' },
+  ];
+
   const quickPrompts = [
     '📍 Where am I located in the office?',
     'What is the annual leave policy for employees?',
     'How many casual leaves can I take in a year?',
-    'What is the standard probation period policy?',
+    'Remind me in 30 mins to submit timesheet',
     'Where is Conference Room B located?',
   ];
 
@@ -543,9 +592,11 @@ export default function VoiceAssistant() {
             AI
           </div>
           <div>
-            <div style={{ fontWeight: 600, fontSize: 15 }}>Workplace Policy & Operations Assistant</div>
+            <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--text-primary)' }}>
+              Workplace Command Center & Assistant
+            </div>
             <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-              Module 6.4 Voice-First Interface • AWS RDS pgvector Grounded
+              Voice & Text Operations • AWS RDS pgvector Grounded • Time Scheduling
             </div>
           </div>
         </div>
@@ -566,6 +617,35 @@ export default function VoiceAssistant() {
         </div>
       </div>
 
+      {/* ── Command Center Action Bar ── */}
+      <div className="command-bar" role="toolbar" aria-label="Command Center Actions">
+        <span className="command-bar-label">⚡ Quick Actions:</span>
+        {commandActions.map((cmd, i) => (
+          <button
+            key={i}
+            className="command-btn"
+            onClick={() => {
+              if (cmd.isTicket) {
+                setTicketForm({
+                  category: 'GENERAL',
+                  subject: 'Workplace Inquiry',
+                  description: 'Requesting workplace support.',
+                  priority: 'MEDIUM',
+                });
+                setTicketError(null);
+                setTicketModal({ messageId: `manual-${Date.now()}` });
+              } else {
+                handleQuickPrompt(cmd.query);
+              }
+            }}
+            disabled={voiceState === 'recording' || voiceState === 'processing'}
+          >
+            <span>{cmd.icon}</span>
+            <span>{cmd.label}</span>
+          </button>
+        ))}
+      </div>
+
       {/* ── Error Banner ── */}
       {errorMessage && (
         <div className="alert-box alert-error" role="alert">
@@ -582,7 +662,7 @@ export default function VoiceAssistant() {
 
       {/* ── TTS Notice Banner ── */}
       {ttsNotice && (
-        <div className="alert-box" style={{ background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.25)', color: '#93c5fd' }}>
+        <div className="alert-box" style={{ background: '#eff6ff', border: '1px solid #bfdbfe', color: '#1e3a8a' }}>
           <div>{ttsNotice}</div>
           <button
             className="alert-dismiss"
@@ -606,9 +686,9 @@ export default function VoiceAssistant() {
                 <line x1="8" y1="23" x2="16" y2="23"></line>
               </svg>
             </div>
-            <h3>Speak with your workplace assistant</h3>
+            <h3>Enterprise AI Workplace Assistant</h3>
             <p>
-              Tap the microphone below to ask about leave entitlements, travel reimbursements, office directions, or HR policies.
+              Speak naturally using the microphone or type below. Ask about verified policies, set time reminders, locate campus amenities, or escalate support tickets.
             </p>
           </div>
         ) : (
@@ -623,10 +703,13 @@ export default function VoiceAssistant() {
                 </div>
                 <div className="message-text">{removeAsterisks(msg.text)}</div>
 
-                {/* Sources & Citations (Zero Internal Path Exposure) */}
+                {/* 1. Policy References & Citations (Zero Internal Path Exposure) */}
                 {msg.sources && msg.sources.length > 0 && (
-                  <div className="sources-container">
-                    <div className="sources-label">Policy References & Citations:</div>
+                  <div className="response-card response-card-policy">
+                    <div className="response-card-header">
+                      <span>📚 Verified Policy Grounding</span>
+                      <span style={{ fontSize: '11px', opacity: 0.8 }}>RDS pgvector</span>
+                    </div>
                     <div className="sources-list">
                       {msg.sources.map((src) => (
                         <span key={src.id} className="source-badge" title={`Confidence: ${src.score || 'Grounded'}`}>
@@ -638,6 +721,42 @@ export default function VoiceAssistant() {
                           {src.pages && <span style={{ opacity: 0.7 }}>({src.pages})</span>}
                         </span>
                       ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 2. Scheduled Reminder Card */}
+                {msg.role === 'assistant' && (msg.scheduleData || isScheduleResponse(msg.text)) && (
+                  <div className="response-card response-card-schedule">
+                    <div className="response-card-header">
+                      <span>⏰ Workplace Reminder Scheduled</span>
+                      <span className="schedule-pill">Active</span>
+                    </div>
+                    <div className="schedule-card-row">
+                      <div>
+                        <strong>{msg.scheduleData?.title || 'Reminder Scheduled'}</strong>
+                        {msg.scheduleData?.scheduled_at && (
+                          <div style={{ fontSize: '12px', marginTop: '3px', color: '#581c87' }}>
+                            📅 {new Date(msg.scheduleData.scheduled_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}
+                            {msg.scheduleData.recurrence_type && msg.scheduleData.recurrence_type !== 'NONE' && (
+                              <span> • 🔄 {msg.scheduleData.recurrence_type}</span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* 3. Campus Facility & Directions Card */}
+                {msg.role === 'assistant' && isLocationResponse(msg.text) && (
+                  <div className="response-card response-card-location">
+                    <div className="response-card-header">
+                      <span>📍 Campus Directions & Navigation</span>
+                      <span className="location-pill">HCL Campus Grounding</span>
+                    </div>
+                    <div style={{ fontSize: '12px' }}>
+                      Navigate via designated campus walkways. Check floor directories at the central lobby.
                     </div>
                   </div>
                 )}
@@ -667,7 +786,7 @@ export default function VoiceAssistant() {
                   </div>
                 )}
 
-                {/* ── Raise Support Ticket Banner (shown on unanswered queries) ── */}
+                {/* ── 4. Raise Support Ticket Banner (shown on unanswered queries) ── */}
                 {msg.role === 'assistant' && msg.suggestTicket && (
                   <div className="ticket-prompt-banner" role="region" aria-label="Unable to answer – raise ticket option">
                     <div className="ticket-prompt-header">
@@ -677,9 +796,9 @@ export default function VoiceAssistant() {
                         </svg>
                       </div>
                       <div className="ticket-prompt-info">
-                        <div className="ticket-prompt-title">Unable to find what you need?</div>
+                        <div className="ticket-prompt-title">Need additional assistance?</div>
                         <div className="ticket-prompt-desc">
-                          Raise a support ticket and our team will resolve this for you within 24 hours.
+                          Raise a workplace support ticket and our IT / HR operations team will resolve this within 24 hours.
                         </div>
                       </div>
                     </div>
@@ -726,7 +845,7 @@ export default function VoiceAssistant() {
 
       {/* ── Quick Prompts Bar ── */}
       <div className="quick-prompts" aria-label="Suggested Workplace Questions">
-        <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600 }}>Suggested:</span>
+        <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 700 }}>Suggestions:</span>
         {quickPrompts.map((prompt, i) => (
           <button
             key={i}
@@ -738,6 +857,30 @@ export default function VoiceAssistant() {
           </button>
         ))}
       </div>
+
+      {/* ── Text Input Row (Keyboard Accessibility) ── */}
+      <form className="chat-input-row" onSubmit={handleTextSubmit}>
+        <input
+          type="text"
+          className="chat-text-input"
+          placeholder="Ask policy question, set reminder ('Remind me tomorrow at 10 AM...'), or type query..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          disabled={voiceState === 'processing'}
+        />
+        <button
+          type="submit"
+          className="chat-send-btn"
+          disabled={!inputText.trim() || voiceState === 'processing'}
+          aria-label="Send message"
+          title="Send query"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
 
       {/* ── Voice Control Deck ── */}
       <div className="voice-deck">

@@ -197,6 +197,7 @@ class AgentOrchestrator:
         request: str,
         tenant_id: str,
         conversation_id: Optional[str] = None,
+        current_user: Optional[Any] = None,
     ) -> AgentState:
         """
         Executes the full agent graph for a single user request.
@@ -205,6 +206,7 @@ class AgentOrchestrator:
             request:         The employee's message.
             tenant_id:       UUID string — mandatory for tenant isolation.
             conversation_id: Optional session ID for future multi-turn support.
+            current_user:    Optional authenticated User object.
 
         Returns:
             The final AgentState after all nodes have run.
@@ -228,6 +230,10 @@ class AgentOrchestrator:
             tenant_id=tenant_id,
             conversation_id=conversation_id or str(uuid.uuid4()),
         )
+        if self._db_session is not None:
+            initial["db_session"] = self._db_session
+        if current_user is not None:
+            initial["current_user"] = current_user
 
         start = time.monotonic()
         final_state: AgentState = self._graph.invoke(initial)

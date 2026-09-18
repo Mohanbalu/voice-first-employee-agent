@@ -39,6 +39,8 @@ try:
     from backend.app.voice.tts_service import TTSService
     from backend.app.voice.voice_agent_service import VoiceAgentService
     from backend.app.rag.answer_generator import clean_markdown_asterisks
+    from backend.app.auth.dependencies import get_optional_current_user
+    from backend.app.models.user import User
 except ImportError:
     from app.config import config
     from app.database import get_db
@@ -65,6 +67,8 @@ except ImportError:
     from app.voice.tts_service import TTSService
     from app.voice.voice_agent_service import VoiceAgentService
     from app.rag.answer_generator import clean_markdown_asterisks
+    from app.auth.dependencies import get_optional_current_user
+    from app.models.user import User
 
 logger = logging.getLogger("routes.voice")
 router = APIRouter(prefix="/api/voice", tags=["voice"])
@@ -275,10 +279,15 @@ async def voice_agent(
     language: Optional[str] = Form(default=None, description="Optional ISO-639-1 language code"),
     prompt: Optional[str] = Form(default=None, description="Optional context prompt for STT"),
     conversation_id: Optional[str] = Form(default=None, description="Optional session/conversation ID"),
+    current_user: Optional[User] = Depends(get_optional_current_user),
+    db: Session = Depends(get_db),
     service: VoiceAgentService = Depends(get_voice_agent_service),
 ) -> VoiceAgentResponse:
     """Processes uploaded voice audio through STT and LangGraph agent orchestrator."""
     resolved_tenant_id = _resolve_tenant_id(tenant_id)
+    if current_user and str(current_user.tenant_id):
+        resolved_tenant_id = str(current_user.tenant_id)
+
     filename = audio.filename or "recording.wav"
     ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
 
@@ -325,10 +334,11 @@ async def voice_agent(
             tmp_path = Path(tmp_file.name)
 
         logger.info(
-            "Processing voice agent request for '%s' (size=%d bytes, tenant=%s)",
+            "Processing voice agent request for '%s' (size=%d bytes, tenant=%s, user=%s)",
             filename,
             file_size,
             resolved_tenant_id,
+            getattr(current_user, "username", "anon"),
         )
 
         result: VoiceAgentResponse = service.process_voice_request(
@@ -338,6 +348,8 @@ async def voice_agent(
             language=language,
             prompt=prompt,
             conversation_id=conversation_id,
+            current_user=current_user,
+            db_session=db,
         )
 
         if result.response:

@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Dashboard from './pages/Dashboard';
 import Assistant from './pages/Assistant';
 import AdminDashboard from './admin/AdminDashboard';
+import SchedulePanel from './components/SchedulePanel';
 import Login from './pages/Login';
 
 function AppContent() {
@@ -18,6 +19,8 @@ function AppContent() {
         setCurrentView('admin');
       } else if (path.includes('assistant') || hash.includes('assistant')) {
         setCurrentView('assistant');
+      } else if (path.includes('schedules') || hash.includes('schedules')) {
+        setCurrentView('schedules');
       } else {
         setCurrentView('dashboard');
       }
@@ -31,7 +34,13 @@ function AppContent() {
   const navigateTo = (view) => {
     setCurrentView(view);
     const targetUrl =
-      view === 'admin' ? '/admin' : view === 'assistant' ? '/assistant' : '/dashboard';
+      view === 'admin'
+        ? '/admin'
+        : view === 'assistant'
+        ? '/assistant'
+        : view === 'schedules'
+        ? '/schedules'
+        : '/dashboard';
     window.history.pushState({}, '', targetUrl);
   };
 
@@ -95,6 +104,20 @@ function AppContent() {
             <span>Voice Assistant</span>
           </button>
 
+          <button
+            className={`nav-button ${currentView === 'schedules' ? 'active' : ''}`}
+            onClick={() => navigateTo('schedules')}
+            aria-current={currentView === 'schedules' ? 'page' : undefined}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Schedules</span>
+          </button>
+
           {user?.role === 'HR' && (
             <button
               className={`nav-button ${currentView === 'admin' ? 'active' : ''}`}
@@ -124,8 +147,8 @@ function AppContent() {
                 fontWeight: '700',
                 padding: '1px 6px',
                 borderRadius: 'var(--radius-full)',
-                backgroundColor: user?.role === 'HR' ? 'rgba(168, 85, 247, 0.2)' : 'rgba(59, 130, 246, 0.2)',
-                color: user?.role === 'HR' ? '#c084fc' : 'var(--accent-primary)',
+                backgroundColor: user?.role === 'HR' ? '#f3e8ff' : '#eff6ff',
+                color: user?.role === 'HR' ? '#7e22ce' : 'var(--accent-primary)',
               }}
             >
               {user?.role} {user?.sap_id ? `• ${user.sap_id}` : ''}
@@ -154,9 +177,14 @@ function AppContent() {
       {/* ── Main View Container ── */}
       <main className="main-content" role="main">
         {currentView === 'dashboard' ? (
-          <Dashboard onNavigateToAssistant={() => navigateTo('assistant')} />
+          <Dashboard
+            onNavigateToAssistant={() => navigateTo('assistant')}
+            onNavigateToSchedules={() => navigateTo('schedules')}
+          />
         ) : currentView === 'assistant' ? (
           <Assistant />
+        ) : currentView === 'schedules' ? (
+          <SchedulePanel onOpenVoiceAssistant={() => navigateTo('assistant')} />
         ) : currentView === 'admin' ? (
           user?.role === 'HR' ? (
             <AdminDashboard />

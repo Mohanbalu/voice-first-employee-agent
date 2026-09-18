@@ -87,6 +87,10 @@ class AgentResponse(BaseModel):
         default=False,
         description="Whether raising a support ticket is suggested when the assistant is unable to answer.",
     )
+    schedule_data: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Optional structured schedule data when a reminder or schedule was created.",
+    )
 
 
 class AgentErrorResponse(BaseModel):

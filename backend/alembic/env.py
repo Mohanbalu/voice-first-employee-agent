@@ -22,6 +22,8 @@ from backend.app.models import (
     Ticket,
     AuditLog,
     Location,
+    Schedule,
+    Timesheet,
 )
 
 # this is the Alembic Config object, which provides

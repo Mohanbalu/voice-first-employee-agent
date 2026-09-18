@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { getMyTickets, createTicket } from '../services/api';
 
-export default function Dashboard({ onNavigateToAssistant }) {
+export default function Dashboard({ onNavigateToAssistant, onNavigateToSchedules }) {
   const { user } = useAuth();
 
   // Tickets state
@@ -61,28 +61,32 @@ export default function Dashboard({ onNavigateToAssistant }) {
 
   const cards = [
     {
+      title: 'Workplace Time Scheduling',
+      desc: 'Natural language time parsing ("in 30 mins", "tomorrow at 10 AM") and recurring task alerts.',
+      icon: '⏰',
+      badge: 'Scheduling',
+      onClick: onNavigateToSchedules,
+    },
+    {
       title: 'Company Policy Q&A',
       desc: 'Retrieval-Augmented Generation across employee handbooks and policy chunks via pgvector.',
       icon: '📚',
       badge: 'RAG Grounded',
+      onClick: onNavigateToAssistant,
     },
     {
       title: 'HR & Leave Management',
       desc: 'Inquire about leave entitlements, casual leaves, carryover limits, and submit inquiries.',
       icon: '🏖️',
       badge: 'Integrated',
+      onClick: onNavigateToAssistant,
     },
     {
       title: 'Office Facilities & Navigation',
       desc: 'SDC campus directions, Tower 1 & 2 facilities, cafeteria, breakout rooms, and play areas.',
       icon: '🗺️',
       badge: 'HCL Campus',
-    },
-    {
-      title: 'Voice-First AI Assistant',
-      desc: 'Hands-free speech interaction powered by Groq Whisper STT and natural speech synthesis.',
-      icon: '🎙️',
-      badge: 'Live',
+      onClick: onNavigateToAssistant,
     },
   ];
 
@@ -103,28 +107,46 @@ export default function Dashboard({ onNavigateToAssistant }) {
             Department: <strong>{user?.department || 'Operations'}</strong> | Role:{' '}
             <strong style={{ color: 'var(--accent-primary)' }}>{user?.role || 'EMPLOYEE'}</strong>
             <br />
-            Access verified workplace policies, submit IT/HR requests, and interact hands-free with your AI Agent.
+            Access verified workplace policies, schedule reminders, submit IT/HR requests, and interact hands-free with your AI Agent.
           </p>
         </div>
-        <button
-          className="hero-cta"
-          onClick={onNavigateToAssistant}
-          aria-label="Open Voice Assistant"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-          </svg>
-          <span>Talk to Voice Assistant</span>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+          {onNavigateToSchedules && (
+            <button
+              onClick={onNavigateToSchedules}
+              className="command-btn"
+              style={{ padding: '10px 18px', background: '#ffffff', border: '1px solid #bfdbfe', color: '#1d4ed8', fontWeight: 600 }}
+              title="Open Workplace Schedules"
+            >
+              ⏰ Schedules
+            </button>
+          )}
+          <button
+            className="hero-cta"
+            onClick={onNavigateToAssistant}
+            aria-label="Open Voice Assistant"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+            <span>Voice Assistant</span>
+          </button>
+        </div>
       </div>
 
       {/* Workplace Overview Grid */}
       <div className="dashboard-grid" style={{ marginBottom: '32px' }}>
         {cards.map((card, idx) => (
-          <div key={idx} className="dashboard-card">
+          <div
+            key={idx}
+            className="dashboard-card"
+            onClick={card.onClick}
+            style={{ cursor: card.onClick ? 'pointer' : 'default' }}
+            title={card.onClick ? `Open ${card.title}` : undefined}
+          >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div className="card-icon">{card.icon}</div>
               <span className="brand-badge">{card.badge}</span>

@@ -45,27 +45,35 @@ _KEYWORD_MAP: List[tuple[set[str], IntentType]] = [
         "software", "hardware", "access", "printer", "computer",
         "ticket", "it ticket", "raise a ticket", "tech support",
     }, IntentType.IT_SUPPORT),
-    # Calendar
+    # Scheduling & Reminders
     ({
-        "meeting", "schedule", "calendar", "book a room", "room booking",
-        "appointment", "book a meeting", "event", "invite",
-    }, IntentType.CALENDAR_QUERY),
+        "remind me", "reminder", "schedule a reminder", "set a reminder",
+        "remind", "set reminder", "create reminder", "my reminders",
+        "schedule reminder",
+    }, IntentType.SCHEDULING),
     # Tasks
     ({
         "task", "to-do", "todo", "assign task", "action item",
         "my tasks", "project task",
     }, IntentType.TASK_MANAGEMENT),
+    # Calendar & Meetings
+    ({
+        "meeting", "calendar", "book a room", "room booking",
+        "appointment", "book a meeting", "event", "invite",
+        "schedule a meeting", "schedule meeting",
+    }, IntentType.CALENDAR_QUERY),
     # Timesheet
     ({
         "timesheet", "log hours", "hours worked", "clock in",
         "clock out", "attendance", "time entry", "overtime",
     }, IntentType.TIMESHEET),
-    # Navigation
+    # Navigation & GPS
     ({
         "where is", "where are", "where can i find", "which floor", "find room", "room location", "floor", "navigate",
         "directions", "office map", "how to get to", "building", "location", "located",
         "nearest", "toilet", "canteen", "cafeteria", "sdc", "tower 1", "tower 2",
         "techbees", "seminar hall", "odc", "play area", "breakout room", "it team",
+        "where am i", "my location", "current location",
     }, IntentType.NAVIGATION),
     # Policy / Knowledge
     ({
@@ -102,6 +110,7 @@ Classify the employee's message into EXACTLY ONE of these intents:
 - it_support: reporting IT issues, requesting tech help or access (e.g. broken laptop, password reset, VPN issue)
 - calendar_query: scheduling meetings, booking rooms, checking calendar
 - task_management: creating or querying tasks, action items, to-dos
+- scheduling: setting reminders, scheduling future alerts, recurring reminders (e.g. remind me tomorrow at 10 AM, set reminder in 30 minutes, remind me every Monday)
 - timesheet: logging hours, checking attendance, overtime queries
 - navigation: finding rooms, offices, facilities, cafeteria, floors, teams, or desks in the building (e.g. where is the IT team, where are Techbees classrooms)
 - clarify_needed: message is too vague or ambiguous to classify
