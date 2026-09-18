@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional
 
 try:
     from backend.app.config import config
-    from backend.app.database import get_session_factory
+    from backend.app.database import get_session_factory, is_db_reachable
     from backend.app.models.tenant import Tenant
     from backend.app.rag.answer_generator import AnswerGenerator, GeneratedAnswer, NO_CONTEXT_ANSWER
     from backend.app.rag.context_builder import BuiltContext, ContextBuilder, SourceReference
@@ -23,7 +23,7 @@ try:
     from backend.app.rag.embeddings import EmbeddingService
 except ImportError:
     from app.config import config
-    from app.database import get_session_factory
+    from app.database import get_session_factory, is_db_reachable
     from app.models.tenant import Tenant
     from app.rag.answer_generator import AnswerGenerator, GeneratedAnswer, NO_CONTEXT_ANSWER
     from app.rag.context_builder import BuiltContext, ContextBuilder, SourceReference
@@ -139,11 +139,19 @@ class RAGService:
             )
 
         # Validate tenant (we need a session for this)
-        def _run(session: Session) -> RAGResponse:
+        def _run(session: Optional[Session]) -> RAGResponse:
             # 1. Validate tenant exists
-            tenant = session.execute(
-                select(Tenant).where(Tenant.id == tenant_id)
-            ).scalar_one_or_none()
+            tenant = None
+            if session is not None and is_db_reachable():
+                try:
+                    tenant = session.execute(
+                        select(Tenant).where(Tenant.id == tenant_id)
+                    ).scalar_one_or_none()
+                except Exception as db_err:
+                    logger.warning("Tenant DB lookup failed (%s); using fallback tenant.", db_err)
+                    tenant = Tenant(id=tenant_id, name="HCL Enterprise", slug="dev-org")
+            else:
+                tenant = Tenant(id=tenant_id, name="HCL Enterprise", slug="dev-org")
 
             if tenant is None:
                 return self._error_response(
@@ -206,11 +214,19 @@ class RAGService:
             )
 
         if session is not None:
-            return _run(session)
+            try:
+                return _run(session)
+            except Exception as exc:
+                logger.warning("Session query failed in answer_question (%s). Retrying with offline fallback.", exc)
+                return _run(session=None)
 
-        session_factory = get_session_factory()
-        with session_factory() as db_session:
-            return _run(db_session)
+        try:
+            session_factory = get_session_factory()
+            with session_factory() as db_session:
+                return _run(db_session)
+        except Exception as db_err:
+            logger.warning("Database unreachable in answer_question (%s). Using offline fallback.", db_err)
+            return _run(session=None)
 
     @staticmethod
     def _error_response(

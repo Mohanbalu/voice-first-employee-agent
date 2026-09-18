@@ -111,7 +111,7 @@ async def agent(
                 conversation_id=conversation_id,
                 current_user=current_user,
             )),
-            timeout=25.0,  # Hard 25s cap — Render free tier limit
+            timeout=35.0,  # Safe buffer for RAG retrieval + LLM generation
         )
     except asyncio.TimeoutError:
         logger.error("Orchestrator timed out after 25s for tenant=%s", tenant_id)

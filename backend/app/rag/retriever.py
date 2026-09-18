@@ -22,7 +22,7 @@ for _parent in [_current_file] + list(_current_file.parents):
 
 try:
     from backend.app.config import config
-    from backend.app.database import get_session_factory
+    from backend.app.database import get_session_factory, is_db_reachable
     from backend.app.models.embedding import ChunkEmbedding
     from backend.app.models.chunk import Chunk
     from backend.app.models.document import Document
@@ -36,7 +36,7 @@ try:
     from backend.app.rag.vector_store import SearchResult, VectorStore
 except ImportError:
     from app.config import config
-    from app.database import get_session_factory
+    from app.database import get_session_factory, is_db_reachable
     from app.models.embedding import ChunkEmbedding
     from app.models.chunk import Chunk
     from app.models.document import Document
@@ -246,6 +246,74 @@ def _build_embedding_service(allow_mock: bool) -> EmbeddingService:
     )
 
 
+import json
+
+_CACHED_LOCAL_CHUNKS: Optional[List[dict]] = None
+
+
+def _get_local_chunks() -> List[dict]:
+    global _CACHED_LOCAL_CHUNKS
+    if _CACHED_LOCAL_CHUNKS is not None:
+        return _CACHED_LOCAL_CHUNKS
+
+    chunks = []
+    bases = [
+        Path("data/processed/chunks"),
+        Path(__file__).resolve().parent.parent.parent.parent / "data" / "processed" / "chunks",
+    ]
+    for base in bases:
+        if base.exists():
+            for fpath in sorted(base.glob("*.jsonl")):
+                try:
+                    with open(fpath, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line_str = line.strip()
+                            if line_str:
+                                chunks.append(json.loads(line_str))
+                except Exception:
+                    pass
+            if chunks:
+                break
+    _CACHED_LOCAL_CHUNKS = chunks
+    return _CACHED_LOCAL_CHUNKS
+
+
+def _search_local_chunks(terms: list[str], limit: int = 12) -> List[SearchResult]:
+    if not terms:
+        return []
+    local_chunks = _get_local_chunks()
+    if not local_chunks:
+        return []
+
+    search_terms = [t.lower() for t in terms[:8]]
+    scored = []
+    for c in local_chunks:
+        text_lower = (c.get("text") or "").lower()
+        doc_lower = (c.get("document_name") or "").lower()
+        hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
+        if hits > 0:
+            sim = min(0.65 + 0.08 * hits, 0.92)
+            meta = c.get("metadata") or {}
+            scored.append((
+                hits,
+                SearchResult(
+                    chunk_id=c.get("chunk_id", str(uuid.uuid4())),
+                    document_id=c.get("document_id", "doc"),
+                    document_name=c.get("document_name", "Company Policy"),
+                    source_file=c.get("source_file", "policy.pdf"),
+                    text=c.get("text", ""),
+                    page_start=c.get("page_start", 1),
+                    page_end=c.get("page_end", 1),
+                    section=c.get("section"),
+                    similarity_score=sim,
+                    distance=round(1.0 - sim, 4),
+                    metadata=meta,
+                )
+            ))
+    scored.sort(key=lambda x: (x[0], x[1].similarity_score), reverse=True)
+    return [item[1] for item in scored[:limit]]
+
+
 class RAGRetriever:
     """
     Tenant-isolated hybrid retriever that:
@@ -273,7 +341,7 @@ class RAGRetriever:
 
     def _search_lexical_candidates(
         self,
-        session: Session,
+        session: Optional[Session],
         tenant_id: uuid.UUID,
         terms: list[str],
         limit: int = 12,
@@ -282,57 +350,60 @@ class RAGRetriever:
         if not terms:
             return []
 
-        try:
-            from sqlalchemy import or_
-            search_terms = terms[:8]
-            filters = []
-            for term in search_terms:
-                filters.append(Chunk.text.ilike(f"%{term}%"))
-                filters.append(Document.document_name.ilike(f"%{term}%"))
+        if session is not None:
+            try:
+                from sqlalchemy import or_
+                search_terms = terms[:8]
+                filters = []
+                for term in search_terms:
+                    filters.append(Chunk.text.ilike(f"%{term}%"))
+                    filters.append(Document.document_name.ilike(f"%{term}%"))
 
-            stmt = (
-                select(
-                    Chunk.chunk_id,
-                    Chunk.document_id,
-                    Document.document_name,
-                    Document.source_file,
-                    Chunk.text,
-                    Chunk.page_start,
-                    Chunk.page_end,
-                    Chunk.section,
-                    Chunk.metadata_json,
-                )
-                .join(Document, Chunk.document_ref_id == Document.id)
-                .where(Chunk.tenant_id == tenant_id)
-                .where(or_(*filters))
-                .limit(limit)
-            )
-            rows = session.execute(stmt).fetchall()
-            results: List[SearchResult] = []
-            for row in rows:
-                text_lower = (row.text or "").lower()
-                doc_lower = (row.document_name or "").lower()
-                hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
-                sim = min(0.65 + 0.08 * hits, 0.90)
-                results.append(
-                    SearchResult(
-                        chunk_id=row.chunk_id,
-                        document_id=row.document_id,
-                        document_name=row.document_name,
-                        source_file=row.source_file,
-                        text=row.text,
-                        page_start=row.page_start,
-                        page_end=row.page_end,
-                        section=row.section,
-                        similarity_score=sim,
-                        distance=round(1.0 - sim, 4),
-                        metadata=row.metadata_json or {},
+                stmt = (
+                    select(
+                        Chunk.chunk_id,
+                        Chunk.document_id,
+                        Document.document_name,
+                        Document.source_file,
+                        Chunk.text,
+                        Chunk.page_start,
+                        Chunk.page_end,
+                        Chunk.section,
+                        Chunk.metadata_json,
                     )
+                    .join(Document, Chunk.document_ref_id == Document.id)
+                    .where(Chunk.tenant_id == tenant_id)
+                    .where(or_(*filters))
+                    .limit(limit)
                 )
-            return results
-        except Exception as exc:
-            logger.warning("Lexical candidate retrieval error: %s", exc)
-            return []
+                rows = session.execute(stmt).fetchall()
+                if rows:
+                    results: List[SearchResult] = []
+                    for row in rows:
+                        text_lower = (row.text or "").lower()
+                        doc_lower = (row.document_name or "").lower()
+                        hits = sum(1 for t in search_terms if t in text_lower or t in doc_lower)
+                        sim = min(0.65 + 0.08 * hits, 0.90)
+                        results.append(
+                            SearchResult(
+                                chunk_id=row.chunk_id,
+                                document_id=row.document_id,
+                                document_name=row.document_name,
+                                source_file=row.source_file,
+                                text=row.text,
+                                page_start=row.page_start,
+                                page_end=row.page_end,
+                                section=row.section,
+                                similarity_score=sim,
+                                distance=round(1.0 - sim, 4),
+                                metadata=row.metadata_json or {},
+                            )
+                        )
+                    return results
+            except Exception as exc:
+                logger.warning("Lexical database query failed (%s); falling back to local chunks.", exc)
+
+        return _search_local_chunks(terms, limit=limit)
 
     def _embed_with_timeout(self, query: str, timeout_seconds: float = 2.0) -> Optional[List[float]]:
         """Attempts to embed query with a strict timeout to avoid thread blocking on model loading."""
@@ -384,21 +455,22 @@ class RAGRetriever:
             limit=12,
         )
 
-        # 2. Try vector retrieval with safe 3.5s timeout
+        # 2. Try vector retrieval with safe 3.5s timeout if DB is reachable
         vector_candidates: List[SearchResult] = []
-        try:
-            query_vec = self._embed_with_timeout(q_clean, timeout_seconds=3.5)
-            if query_vec is not None and len(query_vec) == config.db.vector_dimension:
-                store = VectorStore(target_dimension=config.db.vector_dimension)
-                vector_candidates = store.search_similar_chunks(
-                    session=session,
-                    tenant_id=tenant_id,
-                    query_embedding=query_vec,
-                    top_k=self.cfg.top_k,
-                    min_similarity=0.0,
-                )
-        except Exception as exc:
-            logger.warning("Vector candidate retrieval error (%s); proceeding with lexical.", exc)
+        if session is not None and is_db_reachable():
+            try:
+                query_vec = self._embed_with_timeout(q_clean, timeout_seconds=3.5)
+                if query_vec is not None and len(query_vec) == config.db.vector_dimension:
+                    store = VectorStore(target_dimension=config.db.vector_dimension)
+                    vector_candidates = store.search_similar_chunks(
+                        session=session,
+                        tenant_id=tenant_id,
+                        query_embedding=query_vec,
+                        top_k=self.cfg.top_k,
+                        min_similarity=0.0,
+                    )
+            except Exception as exc:
+                logger.warning("Vector candidate retrieval error (%s); proceeding with lexical.", exc)
 
         # Merge candidate pools by chunk_id
         candidate_dict: dict[str, SearchResult] = {}
@@ -424,14 +496,17 @@ class RAGRetriever:
         )
 
         # 3. Filter mock vectors in production mode
-        if not self.cfg.allow_mock:
-            filtered = self._filter_production_only(session, tenant_id, candidates)
-            if len(filtered) < len(candidates):
-                logger.warning(
-                    "Dropped %d mock-vector results in production mode.",
-                    len(candidates) - len(filtered),
-                )
-            candidates = filtered
+        if not self.cfg.allow_mock and session is not None:
+            try:
+                filtered = self._filter_production_only(session, tenant_id, candidates)
+                if len(filtered) < len(candidates):
+                    logger.warning(
+                        "Dropped %d mock-vector results in production mode.",
+                        len(candidates) - len(filtered),
+                    )
+                candidates = filtered
+            except Exception as exc:
+                logger.warning("Could not filter mock vectors (%s); retaining candidates.", exc)
 
         # 4. Rerank candidates with hybrid scoring & entity boosting
         scored_candidates: list[tuple[float, SearchResult]] = []

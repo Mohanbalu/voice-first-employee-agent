@@ -73,6 +73,30 @@ def get_engine(db_url: Optional[str] = None) -> Engine:
     return _engine
 
 
+import time
+
+_DB_LAST_CHECK_TIME: float = 0.0
+_DB_IS_ALIVE: Optional[bool] = None
+
+
+def is_db_reachable() -> bool:
+    """Checks whether the database is reachable with 30-second result caching."""
+    global _DB_LAST_CHECK_TIME, _DB_IS_ALIVE
+    now = time.monotonic()
+    if _DB_IS_ALIVE is not None and (now - _DB_LAST_CHECK_TIME < 30.0):
+        return _DB_IS_ALIVE
+
+    _DB_LAST_CHECK_TIME = now
+    try:
+        engine = get_engine()
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        _DB_IS_ALIVE = True
+    except Exception:
+        _DB_IS_ALIVE = False
+    return _DB_IS_ALIVE
+
+
 def get_session_factory(db_url: Optional[str] = None) -> sessionmaker[Session]:
     """Returns the configured SessionLocal factory."""
     global _SessionFactory
